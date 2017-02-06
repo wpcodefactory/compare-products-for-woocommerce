@@ -1,0 +1,211 @@
+<?php
+/**
+ * Compare products for WooCommerce  - Core Class
+ *
+ * @version 1.0.0
+ * @since   1.0.0
+ * @author  Algoritmika Ltd.
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
+
+if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
+
+	final class Alg_WC_CP_Core {
+
+		/**
+		 * Plugin version.
+		 *
+		 * @var   string
+		 * @since 1.0.0
+		 */
+		public $version = '1.0.0';
+
+		/**
+		 * @var   Alg_WC_CP_Core The single instance of the class
+		 * @since 1.0.0
+		 */
+		protected static $_instance = null;
+
+		/**
+		 * Main Alg_WC_CP_Core Instance
+		 *
+		 * Ensures only one instance of Alg_WC_CP_Core is loaded or can be loaded.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @static
+		 * @return  Alg_WC_CP_Core - Main instance
+		 */
+		public static function instance() {
+			if ( is_null( self::$_instance ) ) {
+				self::$_instance = new self();
+			}
+
+			return self::$_instance;
+		}
+
+		/**
+		 * Constructor.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		function __construct() {
+
+			// Set up localization
+			$this->handle_localization();
+
+			// Init admin part
+			$this->init_admin();
+
+			if ( true === filter_var( get_option( Alg_WC_CP_Settings_General::OPTION_ENABLE_PLUGIN, false ), FILTER_VALIDATE_BOOLEAN ) ) {
+
+				// Manages buttons
+				$this->handle_buttons();
+
+				// Enqueue scripts
+				add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
+				// Manages query vars
+				add_filter( 'query_vars', array( $this, 'handle_query_vars' ) );
+			}
+		}
+
+		/**
+		 * Manages query vars
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		public function handle_query_vars($vars){
+			$vars = Alg_WC_CP_Default_Button::handle_query_vars($vars);
+			return $vars;
+		}
+
+		/**
+		 * Load scripts and styles
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		function enqueue_scripts() {
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+			// Font awesome
+			$css_file = 'http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css';
+			$font_awesome_opt = get_option( Alg_WC_CP_Settings_General::OPTION_FONT_AWESOME, true );
+			if ( filter_var( $font_awesome_opt, FILTER_VALIDATE_BOOLEAN ) !== false ) {
+				wp_register_style( 'alg-wc-cp-font-awesome', $css_file, array() );
+				wp_enqueue_style( 'alg-wc-cp-font-awesome' );
+			}
+
+			$css_file = 'assets/css/alg-wc-cp'.$suffix.'.css';
+			$css_ver = date( "ymd-Gis", filemtime( ALG_WC_CP_DIR . $css_file ) );
+			wp_register_style( 'alg-wc-compare-products', ALG_WC_CP_URL . $css_file, array(), $css_ver );
+			wp_enqueue_style( 'alg-wc-compare-products' );
+		}
+
+		/**
+		 * Manages buttons.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		private function handle_buttons(){
+			Alg_WC_CP_Default_Button::manage_button_loading();
+		}
+
+		/**
+		 * Init admin fields
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		private function init_admin() {
+			if ( is_admin() ) {
+				add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_woocommerce_settings_tab' ) );
+				add_filter( 'plugin_action_links_' . ALG_WC_CP_BASENAME, array( $this, 'action_links' ) );
+			}
+
+			// Admin setting options inside WooCommerce
+			new Alg_WC_CP_Settings_General();
+			new Alg_WC_CP_Settings_Buttons();
+
+			if ( is_admin() && get_option( 'alg_wc_cp_version', '' ) !== $this->version ) {
+				update_option( 'alg_wc_cp_version', $this->version );
+			}
+		}
+
+		/**
+		 * Show action links on the plugin screen
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @param   mixed $links
+		 * @return  array
+		 */
+		function action_links( $links ) {
+			$custom_links = array( '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=alg_wc_cp' ) . '">' . __( 'Settings', 'woocommerce' ) . '</a>' );
+			return array_merge( $custom_links, $links );
+		}
+
+		/**
+		 * Add Wish List settings tab to WooCommerce settings.
+		 *
+		 * @version 1.1.0
+		 * @since   1.0.0
+		 */
+		function add_woocommerce_settings_tab( $settings ) {
+			$settings[] = new Alg_WC_CP_Settings();
+			return $settings;
+		}
+
+		/**
+		 * Handle Localization
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		public function handle_localization() {
+			$locale = apply_filters( 'plugin_locale', get_locale(), 'alg-wc-compare-products' );
+			load_textdomain( 'alg-wc-compare-products', WP_LANG_DIR . dirname( ALG_WC_CP_BASENAME ) . 'alg-wc-compare-products' . '-' . $locale . '.mo' );
+			load_plugin_textdomain( 'alg-wc-compare-products', false, dirname( ALG_WC_CP_BASENAME ) . '/languages/' );
+		}
+
+		/**
+		 * Method called when the plugin is activated
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		public function on_install() {
+
+		}
+
+		/**
+		 * Method called when the plugin is uninstalled
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		public static function on_uninstall() {
+
+		}
+
+		/**
+		 * Returns class name
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @return type
+		 */
+		public static function get_class_name() {
+			return get_called_class();
+		}
+
+	}
+
+endif;
