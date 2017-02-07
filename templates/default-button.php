@@ -18,11 +18,12 @@ $action     = $params['btn_data_action'];
 $class      = $params['btn_class'];
 $label      = $params[ 'btn_label' ];
 $icon_class = $params['btn_icon_class'];
+$href       = $params['btn_href'];
 ?>
 
 <div class="alg-wc-cp-default-btn-wrapper">
-	<button data-item_id="<?php echo $id; ?>" data-action="<?php echo esc_attr( $action );?>" class="<?php echo esc_attr( $class );?>">
+	<a href="<?php echo esc_url($href); ?>" data-item_id="<?php echo $id; ?>" data-action="<?php echo esc_attr( $action );?>" class="<?php echo esc_attr( $class );?>">
 		<span class="alg-wc-cp-btn-text"><?php echo esc_html( $label ); ?></span>
 		<i class="<?php echo esc_attr( $icon_class );?>" aria-hidden="true"></i>
-	</button>
+	</a>
 </div>

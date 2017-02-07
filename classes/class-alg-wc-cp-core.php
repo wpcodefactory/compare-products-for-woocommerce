@@ -71,6 +71,53 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 
 				// Manages query vars
 				add_filter( 'query_vars', array( $this, 'handle_query_vars' ) );
+
+				// Takes actions based on the requested url
+				add_action( 'wp_footer', array( $this, 'route' ), 20 );
+
+				// Start session if necessary
+				add_action( 'init', array( $this, "handle_session" ), 1 );
+			}
+		}
+
+		/**
+		 * Start session if necessary
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		function handle_session() {
+			if ( ! session_id() ) {
+				session_start();
+			}
+
+		}
+
+		/**
+		 * Takes actions based on the requested url
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		public function route() {
+			$args   = $_GET;
+			$args   = wp_parse_args( $args, array(
+				Alg_WC_CP_Query_Vars::ACTION => '',
+			) );
+			$action = sanitize_text_field( $args[ Alg_WC_CP_Query_Vars::ACTION ] );
+
+			if ( $action == 'compare' ) {
+
+				// Add product to compare list
+				$response = Alg_WC_CP_Compare_list::add_product_to_compare_list( $_GET );
+				if($response!==false){
+					$product = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
+					wc_add_notice( __( "<strong>{$product->get_title()}</strong> was successfully added to compare list.", 'alg-wc-compare-products' ), 'success' );
+					Alg_WC_CP_Compare_list::show_compare_list( $response );
+					//add_action( 'wp_footer', array( Alg_WC_CP_Compare_list::get_class_name(), 'show_compare_list' ) );
+				}else{
+					wc_add_notice( __( 'Sorry, Some error occurred. Please, try again later.', 'alg-wc-compare-products' ), 'error' );
+				}
 			}
 		}
 
@@ -102,6 +149,13 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 				wp_enqueue_style( 'alg-wc-cp-font-awesome' );
 			}
 
+			// Izimodal - A modal plugin (http://izimodal.marcelodolce.com)
+			wp_register_script( 'alg-wc-cp-izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/js/iziModal.min.js', array( 'jquery' ), false, true );
+			wp_enqueue_script( 'alg-wc-cp-izimodal' );
+			wp_register_style( 'alg-wc-cp-izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/css/iziModal.min.css', array(), false );
+			wp_enqueue_style( 'alg-wc-cp-izimodal' );
+
+			// Main css file
 			$css_file = 'assets/css/alg-wc-cp'.$suffix.'.css';
 			$css_ver = date( "ymd-Gis", filemtime( ALG_WC_CP_DIR . $css_file ) );
 			wp_register_style( 'alg-wc-compare-products', ALG_WC_CP_URL . $css_file, array(), $css_ver );

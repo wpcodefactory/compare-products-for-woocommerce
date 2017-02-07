@@ -13,4 +13,12 @@
   display: inline-block;
 }
 
+.iziModal .iziModal-header-subtitle, .iziModal .iziModal-header-title {
+  clear: none;
+}
+
+.iziModal {
+  outline: none;
+}
+
 /*# sourceMappingURL=../maps/alg-wc-cp.css.map */

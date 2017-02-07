@@ -40,7 +40,8 @@ if ( ! class_exists( 'Alg_WC_CP_Default_Button' ) ) {
 		 * @since   1.0.0
 		 */
 		public static function handle_query_vars($vars){
-			$vars[] = Alg_WC_CP_Query_Vars::COMPARE_PRODUCT;
+			$vars[] = Alg_WC_CP_Query_Vars::ACTION;
+			$vars[] = Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID;
 			return $vars;
 		}
 
@@ -54,9 +55,13 @@ if ( ! class_exists( 'Alg_WC_CP_Default_Button' ) ) {
 
 			$params = array(
 				'btn_data_action' => 'alg_wc_cp_compare',
-				'btn_class'       => 'alg_wc_cp_default_btn',
+				'btn_class'       => 'alg_wc_cp_default_btn button',
 				'btn_label'       => __( 'Compare', 'alg-wc-compare-products' ),
 				'btn_icon_class'  => 'fa fa-exchange alg-wc-cp-icon',
+				'btn_href'        => add_query_arg( array(
+					Alg_WC_CP_Query_Vars::ACTION             => 'compare',
+					Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID => get_the_ID(),
+				), get_permalink() ),
 			);
 
 			echo alg_wc_cp_locate_template( 'default-button.php', $params );
