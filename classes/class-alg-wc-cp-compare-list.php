@@ -48,7 +48,9 @@ if ( ! class_exists( 'Alg_WC_CP_Compare_list' ) ) {
 		public static function show_notification_after_comparing( $compare_response, $args ){
 			if($compare_response!==false){
 				$product = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
-				wc_add_notice( __( "<strong>{$product->get_title()}</strong> was successfully added to compare list.", 'alg-wc-compare-products' ), 'success' );
+				$message = __("<strong>{$product->get_title()}</strong> was successfully added to compare list.", 'alg-wc-compare-products' );
+				$compare_list_link = __("<a class='alg-wc-cp-open-modal button wc-forward' href='#'>View Compare list</a>", 'alg-wc-compare-products' );
+				wc_add_notice( "{$message}{$compare_list_link}", 'success' );
 			}else{
 				wc_add_notice( __( 'Sorry, Some error occurred. Please, try again later.', 'alg-wc-compare-products' ), 'error' );
 			}
@@ -80,7 +82,7 @@ if ( ! class_exists( 'Alg_WC_CP_Compare_list' ) ) {
 		 *
 		 * @param $response
 		 */
-		public static function show_compare_list( $response ) {
+		public static function show_compare_list() {
 			$compare_list = Alg_WC_CP_Compare_list::get_list();
 
 			$the_query = new WP_Query( array(
@@ -95,19 +97,28 @@ if ( ! class_exists( 'Alg_WC_CP_Compare_list' ) ) {
 			);
 			echo alg_wc_cp_locate_template( 'compare-list.php', $params );
 
+			$compare_list_label          = __( "Compare list", "alg-wc-compare-products" );
+			$compare_list_subtitle_label = __( "Compare your items", "alg-wc-compare-products" );
+
 			echo
 			"
 			<script>
-			    jQuery('#iziModal').iziModal({
-			    	title: 'Compare list',
-			    	subtitle:'Compare your items',
-			    	icon:'fa fa-exchange',
-			    	headerColor: '#666666',
-			    	zindex:999999,
-			    	fullscreen: true,
-			    	padding:18,
-				    autoOpen: 1,
-			    });			
+				jQuery(function ($) {
+					function openModal(){
+						$('#iziModal').iziModal({
+					        title: '{$compare_list_label}',
+					        subtitle:'{$compare_list_subtitle_label}',
+					        icon:'fa fa-exchange',
+					        headerColor: '#666666',
+					        zindex:999999,
+					        fullscreen: true,
+					        padding:18,
+						    autoOpen: 1,
+					    });	
+					}
+					$('.alg-wc-cp-open-modal').on('click',openModal);
+					openModal();
+				});
 			</script>
 			";
 		}
