@@ -109,15 +109,13 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			if ( $action == 'compare' ) {
 
 				// Add product to compare list
-				$response = Alg_WC_CP_Compare_list::add_product_to_compare_list( $_GET );
-				if($response!==false){
-					$product = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
-					wc_add_notice( __( "<strong>{$product->get_title()}</strong> was successfully added to compare list.", 'alg-wc-compare-products' ), 'success' );
-					Alg_WC_CP_Compare_list::show_compare_list( $response );
-					//add_action( 'wp_footer', array( Alg_WC_CP_Compare_list::get_class_name(), 'show_compare_list' ) );
-				}else{
-					wc_add_notice( __( 'Sorry, Some error occurred. Please, try again later.', 'alg-wc-compare-products' ), 'error' );
-				}
+				$response = Alg_WC_CP_Compare_list::add_product_to_compare_list( $args );
+
+				// Show WooCommerce notification
+				Alg_WC_CP_Compare_list::show_notification_after_comparing( $response, $args );
+
+				// Show compare list
+				Alg_WC_CP_Compare_list::show_compare_list();
 			}
 		}
 
