@@ -116,6 +116,17 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 
 				// Show compare list
 				Alg_WC_CP_Compare_list::show_compare_list();
+
+			} else if ( $action == 'remove' ) {
+
+				// Removes product from compare list
+				$response = Alg_WC_CP_Compare_list::remove_product_from_compare_list( $args );
+
+				// Show WooCommerce notification
+				//Alg_WC_CP_Compare_list::show_notification_after_comparing( $response, $args );
+
+				// Show compare list
+				Alg_WC_CP_Compare_list::show_compare_list();
 			}
 		}
 

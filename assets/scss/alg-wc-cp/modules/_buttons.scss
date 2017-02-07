@@ -1,7 +1,16 @@
-.alg-wc-cp-icon{
-	margin-left:10px;
-}
+
 
 .alg-wc-cp-default-btn-wrapper{
 	display:inline-block;
+	.alg-wc-cp-icon{
+		margin-left:10px;
+	}
+}
+
+.alg-wc-cp-remove-btn{
+	font-size:25px;
+	.alg-wc-cp-btn-text{
+		display:none;
+	}
+
 }

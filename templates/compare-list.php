@@ -41,6 +41,11 @@ $show_add_to_cart_btn = true;
 	            <?php if ( $show_add_to_cart_btn ) : ?>
                     <th class="add-to-cart-btn"><?php _e( 'Add to cart', 'woocommerce' ); ?></th>
 	            <?php endif; ?>
+
+	            <?php // Remove button ?>
+	            <?php if ( $show_add_to_cart_btn ) : ?>
+                    <th class="product-remove"></th>
+	            <?php endif; ?>
             </tr>
         </thead>
 
@@ -49,6 +54,7 @@ $show_add_to_cart_btn = true;
 			<?php $product = wc_get_product( get_the_ID() ); ?>
             <tr>
                 <td data-title="<?php _e( 'Product', 'alg-wc-compare-products' ); ?>" class="product">
+
                     <a class="product-thumbnail" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
 						<?php echo $product->get_image() ?>
                     </a>
@@ -79,6 +85,12 @@ $show_add_to_cart_btn = true;
                         class="add-to-cart-btn"><?php echo do_shortcode('[add_to_cart show_price="false" style="" id="'.get_the_ID().'"]'); ?>
                     </td>
 	            <?php endif; ?>
+
+	            <?php // Remove button ?>
+                <td data-title="<?php _e( 'Remove', 'alg-wc-compare-products' ); ?>"
+                    class="product-remove"><?php echo Alg_WC_CP_Remove_Button::load_remove_button_template(); ?>
+                </td>
+
             </tr>
         <?php endwhile;?>
         </table>

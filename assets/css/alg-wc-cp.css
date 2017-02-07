@@ -5,12 +5,20 @@
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
-.alg-wc-cp-icon {
+.alg-wc-cp-default-btn-wrapper {
+  display: inline-block;
+}
+
+.alg-wc-cp-default-btn-wrapper .alg-wc-cp-icon {
   margin-left: 10px;
 }
 
-.alg-wc-cp-default-btn-wrapper {
-  display: inline-block;
+.alg-wc-cp-remove-btn {
+  font-size: 25px;
+}
+
+.alg-wc-cp-remove-btn .alg-wc-cp-btn-text {
+  display: none;
 }
 
 .alg-wc-cp-list {
@@ -65,6 +73,10 @@
 			}
 		}
 	}*/
+}
+
+.alg-wc-cp-list table {
+  margin-bottom: 0 !important;
 }
 
 .alg-wc-cp-list .product-thumbnail img {

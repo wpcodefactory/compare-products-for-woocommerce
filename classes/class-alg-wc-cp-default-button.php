@@ -54,8 +54,8 @@ if ( ! class_exists( 'Alg_WC_CP_Default_Button' ) ) {
 		public static function load_default_button_template() {
 
 			$params = array(
-				'btn_data_action' => 'alg_wc_cp_compare',
-				'btn_class'       => 'alg_wc_cp_default_btn button',
+				'btn_data_action' => 'compare',
+				'btn_class'       => 'alg-wc-cp-btn alg-wc-cp-default-btn button',
 				'btn_label'       => __( 'Compare', 'alg-wc-compare-products' ),
 				'btn_icon_class'  => 'fa fa-exchange alg-wc-cp-icon',
 				'btn_href'        => add_query_arg( array(

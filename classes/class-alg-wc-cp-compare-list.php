@@ -25,7 +25,6 @@ if ( ! class_exists( 'Alg_WC_CP_Compare_list' ) ) {
 		 */
 		public static function add_product_to_compare_list( $args = array() ) {
 			$args = wp_parse_args( $args, array(
-				'show_notification'                      => true,
 				Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID => null,  // integer
 			) );
 			$product_id = filter_var( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ], FILTER_VALIDATE_INT );
@@ -38,6 +37,28 @@ if ( ! class_exists( 'Alg_WC_CP_Compare_list' ) ) {
 			$compare_list = array_unique( $compare_list );
 			self::set_list( $compare_list );
 			return $compare_list;
+		}
+
+		/**
+		 * Removes a product from compare list.
+		 *
+		 * @param array $args
+		 *
+		 * @return array|bool
+		 */
+		public static function remove_product_from_compare_list( $args = array() ) {
+			$args = wp_parse_args( $args, array(
+				Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID => null,  // integer
+			) );
+			$product_id = filter_var( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ], FILTER_VALIDATE_INT );
+			if ( ! is_numeric( $product_id ) || get_post_type( $product_id ) != 'product' ) {
+				return false;
+			}
+
+			$compare_list = self::get_list();
+			$index        = array_search( $product_id, $compare_list );
+			unset( $compare_list[ $index ] );
+			self::set_list( $compare_list );
 		}
 
 		/**
@@ -111,6 +132,7 @@ if ( ! class_exists( 'Alg_WC_CP_Compare_list' ) ) {
 					        icon:'fa fa-exchange',
 					        headerColor: '#666666',
 					        zindex:999999,
+					        history:false,
 					        fullscreen: true,
 					        padding:18,
 						    autoOpen: 1,
