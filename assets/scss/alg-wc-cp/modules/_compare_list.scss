@@ -1,6 +1,7 @@
 .alg-wc-cp-list {
 	table{
 		margin-bottom:0 !important;
+		width:100%;
 	}
 	.product-thumbnail img {
 		max-width: 70px;
@@ -12,9 +13,20 @@
 	td, tr {
 		vertical-align: middle !important;
 		text-align: center !important;
+		padding:12px;
+		&:last-child{
+			padding:12px;
+		}
+	}
+	p{
+		margin:0;
 	}
 	th {
 		text-align: center;
+		text-transform:uppercase;
+		background:#F7F7F7;
+		padding:12px;
+		font-size:15px;
 	}
 	tr{
 		&:nth-child(even) {

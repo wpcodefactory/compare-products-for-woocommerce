@@ -77,6 +77,7 @@
 
 .alg-wc-cp-list table {
   margin-bottom: 0 !important;
+  width: 100%;
 }
 
 .alg-wc-cp-list .product-thumbnail img {
@@ -91,10 +92,23 @@
 .alg-wc-cp-list td, .alg-wc-cp-list tr {
   vertical-align: middle !important;
   text-align: center !important;
+  padding: 12px;
+}
+
+.alg-wc-cp-list td:last-child, .alg-wc-cp-list tr:last-child {
+  padding: 12px;
+}
+
+.alg-wc-cp-list p {
+  margin: 0;
 }
 
 .alg-wc-cp-list th {
   text-align: center;
+  text-transform: uppercase;
+  background: #F7F7F7;
+  padding: 12px;
+  font-size: 15px;
 }
 
 .alg-wc-cp-list tr:nth-child(even) td {
