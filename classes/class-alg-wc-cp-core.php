@@ -80,6 +80,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 
 				// Start session if necessary
 				add_action( 'init', array( $this, "handle_session" ), 1 );
+				add_action( 'woocommerce_init', array( $this, "handle_session" ), 1 );
 			}
 		}
 
@@ -116,8 +117,6 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		 * @since   1.0.0
 		 */
 		public function route() {
-			$this->handle_session();
-
 			$args   = $_GET;
 			$args   = wp_parse_args( $args, array(
 				Alg_WC_CP_Query_Vars::ACTION => '',
