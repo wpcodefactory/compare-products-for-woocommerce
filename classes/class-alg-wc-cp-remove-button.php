@@ -27,7 +27,7 @@ if ( ! class_exists( 'Alg_WC_CP_Remove_Button' ) ) {
 				'btn_data_action' => 'compare',
 				'btn_class'       => 'alg-wc-cp-btn alg-wc-cp-remove-btn',
 				'btn_label'       => __( 'Remove', 'alg-wc-compare-products' ),
-				'btn_icon_class'  => 'fa fa-times-circle alg-wc-cp-icon',
+				'btn_icon_class'  => 'fa fa-trash alg-wc-cp-icon',
 				'btn_href'        => add_query_arg( array(
 					Alg_WC_CP_Query_Vars::ACTION             => 'remove',
 					Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID => get_the_ID(),

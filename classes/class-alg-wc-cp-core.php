@@ -73,10 +73,26 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 				add_filter( 'query_vars', array( $this, 'handle_query_vars' ) );
 
 				// Takes actions based on the requested url
-				add_action( 'wp_footer', array( $this, 'route' ), 20 );
+				add_action( 'woocommerce_init', array( $this, 'route' ), 20 );
+
+				// Creates comparison list
+				add_action( 'wp_footer', array( $this, 'create_comparison_list' ) );
 
 				// Start session if necessary
 				add_action( 'init', array( $this, "handle_session" ), 1 );
+			}
+		}
+
+		/**
+		 * Creates comparison list
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		public function create_comparison_list(){
+
+			if ( Alg_WC_CP_Comparison_list::$add_product_response !== false || Alg_WC_CP_Comparison_list::$remove_product_response !== false ) {
+				echo Alg_WC_CP_Comparison_list::create_comparison_list();
 			}
 		}
 
@@ -100,6 +116,8 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		 * @since   1.0.0
 		 */
 		public function route() {
+			$this->handle_session();
+
 			$args   = $_GET;
 			$args   = wp_parse_args( $args, array(
 				Alg_WC_CP_Query_Vars::ACTION => '',
@@ -109,24 +127,19 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			if ( $action == 'compare' ) {
 
 				// Add product to compare list
-				$response = Alg_WC_CP_Compare_list::add_product_to_compare_list( $args );
+				$response = Alg_WC_CP_Comparison_list::add_product_to_comparison_list( $args );
 
 				// Show WooCommerce notification
-				Alg_WC_CP_Compare_list::show_notification_after_comparing( $response, $args );
-
-				// Show compare list
-				Alg_WC_CP_Compare_list::show_compare_list();
+				Alg_WC_CP_Comparison_list::show_notification_after_comparing( $args );
 
 			} else if ( $action == 'remove' ) {
 
 				// Removes product from compare list
-				$response = Alg_WC_CP_Compare_list::remove_product_from_compare_list( $args );
+				$response = Alg_WC_CP_Comparison_list::remove_product_from_comparison_list( $args );
 
 				// Show WooCommerce notification
-				//Alg_WC_CP_Compare_list::show_notification_after_comparing( $response, $args );
+				Alg_WC_CP_Comparison_list::show_notification_after_comparing( $args );
 
-				// Show compare list
-				Alg_WC_CP_Compare_list::show_compare_list();
 			}
 		}
 
@@ -169,6 +182,12 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			$css_ver = date( "ymd-Gis", filemtime( ALG_WC_CP_DIR . $css_file ) );
 			wp_register_style( 'alg-wc-compare-products', ALG_WC_CP_URL . $css_file, array(), $css_ver );
 			wp_enqueue_style( 'alg-wc-compare-products' );
+
+			// Show comparison list
+			if(Alg_WC_CP_Comparison_list::$add_product_response!==false || Alg_WC_CP_Comparison_list::$remove_product_response!==false){
+				Alg_WC_CP_Comparison_list::show_comparison_list();
+			}
+
 		}
 
 		/**

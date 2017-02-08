@@ -18,7 +18,8 @@ $show_stock           = true;
 $show_add_to_cart_btn = true;
 ?>
 
-<div class="iziModal alg-wc-cp-list responsive" id="iziModal">
+<div class="iziModal" id="iziModal">
+    <div class="alg-wc-cp-list responsive">
 
 	<?php if ( $the_query != null && $the_query->have_posts() ) : ?>
         <table>
@@ -94,6 +95,9 @@ $show_add_to_cart_btn = true;
             </tr>
         <?php endwhile;?>
         </table>
+    <?php else: ?>
+        <?php _e('The comparison list is empty', 'alg-wc-compare-products'); ?>
     <?php endif; ?>
 
+    </div>
 </div>
