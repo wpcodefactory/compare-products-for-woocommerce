@@ -24,8 +24,8 @@ if ( ! class_exists( 'Alg_WC_CP_Default_Button' ) ) {
 		public static function manage_button_loading() {
 			$show_default_btn_single_product = get_option( Alg_WC_CP_Settings_Buttons::OPTION_DEFAULT_BTN_SHOW_ON_SINGLE_PAGE, false );
 			if ( filter_var( $show_default_btn_single_product, FILTER_VALIDATE_BOOLEAN ) !== false ) {
-				$default_btn_single_prod_position = sanitize_text_field( get_option( Alg_WC_CP_Settings_Buttons::OPTION_DEFAULT_BTN_POSITION, 'woocommerce_single_product_summary' ) );
-				$default_btn_single_prod_priority = filter_var( get_option( Alg_WC_CP_Settings_Buttons::OPTION_DEFAULT_BTN_PRIORITY, 31 ), FILTER_VALIDATE_INT );
+				$default_btn_single_prod_position = sanitize_text_field( get_option( Alg_WC_CP_Settings_Buttons::OPTION_DEFAULT_BTN_SINGLE_POSITION, 'woocommerce_single_product_summary' ) );
+				$default_btn_single_prod_priority = filter_var( get_option( Alg_WC_CP_Settings_Buttons::OPTION_DEFAULT_BTN_SINGLE_PRIORITY, 31 ), FILTER_VALIDATE_INT );
 				add_action( $default_btn_single_prod_position, array(
 					self::get_class_name(),
 					'load_default_button_template',
