@@ -22,7 +22,8 @@ if ( ! class_exists( 'Alg_WC_CP_Remove_Button' ) ) {
 		 * @since   1.0.0
 		 */
 		public static function load_remove_button_template() {
-
+			global $wp;
+			$current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
 			$params = array(
 				'btn_data_action' => 'compare',
 				'btn_class'       => 'alg-wc-cp-btn alg-wc-cp-remove-btn',
@@ -31,9 +32,8 @@ if ( ! class_exists( 'Alg_WC_CP_Remove_Button' ) ) {
 				'btn_href'        => add_query_arg( array(
 					Alg_WC_CP_Query_Vars::ACTION             => 'remove',
 					Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID => get_the_ID(),
-				), get_permalink() ),
+				), $current_url ),
 			);
-
 			echo alg_wc_cp_locate_template( 'remove-button.php', $params );
 		}
 	}

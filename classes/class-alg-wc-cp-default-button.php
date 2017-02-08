@@ -31,6 +31,16 @@ if ( ! class_exists( 'Alg_WC_CP_Default_Button' ) ) {
 					'load_default_button_template',
 				), $default_btn_single_prod_priority );
 			}
+
+			$show_default_btn_loop_product = get_option( Alg_WC_CP_Settings_Buttons::OPTION_DEFAULT_BTN_LOOP_ENABLE,false );
+			if ( filter_var( $show_default_btn_loop_product, FILTER_VALIDATE_BOOLEAN ) !== false ) {
+				$default_btn_loop_prod_position = 'woocommerce_after_shop_loop_item';
+				$default_btn_loop_prod_priority = get_option( Alg_WC_CP_Settings_Buttons::OPTION_DEFAULT_BTN_LOOP_PRIORITY, 11 );
+				add_action( $default_btn_loop_prod_position, array(
+					self::get_class_name(),
+					'load_default_button_template',
+				), filter_var( $default_btn_loop_prod_priority, FILTER_VALIDATE_INT ) );
+			}
 		}
 
 		/**
@@ -52,6 +62,8 @@ if ( ! class_exists( 'Alg_WC_CP_Default_Button' ) ) {
 		 * @since   1.0.0
 		 */
 		public static function load_default_button_template() {
+			global $wp;
+			$current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
 
 			$params = array(
 				'btn_data_action' => 'compare',
@@ -61,7 +73,7 @@ if ( ! class_exists( 'Alg_WC_CP_Default_Button' ) ) {
 				'btn_href'        => add_query_arg( array(
 					Alg_WC_CP_Query_Vars::ACTION             => 'compare',
 					Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID => get_the_ID(),
-				), get_permalink() ),
+				), $current_url ),
 			);
 
 			echo alg_wc_cp_locate_template( 'default-button.php', $params );

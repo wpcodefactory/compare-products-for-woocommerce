@@ -122,6 +122,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 				Alg_WC_CP_Query_Vars::ACTION => '',
 			) );
 			$action = sanitize_text_field( $args[ Alg_WC_CP_Query_Vars::ACTION ] );
+			error_log($action);
 
 			if ( $action == 'compare' ) {
 
