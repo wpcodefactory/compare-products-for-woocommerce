@@ -79,13 +79,13 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		public static function show_notification_after_comparing( $args ) {
 			if ( self::$add_product_response !== false ) {
 				$product           = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
-				$message           = __( "<strong>{$product->get_title()}</strong> was successfully added to compare list.", 'alg-wc-compare-products' );
-				$compare_list_link = __( "<a class='alg-wc-cp-open-modal button wc-forward' href='#'>View Compare list</a>", 'alg-wc-compare-products' );
+				$message           = __( "<strong>{$product->get_title()}</strong> was successfully added to comparison list.", 'alg-wc-compare-products' );
+				$compare_list_link = __( "<a class='alg-wc-cp-open-modal button wc-forward' href='#'>View comparison list</a>", 'alg-wc-compare-products' );
 				wc_add_notice( "{$message}{$compare_list_link}", 'success' );
 			} else if ( self::$remove_product_response !== false ) {
 				$product           = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
-				$message           = __( "<strong>{$product->get_title()}</strong> was successfully removed from compare list.", 'alg-wc-compare-products' );
-				$compare_list_link = __( "<a class='alg-wc-cp-open-modal button wc-forward' href='#'>View Compare list</a>", 'alg-wc-compare-products' );
+				$message           = __( "<strong>{$product->get_title()}</strong> was successfully removed from comparison list.", 'alg-wc-compare-products' );
+				$compare_list_link = __( "<a class='alg-wc-cp-open-modal button wc-forward' href='#'>View comparison list</a>", 'alg-wc-compare-products' );
 				wc_add_notice( "{$message}{$compare_list_link}", 'success' );
 			} else {
 				wc_add_notice( __( 'Sorry, Some error occurred. Please, try again later.', 'alg-wc-compare-products' ), 'error' );
@@ -137,8 +137,20 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 				) );
 			}
 
+			$fields = array(
+				'image'       => __( 'Image', 'alg-wc-compare-products' ),
+				'price'       => __( 'Price', 'alg-wc-compare-products' ),
+				'add-to-cart' => __( 'Add to cart button', 'alg-wc-compare-products' ),
+				'description' => __( 'Description', 'alg-wc-compare-products' ),
+				'stock'       => __( 'Availability', 'alg-wc-compare-products' ),
+				'weight'      => __( 'Weight', 'alg-wc-compare-products' ),
+				'dimensions'  => __( 'Dimensions', 'alg-wc-compare-products' ),
+			);
+
+			$fields = get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_FIELDS );
 			$params = array(
 				'the_query' => $the_query,
+				'fields'    => array_flip( $fields ),
 			);
 			return alg_wc_cp_locate_template( 'comparison-list.php', $params );
 		}

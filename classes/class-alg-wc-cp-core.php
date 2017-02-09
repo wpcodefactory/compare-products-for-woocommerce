@@ -59,7 +59,8 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			$this->handle_localization();
 
 			// Init admin part
-			$this->init_admin();
+			//$this->init_admin();
+			add_action( 'woocommerce_init', array( $this, 'init_admin' ), 20 );
 
 			if ( true === filter_var( get_option( Alg_WC_CP_Settings_General::OPTION_ENABLE_PLUGIN, false ), FILTER_VALIDATE_BOOLEAN ) ) {
 
@@ -122,7 +123,6 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 				Alg_WC_CP_Query_Vars::ACTION => '',
 			) );
 			$action = sanitize_text_field( $args[ Alg_WC_CP_Query_Vars::ACTION ] );
-			error_log($action);
 
 			if ( $action == 'compare' ) {
 
@@ -139,7 +139,6 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 
 				// Show WooCommerce notification
 				Alg_WC_CP_Comparison_list::show_notification_after_comparing( $args );
-
 			}
 		}
 
@@ -206,7 +205,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		 * @version 1.0.0
 		 * @since   1.0.0
 		 */
-		private function init_admin() {
+		public function init_admin() {
 			if ( is_admin() ) {
 				add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_woocommerce_settings_tab' ) );
 				add_filter( 'plugin_action_links_' . ALG_WC_CP_BASENAME, array( $this, 'action_links' ) );
@@ -215,6 +214,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			// Admin setting options inside WooCommerce
 			new Alg_WC_CP_Settings_General();
 			new Alg_WC_CP_Settings_Buttons();
+			new Alg_WC_CP_Settings_Comparison_List();
 
 			if ( is_admin() && get_option( 'alg_wc_cp_version', '' ) !== $this->version ) {
 				update_option( 'alg_wc_cp_version', $this->version );
