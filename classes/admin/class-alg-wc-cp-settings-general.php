@@ -51,9 +51,9 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 					'type'     => 'checkbox',
 				),
 				array(
-					'title'       => __( 'Load FontAwesome', 'alg-wish-list-for-woocommerce' ),
-					'desc'        => __( 'Load most recent version of Font Awesome', 'alg-wish-list-for-woocommerce' ),
-					'desc_tip'    => __( 'Only mark this if you are not loading Font Awesome nowhere else. Font Awesome is responsible for creating icons', 'alg-wish-list-for-woocommerce' ),
+					'title'       => __( 'Load FontAwesome', 'alg-wc-compare-products' ),
+					'desc'        => __( 'Load most recent version of Font Awesome', 'alg-wc-compare-products' ),
+					'desc_tip'    => __( 'Only mark this if you are not loading Font Awesome nowhere else. Font Awesome is responsible for creating icons', 'alg-wc-compare-products' ),
 					'id'          => self::OPTION_FONT_AWESOME,
 					'default'     => 'yes',
 					'type'        => 'checkbox',

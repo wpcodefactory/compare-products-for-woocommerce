@@ -61,6 +61,11 @@ $show_description     = isset( $fields['description'] ) ? true : false;
                             <th class="product-weight"><?php _e( 'Weight', 'woocommerce' ); ?></th>
 		                <?php endif; ?>
 
+		                <?php // Dimensions ?>
+		                <?php if ( $key == 'dimensions' ) : ?>
+                            <th class="product-dimensions"><?php _e( 'Dimensions', 'woocommerce' ); ?></th>
+		                <?php endif; ?>
+
 		                <?php // Dynamic attribute ?>
 		                <?php if ( strpos( $key, 'pa_' ) !== false ): ?>
                             <th class="add-to-cart-btn"><?php echo esc_html( get_taxonomy( $key )->label ); ?></th>
@@ -136,6 +141,20 @@ $show_description     = isset( $fields['description'] ) ? true : false;
 		                                echo ' - ';
 	                                }
 	                                ?>
+                                </td>
+		                    <?php endif; ?>
+
+		                    <?php // Dimensions ?>
+		                    <?php if ( $key == 'dimensions' ) : ?>
+                                <td data-title="<?php _e( 'Dimensions', 'woocommerce' ); ?>"
+                                    class="product-dimensions">
+				                    <?php
+				                    if ( empty( ! $product->get_dimensions() ) ) {
+					                    echo $product->get_dimensions();
+				                    } else {
+					                    echo ' - ';
+				                    }
+				                    ?>
                                 </td>
 		                    <?php endif; ?>
 
