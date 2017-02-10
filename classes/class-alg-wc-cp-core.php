@@ -62,6 +62,8 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			//$this->init_admin();
 			add_action( 'woocommerce_init', array( $this, 'init_admin' ), 20 );
 
+
+
 			if ( true === filter_var( get_option( Alg_WC_CP_Settings_General::OPTION_ENABLE_PLUGIN, false ), FILTER_VALIDATE_BOOLEAN ) ) {
 
 				// Manages buttons
@@ -199,6 +201,50 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			Alg_WC_CP_Default_Button::manage_button_loading();
 		}
 
+		function enqueue_admin_scripts($hook) {
+			if ( $hook == 'woocommerce_page_wc-settings' && isset( $_GET['tab'] ) && $_GET['tab'] == 'alg_wc_cp' ) {
+				wp_register_script( 'selectize', 'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js', array( 'jquery' ), false, true );
+				wp_enqueue_script( 'selectize' );
+				wp_register_style( 'selectize', 'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.default.min.css', array(), false );
+				wp_enqueue_style( 'selectize' );
+
+				$js="
+						jQuery(document).ready(function($){
+							var selectize_inputs = $('.selectize_drag_drop');
+							selectize_inputs.each(function(){
+								/*var data = JSON.parse(jQuery(this).attr('data-data'));
+								var pretty_data=[];
+								for(var key in data) {
+								    pretty_data.push({id:key,title:data[key]});
+								}*/
+								//var pretty_data = JSON.parse(jQuery(this).attr('data-data'));	
+															
+								//var selected=[{value:a}];
+								var select = jQuery(this).selectize({
+									plugins: ['drag_drop','remove_button'],
+									persist: false,
+									//options:pretty_data,
+									//items:['a'],
+									/*maxItems: null,
+								    valueField: 'id',
+								    labelField: 'title',
+								    searchField: 'title',
+								    options:pretty_data,
+								    create: false,							
+									delimiter: ',',
+                                    persist: false  */  
+								});
+								
+							});
+							
+								
+						})
+				";
+				wp_add_inline_script( 'selectize', $js );
+
+			}
+		}
+
 		/**
 		 * Init admin fields
 		 *
@@ -216,9 +262,14 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			new Alg_WC_CP_Settings_Buttons();
 			new Alg_WC_CP_Settings_Comparison_List();
 
+
+
 			if ( is_admin() && get_option( 'alg_wc_cp_version', '' ) !== $this->version ) {
 				update_option( 'alg_wc_cp_version', $this->version );
 			}
+
+			// Admin scripts
+			add_action( 'admin_enqueue_scripts', array($this, 'enqueue_admin_scripts' ), 99 );
 		}
 
 		/**

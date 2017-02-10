@@ -56,6 +56,11 @@ $show_description     = isset( $fields['description'] ) ? true : false;
                             <th class="add-to-cart-btn"><?php _e( 'Add to cart', 'woocommerce' ); ?></th>
 		                <?php endif; ?>
 
+		                <?php // Weight ?>
+		                <?php if ( $key == 'weight' ) : ?>
+                            <th class="product-weight"><?php _e( 'Weight', 'woocommerce' ); ?></th>
+		                <?php endif; ?>
+
 		                <?php // Dynamic attribute ?>
 		                <?php if ( strpos( $key, 'pa_' ) !== false ): ?>
                             <th class="add-to-cart-btn"><?php echo esc_html( get_taxonomy( $key )->label ); ?></th>
@@ -117,6 +122,20 @@ $show_description     = isset( $fields['description'] ) ? true : false;
 		                    <?php if ( $key == 'add-to-cart' ) : ?>
                                 <td data-title="<?php _e( 'Add to cart', 'woocommerce' ); ?>"
                                     class="add-to-cart-btn"><?php echo do_shortcode( '[add_to_cart show_price="false" style="" id="' . get_the_ID() . '"]' ); ?>
+                                </td>
+		                    <?php endif; ?>
+
+		                    <?php // Weight ?>
+		                    <?php if ( $key == 'weight' ) : ?>
+                                <td data-title="<?php _e( 'Weight', 'woocommerce' ); ?>"
+                                    class="product-weight">
+	                                <?php
+	                                if ( empty( ! $product->get_weight() ) ) {
+		                                echo wc_format_localized_decimal( $product->get_weight() ) . ' ' . esc_attr( get_option( 'woocommerce_weight_unit' ) );
+	                                } else {
+		                                echo ' - ';
+	                                }
+	                                ?>
                                 </td>
 		                    <?php endif; ?>
 
