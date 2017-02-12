@@ -23,7 +23,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings' ) ) :
 		 */
 		function __construct() {
 			$this->id    = 'alg_wc_cp';
-			$this->label = __( 'Compare products', 'alg-wc-compare-products' );
+			$this->label = __( 'Compare Products', 'alg-wc-compare-products' );
 			parent::__construct();
 		}
 

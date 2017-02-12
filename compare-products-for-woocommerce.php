@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Compare products for WooCommerce
-Description: Let your users know which products interest them the most by comparing them
+Plugin Name: Compare Products for WooCommerce
+Description: Let your users know which products interest them the most by comparing them.
 Version: 1.0.0
 Author: Algoritmika Ltd
 Copyright: © 2017 Algoritmika Ltd.
