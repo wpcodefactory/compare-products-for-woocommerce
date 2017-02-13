@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 
-	final class Alg_WC_CP_Core {
+	class Alg_WC_CP_Core {
 
 		/**
 		 * Plugin version.
