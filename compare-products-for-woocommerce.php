@@ -14,10 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Disble this plugin if Pro version is activated
 if ( defined( 'ALG_WC_CP_PRO_DIR' ) ) {
-	function auto_deactivate(){
+	function alg_wc_cp_auto_deactivate(){
 		deactivate_plugins( plugin_basename( __FILE__ ) );
 	}
-	add_action('admin_init','auto_deactivate');
+	add_action('admin_init','alg_wc_cp_auto_deactivate');
 }
 
 // Check if WooCommerce is active
