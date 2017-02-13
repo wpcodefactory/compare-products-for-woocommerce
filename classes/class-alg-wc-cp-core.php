@@ -211,33 +211,12 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 				$js="
 						jQuery(document).ready(function($){
 							var selectize_inputs = $('.selectize_drag_drop');
-							selectize_inputs.each(function(){
-								/*var data = JSON.parse(jQuery(this).attr('data-data'));
-								var pretty_data=[];
-								for(var key in data) {
-								    pretty_data.push({id:key,title:data[key]});
-								}*/
-								//var pretty_data = JSON.parse(jQuery(this).attr('data-data'));	
-															
-								//var selected=[{value:a}];
+							selectize_inputs.each(function(){								
 								var select = jQuery(this).selectize({
 									plugins: ['drag_drop','remove_button'],
 									persist: false,
-									//options:pretty_data,
-									//items:['a'],
-									/*maxItems: null,
-								    valueField: 'id',
-								    labelField: 'title',
-								    searchField: 'title',
-								    options:pretty_data,
-								    create: false,							
-									delimiter: ',',
-                                    persist: false  */  
-								});
-								
+								});								
 							});
-							
-								
 						})
 				";
 				wp_add_inline_script( 'selectize', $js );
