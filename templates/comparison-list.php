@@ -3,7 +3,7 @@
  * Compare products for WooCommerce - Comparison list template
  *
  * @author  Algoritmika Ltd.
- * @version 1.0.0
+ * @version 1.1.0
  * @since   1.0.0
  */
 
@@ -15,11 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php
 $id                   = get_the_ID();
 $fields               = isset( $params['fields'] ) ? $params['fields'] : array();
+$show_title           = $params['show_title'];
+$show_image           = $params['show_image'];
 $the_query            = $params['the_query'];
 $show_price           = isset( $fields['price'] ) ? true : false;
 $show_stock           = isset( $fields['stock'] ) ? true : false;
 $show_add_to_cart_btn = isset( $fields['add-to-cart'] ) ? true : false;
-$show_image           = isset( $fields['image'] ) ? true : false;
 $show_description     = isset( $fields['description'] ) ? true : false;
 ?>
 
@@ -31,11 +32,12 @@ $show_description     = isset( $fields['description'] ) ? true : false;
 
                 <thead>
                 <tr>
-
-	                <?php // Product ?>
-                    <th class="product"><?php _e( 'Product', 'alg-wc-compare-products' ); ?></th>
-
 	                <?php foreach ( $fields as $key => $field ): ?>
+		                <?php // Product ?>
+		                <?php if ( $key == 'product' ) : ?>
+                            <th class="product"><?php _e( 'Product', 'alg-wc-compare-products' ); ?></th>
+		                <?php endif; ?>
+
 		                <?php // Product description ?>
 		                <?php if ( $key == 'description' ) : ?>
                             <th class="product-description"><?php _e( 'Description', 'alg-wc-compare-products' ); ?></th>
@@ -68,7 +70,7 @@ $show_description     = isset( $fields['description'] ) ? true : false;
 
 		                <?php // Dynamic attribute ?>
 		                <?php if ( strpos( $key, 'pa_' ) !== false ): ?>
-                            <th class="add-to-cart-btn"><?php echo esc_html( get_taxonomy( $key )->label ); ?></th>
+                            <th class="dynamic-attribute"><?php echo esc_html( get_taxonomy( $key )->label ); ?></th>
 		                <?php endif; ?>
 	                <?php endforeach; ?>
 
@@ -80,24 +82,26 @@ $show_description     = isset( $fields['description'] ) ? true : false;
 
                 <?php get_the_excerpt() ?>
 
-
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 					<?php $product = wc_get_product( get_the_ID() ); ?>
                     <tr>
-	                    <?php // Product ?>
-                        <td data-title="<?php _e( 'Product', 'alg-wc-compare-products' ); ?>" class="product">
-
-	                        <?php // Product Image ?>
-                            <?php if($show_image): ?>
-                            <a class="product-thumbnail" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
-								<?php echo $product->get_image() ?>
-                            </a>
-                            <?php endif; ?>
-
-                            <div class="product-name"><strong><?php echo $product->get_title(); ?></strong></div>
-                        </td>
-
 	                    <?php foreach ( $fields as $key => $field ): ?>
+		                    <?php // Product ?>
+		                    <?php if ( $key == 'product' ) : ?>
+                                <td data-title="<?php _e( 'Product', 'alg-wc-compare-products' ); ?>" class="product">
+				                    <?php // Product Image ?>
+				                    <?php if($show_image): ?>
+                                        <a class="product-thumbnail" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
+						                    <?php echo $product->get_image() ?>
+                                        </a>
+				                    <?php endif; ?>
+
+	                                <?php if($show_title): ?>
+                                        <div class="product-name"><strong><?php echo $product->get_title(); ?></strong></div>
+	                                <?php endif; ?>
+                                </td>
+		                    <?php endif; ?>
+
 		                    <?php // Product description ?>
 		                    <?php if ( $key == 'description' ) : ?>
                                 <td data-title="<?php _e( 'Description', 'alg-wc-compare-products' ); ?>"
@@ -161,7 +165,7 @@ $show_description     = isset( $fields['description'] ) ? true : false;
 		                    <?php // Dynamic attribute ?>
 		                    <?php if ( strpos( $key, 'pa_' ) !== false ): ?>
                                 <td data-title="<?php echo esc_html( get_taxonomy( $key )->label ); ?>"
-                                    class="<?php echo esc_attr( $key ) ?>">
+                                    class="dynamic-attribute <?php echo esc_attr( $key ) ?>">
 				                    <?php
 				                    $terms = wc_get_product_terms( $product->get_id(), $key );
 				                    echo count( $terms ) > 0 ? implode( ", ", $terms ) : ' - ';

@@ -47,7 +47,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Gets comparison list fields
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 * @param bool $getWcAttributes     Gets WooCommerce attributes too
 		 * @param bool $reorder_based_on_db Reorder fields based on database
@@ -56,7 +56,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		public static function get_fields( $getWcAttributes = true, $reorder_based_on_db = true ) {
 			// Default fields
 			$default_fields = array(
-				'image'       => __( 'Image', 'alg-wc-compare-products' ),
+				'product'     => __( 'Product', 'alg-wc-compare-products' ),
 				'price'       => __( 'Price', 'alg-wc-compare-products' ),
 				'weight'      => __( 'Weight', 'alg-wc-compare-products' ),
 			);
@@ -78,7 +78,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 
 			// Reorder options if needed
 			if( $reorder_based_on_db ){
-				$db_fields = get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_FIELDS );
+				$db_fields = get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_COLUMNS );
 				if ( ! empty( $db_fields ) ) {
 					$fields = array_merge( array_flip( $db_fields ), $fields );
 				}
@@ -180,7 +180,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Creates compare list.
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 */
 		public static function create_comparison_list(){
@@ -207,10 +207,12 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 				'dimensions'  => __( 'Dimensions', 'alg-wc-compare-products' ),
 			);
 
-			$fields = get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_FIELDS );
+			$fields = get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_COLUMNS );
 			$params = array(
-				'the_query' => $the_query,
-				'fields'    => array_flip( $fields ),
+				'the_query'  => $the_query,
+				'show_image' => filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_FIELD_IMAGE, false ), FILTER_VALIDATE_BOOLEAN ),
+				'show_title' => filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_FIELD_TITLE, false ), FILTER_VALIDATE_BOOLEAN ),
+				'fields'     => array_flip( $fields ),
 			);
 			return alg_wc_cp_locate_template( 'comparison-list.php', $params );
 		}
