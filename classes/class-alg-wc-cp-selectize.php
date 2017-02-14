@@ -31,6 +31,26 @@ if ( ! class_exists( 'Alg_WC_CP_Selectize' ) ) {
 		}
 
 		/**
+		 * Style customize to prevent WooCommerce override
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		public static function customize_selectize_style() {
+			$css = "
+				.selectize-control a.remove{
+					text-indent:0 !important;
+					line-height:auto !important;
+				}
+				.selectize-control a.remove:before{
+					display:none !important;
+					content:none !important;
+				}
+			";
+			wp_add_inline_style( 'selectize', $css );
+		}
+
+		/**
 		 * Loads selectize.
 		 *
 		 * @version 1.0.0
