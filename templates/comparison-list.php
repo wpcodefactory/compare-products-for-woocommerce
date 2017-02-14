@@ -135,7 +135,7 @@ $show_description     = isset( $fields['description'] ) ? true : false;
                                 <td data-title="<?php _e( 'Weight', 'woocommerce' ); ?>"
                                     class="product-weight">
 	                                <?php
-	                                if ( ! empty( $product->get_weight() ) ) {
+	                                if ( $product->get_weight() != '' ) {
 		                                echo wc_format_localized_decimal( $product->get_weight() ) . ' ' . esc_attr( get_option( 'woocommerce_weight_unit' ) );
 	                                } else {
 		                                echo ' - ';
@@ -149,7 +149,7 @@ $show_description     = isset( $fields['description'] ) ? true : false;
                                 <td data-title="<?php _e( 'Dimensions', 'woocommerce' ); ?>"
                                     class="product-dimensions">
 				                    <?php
-				                    if ( ! empty( $product->get_dimensions() ) ) {
+				                    if ( $product->get_dimensions() != '' ) {
 					                    echo $product->get_dimensions();
 				                    } else {
 					                    echo ' - ';
