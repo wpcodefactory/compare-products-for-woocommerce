@@ -201,26 +201,16 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			Alg_WC_CP_Default_Button::manage_button_loading();
 		}
 
+		/**
+		 * Enqueues admin scripts.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function enqueue_admin_scripts($hook) {
 			if ( $hook == 'woocommerce_page_wc-settings' && isset( $_GET['tab'] ) && $_GET['tab'] == 'alg_wc_cp' ) {
-				wp_register_script( 'selectize', 'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'selectize' );
-				wp_register_style( 'selectize', 'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.default.min.css', array(), false );
-				wp_enqueue_style( 'selectize' );
-
-				$js="
-						jQuery(document).ready(function($){
-							var selectize_inputs = $('.selectize_drag_drop');
-							selectize_inputs.each(function(){								
-								var select = jQuery(this).selectize({
-									plugins: ['drag_drop','remove_button'],
-									persist: false,
-								});								
-							});
-						})
-				";
-				wp_add_inline_script( 'selectize', $js );
-
+				Alg_WC_CP_Selectize::enqueue_scripts();
+				Alg_WC_CP_Selectize::load_selectize();
 			}
 		}
 
@@ -240,8 +230,6 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			new Alg_WC_CP_Settings_General();
 			new Alg_WC_CP_Settings_Buttons();
 			new Alg_WC_CP_Settings_Comparison_List();
-
-
 
 			if ( is_admin() && get_option( 'alg_wc_cp_version', '' ) !== $this->version ) {
 				update_option( 'alg_wc_cp_version', $this->version );
