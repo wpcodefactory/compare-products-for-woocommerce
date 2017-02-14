@@ -45,6 +45,56 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		}
 
 		/**
+		 * Gets comparison list fields
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @param bool $getWcAttributes
+		 * @return array
+		 */
+		public static function get_fields( $getWcAttributes = true ) {
+			// Default fields
+			$default_fields = array(
+				'image'       => __( 'Image', 'alg-wc-compare-products' ),
+				'price'       => __( 'Price', 'alg-wc-compare-products' ),
+				'weight'      => __( 'Weight', 'alg-wc-compare-products' ),
+			);
+
+			// Other fields
+			$fields = array(
+				'add-to-cart' => __( 'Add to cart button', 'alg-wc-compare-products' ),
+				'description' => __( 'Description', 'alg-wc-compare-products' ),
+				'stock'       => __( 'Availability', 'alg-wc-compare-products' ),
+				'dimensions'  => __( 'Dimensions', 'alg-wc-compare-products' ),
+			);
+			$fields = array_merge( $default_fields, $fields );
+
+			if ( $getWcAttributes ) {
+				$attributes_pretty = self::get_woocommerce_fields();
+				$fields = array_merge( $fields, $attributes_pretty );
+			}
+
+			return $fields;
+		}
+
+		/**
+		 * Gets only the WooCommerce attributes that will be in Comparison List
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 * @return array
+		 */
+		public static function get_woocommerce_fields(){
+			// WooCommere attributes
+			$attributes        = wc_get_attribute_taxonomies();
+			$attributes_pretty = array();
+			foreach ( $attributes as $attribute ) {
+				$attributes_pretty[ wc_attribute_taxonomy_name( $attribute->attribute_name ) ] = $attribute->attribute_label;
+			}
+			return $attributes_pretty;
+		}
+
+		/**
 		 * Removes a product from compare list.
 		 *
 		 * @version 1.0.0

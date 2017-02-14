@@ -37,34 +37,13 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 		 * @since   1.0.0
 		 */
 		function get_settings( $settings = null ) {
-			// Default fields
-			$default_fields = array(
-				'image'       => __( 'Image', 'alg-wc-compare-products' ),
-				'price'       => __( 'Price', 'alg-wc-compare-products' ),
-				'weight'      => __( 'Weight', 'alg-wc-compare-products' ),
-			);
-
-			// Other fields
-			$fields = array(
-				'add-to-cart' => __( 'Add to cart button', 'alg-wc-compare-products' ),
-				'description' => __( 'Description', 'alg-wc-compare-products' ),
-				'stock'       => __( 'Availability', 'alg-wc-compare-products' ),
-				'dimensions'  => __( 'Dimensions', 'alg-wc-compare-products' ),
-			);
-			$fields = array_merge($default_fields, $fields);
-
-			// WooCommere attributes
-			$attributes        = wc_get_attribute_taxonomies();
-			$attributes_pretty = array();
-			foreach ( $attributes as $attribute ) {
-				$attributes_pretty[ wc_attribute_taxonomy_name( $attribute->attribute_name ) ] = $attribute->attribute_label;
-			}
-			$fields = array_merge( $fields, $attributes_pretty );
+			$fields = Alg_WC_CP_Comparison_list::get_fields();
+			$default_fields = array_slice($fields, 0, 3);
 
 			// Reorder options if needed
-			$db_fields = get_option(self::OPTION_FIELDS);
-			if(!empty($db_fields)){
-				$fields = array_merge(array_flip($db_fields), $fields);
+			$db_fields = get_option( self::OPTION_FIELDS );
+			if ( ! empty( $db_fields ) ) {
+				$fields = array_merge( array_flip( $db_fields ), $fields );
 			}
 
 			// Settings
