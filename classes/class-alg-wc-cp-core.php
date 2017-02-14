@@ -253,7 +253,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		}
 
 		/**
-		 * Add Wish List settings tab to WooCommerce settings.
+		 * Add settings tab to WooCommerce settings.
 		 *
 		 * @version 1.1.0
 		 * @since   1.0.0
