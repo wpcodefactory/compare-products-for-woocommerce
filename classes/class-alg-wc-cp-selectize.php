@@ -46,7 +46,6 @@ if ( ! class_exists( 'Alg_WC_CP_Selectize' ) ) {
 			$js = "
 				var opts = '" . wp_json_encode( $opts ) . "';
 				opts = JSON.parse(opts);
-				console.log(opts);
 				jQuery(document).ready(function($){
 					var selectize_inputs = $('.selectize_drag_drop');
 					selectize_inputs.each(function(){						
