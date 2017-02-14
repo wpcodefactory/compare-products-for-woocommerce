@@ -49,7 +49,8 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		 *
 		 * @version 1.0.0
 		 * @since   1.0.0
-		 * @param bool $getWcAttributes
+		 * @param bool $getWcAttributes     Gets WooCommerce attributes too
+		 * @param bool $reorder_based_on_db Reorder fields based on database
 		 * @return array
 		 */
 		public static function get_fields( $getWcAttributes = true, $reorder_based_on_db = true ) {
