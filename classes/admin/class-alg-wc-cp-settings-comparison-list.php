@@ -40,12 +40,6 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 			$fields = Alg_WC_CP_Comparison_list::get_fields();
 			$default_fields = array_slice($fields, 0, 3);
 
-			// Reorder options if needed
-			$db_fields = get_option( self::OPTION_FIELDS );
-			if ( ! empty( $db_fields ) ) {
-				$fields = array_merge( array_flip( $db_fields ), $fields );
-			}
-
 			// Settings
 			$new_settings = array(
 				array(

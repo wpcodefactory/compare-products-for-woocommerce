@@ -52,7 +52,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		 * @param bool $getWcAttributes
 		 * @return array
 		 */
-		public static function get_fields( $getWcAttributes = true ) {
+		public static function get_fields( $getWcAttributes = true, $reorder_based_on_db = true ) {
 			// Default fields
 			$default_fields = array(
 				'image'       => __( 'Image', 'alg-wc-compare-products' ),
@@ -69,9 +69,18 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 			);
 			$fields = array_merge( $default_fields, $fields );
 
+			// WooCommerce attributes
 			if ( $getWcAttributes ) {
 				$attributes_pretty = self::get_woocommerce_fields();
 				$fields = array_merge( $fields, $attributes_pretty );
+			}
+
+			// Reorder options if needed
+			if( $reorder_based_on_db ){
+				$db_fields = get_option( self::OPTION_FIELDS );
+				if ( ! empty( $db_fields ) ) {
+					$fields = array_merge( array_flip( $db_fields ), $fields );
+				}
 			}
 
 			return $fields;
