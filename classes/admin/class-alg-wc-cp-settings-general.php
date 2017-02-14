@@ -44,7 +44,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 					'id'       => 'alg_wc_cp_opt',
 				),
 				array(
-					'title'    => __( 'Enable plugin', 'alg-wc-compare-products' ),
+					'title'    => __( 'Enable Plugin', 'alg-wc-compare-products' ),
 					'desc'     => __( 'Enable "Compare Products for WooCommerce" plugin', 'alg-wc-compare-products' ),
 					'id'       => self::OPTION_ENABLE_PLUGIN,
 					'default'  => 'yes',

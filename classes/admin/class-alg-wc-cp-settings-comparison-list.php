@@ -47,7 +47,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 
 				// General
 				array(
-					'title'     => __( 'General options', 'alg-wc-compare-products' ),
+					'title'     => __( 'Comparison List Options', 'alg-wc-compare-products' ),
 					'type'      => 'title',
 					'id'        => 'alg_wc_cp_cl_opt',
 				),

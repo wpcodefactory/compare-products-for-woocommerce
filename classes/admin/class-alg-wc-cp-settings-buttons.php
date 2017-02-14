@@ -44,19 +44,19 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Buttons' ) ) {
 		function get_settings( $settings = null ) {
 			$new_settings = array(
 				array(
-					'title' => __( 'General options', 'alg-wc-compare-products' ),
-					'type'  => 'title',
-					'id'    => 'alg_wc_cp_btn_opt',
+					'title'      => __( 'Buttons Options', 'alg-wc-compare-products' ),
+					'type'       => 'title',
+					'id'         => 'alg_wc_cp_btn_opt',
 				),
 				array(
-					'title'    => __( 'Single page', 'alg-wc-compare-products' ),
-					'desc'     => __( 'Enables a default button on single product page', 'alg-wc-compare-products' ),
-					'id'       => self::OPTION_DEFAULT_BTN_SHOW_ON_SINGLE_PAGE,
-					'default'  => 'yes',
-					'type'     => 'checkbox',
+					'title'      => __( 'Single Page', 'alg-wc-compare-products' ),
+					'desc'       => __( 'Enables a default button on single product page', 'alg-wc-compare-products' ),
+					'id'         => self::OPTION_DEFAULT_BTN_SHOW_ON_SINGLE_PAGE,
+					'default'    => 'yes',
+					'type'       => 'checkbox',
 				),
 				array(
-					'title'      => __( 'Position on single', 'alg-wc-compare-products' ),
+					'title'      => __( 'Position on Single', 'alg-wc-compare-products' ),
 					'desc'       => __( 'Where the button will appear on single product page?', 'alg-wc-compare-products' ),
 					'desc_tip'   => __( 'Default is On single product summary', 'alg-wc-compare-products' ),
 					'id'         => self::OPTION_DEFAULT_BTN_SINGLE_POSITION,
@@ -70,7 +70,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Buttons' ) ) {
 					),
 				),
 				array(
-					'title'      => __( 'Priority on single', 'alg-wc-compare-products' ),
+					'title'      => __( 'Priority on Single', 'alg-wc-compare-products' ),
 					'desc'       => __( 'More precise control of where the button will appear on single product page', 'alg-wc-compare-products' ),
 					'desc_tip'   => __( 'Default is 31, right after "add to cart" button ', 'alg-wc-compare-products' ),
 					'id'         => self::OPTION_DEFAULT_BTN_SINGLE_PRIORITY,
@@ -79,14 +79,14 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Buttons' ) ) {
 					'attributes' => array( 'type' => 'number' ),
 				),
 				array(
-					'title'      => __( 'Product loop', 'alg-wc-compare-products' ),
+					'title'      => __( 'Product Loop', 'alg-wc-compare-products' ),
 					'desc'       => __( 'Enable button on product loop', 'alg-wc-compare-products' ),
 					'id'         => self::OPTION_DEFAULT_BTN_LOOP_ENABLE,
 					'default'    => 'no',
 					'type'       => 'checkbox',
 				),
 				array(
-					'title'      => __( 'Priority on loop', 'alg-wc-compare-products' ),
+					'title'      => __( 'Priority on Loop', 'alg-wc-compare-products' ),
 					'desc'       => __( 'More precise control of where the button will appear on product loop', 'alg-wc-compare-products' ),
 					'id'         => self::OPTION_DEFAULT_BTN_LOOP_PRIORITY,
 					'options'    => array(
@@ -97,8 +97,8 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Buttons' ) ) {
 					'type'       => 'select',
 				),
 				array(
-					'type' => 'sectionend',
-					'id'   => 'alg_wc_cp_btn_opt',
+					'type'       => 'sectionend',
+					'id'         => 'alg_wc_cp_btn_opt',
 				),
 			);
 
