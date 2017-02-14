@@ -77,7 +77,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 
 			// Reorder options if needed
 			if( $reorder_based_on_db ){
-				$db_fields = get_option( self::OPTION_FIELDS );
+				$db_fields = get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_FIELDS );
 				if ( ! empty( $db_fields ) ) {
 					$fields = array_merge( array_flip( $db_fields ), $fields );
 				}
