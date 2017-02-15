@@ -27,7 +27,7 @@ If you are interested in contributing - head over to the [Compare Products for W
 
 == Changelog ==
 
-= 1.1.1 - 15/02/2017 =
+= 1.1.0 - 15/02/2017 =
 * Add image option on list tab
 * Add title option on list tab
 * Add product option on column
