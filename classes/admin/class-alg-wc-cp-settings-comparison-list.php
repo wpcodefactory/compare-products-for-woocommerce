@@ -15,9 +15,11 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 
 	class Alg_WC_CP_Settings_Comparison_List extends Alg_WC_CP_Settings_Section {
 
-		const OPTION_COLUMNS       = 'alg_wc_cp_cl_cols';
-		const OPTION_FIELD_IMAGE  = 'alg_wc_cp_cl_field_image';
-		const OPTION_FIELD_TITLE  = 'alg_wc_cp_cl_field_title';
+		const OPTION_COLUMNS               = 'alg_wc_cp_cl_cols';
+		const OPTION_FIELD_IMAGE           = 'alg_wc_cp_cl_field_image';
+		const OPTION_FIELD_TITLE           = 'alg_wc_cp_cl_field_title';
+		const OPTION_USE_MODAL             = 'alg_wc_cp_cl_use_modal';
+		const OPTION_COMPARISON_LIST_PAGE  = 'alg_wc_cp_page_id';
 
 
 		/**
@@ -42,14 +44,49 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 			$fields = Alg_WC_CP_Comparison_list::get_fields();
 			$default_fields = array_slice($fields, 0, 3);
 
+			$pages_pretty = array( '' => __( 'None', 'alg-wc-compare-products' ) );
+			$pages = get_pages(array(
+			));
+			foreach ($pages as $page){
+				$pages_pretty[$page->ID] = $page->post_title;
+			}
+
 			// Settings
 			$new_settings = array(
 
 				// General
 				array(
 					'title'     => __( 'Comparison List Options', 'alg-wc-compare-products' ),
+					'desc'      => __( 'Options regarding the comparison list', 'alg-wc-compare-products' ),
 					'type'      => 'title',
 					'id'        => 'alg_wc_cp_cl_opt',
+				),
+				array(
+					'title'     => __( 'Modal', 'alg-wc-compare-products' ),
+					'desc'      => __( 'Enables a popup that shows the comparison list', 'alg-wc-compare-products' ),
+					'id'        => self::OPTION_USE_MODAL,
+					'default'   => 'yes',
+					'type'      => 'checkbox',
+				),
+				array(
+					'title'     => __( 'Page', 'alg-wc-compare-products' ),
+					'desc'      => __( 'A page that displays the comparison list', 'alg-wc-compare-products' ),
+					'id'        => self::OPTION_COMPARISON_LIST_PAGE,
+					'default'   => Alg_WC_CP_Comparison_list::get_comparison_list_page_id(),
+					'options'   => $pages_pretty,
+					'type'      => 'select',
+				),
+				array(
+					'type'      => 'sectionend',
+					'id'        => 'alg_wc_cp_cl_opt',
+				),
+
+				// Columns
+				array(
+					'title'     => __( 'Columns', 'alg-wc-compare-products' ),
+					'desc'      => __( 'Options regarding comparison table columns', 'alg-wc-compare-products' ),
+					'type'      => 'title',
+					'id'        => 'alg_wc_cp_cl_cols_opt',
 				),
 				array(
 					'title'     => __( 'Image', 'alg-wc-compare-products' ),
@@ -64,18 +101,6 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 					'id'        => self::OPTION_FIELD_TITLE,
 					'default'   => 'yes',
 					'type'      => 'checkbox',
-				),
-				array(
-					'type'      => 'sectionend',
-					'id'        => 'alg_wc_cp_cl_opt',
-				),
-
-				// Columns
-				array(
-					'title'     => __( 'Columns', 'alg-wc-compare-products' ),
-					'desc'      => __( 'Columns of the comparison table', 'alg-wc-compare-products' ),
-					'type'      => 'title',
-					'id'        => 'alg_wc_cp_cl_cols_opt',
 				),
 				array(
 					'title'     => __( 'Columns', 'alg-wc-compare-products' ),

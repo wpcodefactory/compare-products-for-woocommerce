@@ -2,7 +2,7 @@
 /*
 Plugin Name: Compare Products for WooCommerce
 Description: Let your users know which products interest them the most by comparing them.
-Version: 1.0.0
+Version: 1.1.0
 Author: Algoritmika Ltd
 Copyright: © 2017 Algoritmika Ltd.
 License: GNU General Public License v3.0

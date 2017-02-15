@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce  - Core Class
  *
- * @version 1.0.0
+ * @version 1.1.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -50,7 +50,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		/**
 		 * Constructor.
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 */
 		function __construct() {
@@ -84,19 +84,33 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 				// Start session if necessary
 				add_action( 'init', array( $this, "handle_session" ), 1 );
 				add_action( 'woocommerce_init', array( $this, "handle_session" ), 1 );
+
+				// Manages Shortcodes
+				$this->handle_shortcodes();
 			}
+		}
+
+		/**
+		 * Manages Shortcodes
+		 *
+		 * @version 1.1.0
+		 * @since   1.1.0
+		 */
+		private function handle_shortcodes() {
+			add_shortcode( 'alg_wc_cp_table', array( Alg_WC_CP_Shortcodes::get_class_name(), 'create_comparison_list' ) );
 		}
 
 		/**
 		 * Creates comparison list
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 */
-		public function create_comparison_list(){
-
-			if ( Alg_WC_CP_Comparison_list::$add_product_response !== false || Alg_WC_CP_Comparison_list::$remove_product_response !== false ) {
-				echo Alg_WC_CP_Comparison_list::create_comparison_list();
+		public function create_comparison_list() {
+			if ( true === filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_USE_MODAL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				if ( Alg_WC_CP_Comparison_list::$add_product_response !== false || Alg_WC_CP_Comparison_list::$remove_product_response !== false ) {
+					echo Alg_WC_CP_Comparison_list::create_comparison_list();
+				}
 			}
 		}
 
@@ -158,7 +172,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		/**
 		 * Load scripts and styles
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 */
 		function enqueue_scripts() {
@@ -172,23 +186,24 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 				wp_enqueue_style( 'alg-wc-cp-font-awesome' );
 			}
 
-			// Izimodal - A modal plugin (http://izimodal.marcelodolce.com)
-			wp_register_script( 'alg-wc-cp-izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/js/iziModal.min.js', array( 'jquery' ), false, true );
-			wp_enqueue_script( 'alg-wc-cp-izimodal' );
-			wp_register_style( 'alg-wc-cp-izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/css/iziModal.min.css', array(), false );
-			wp_enqueue_style( 'alg-wc-cp-izimodal' );
-
 			// Main css file
 			$css_file = 'assets/css/alg-wc-cp'.$suffix.'.css';
 			$css_ver = date( "ymd-Gis", filemtime( ALG_WC_CP_DIR . $css_file ) );
 			wp_register_style( 'alg-wc-compare-products', ALG_WC_CP_URL . $css_file, array(), $css_ver );
 			wp_enqueue_style( 'alg-wc-compare-products' );
 
-			// Show comparison list
-			if(Alg_WC_CP_Comparison_list::$add_product_response!==false || Alg_WC_CP_Comparison_list::$remove_product_response!==false){
-				Alg_WC_CP_Comparison_list::show_comparison_list();
-			}
+			// Izimodal - A modal plugin (http://izimodal.marcelodolce.com)
+			if ( true === filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_USE_MODAL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				wp_register_script( 'alg-wc-cp-izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/js/iziModal.min.js', array( 'jquery' ), false, true );
+				wp_enqueue_script( 'alg-wc-cp-izimodal' );
+				wp_register_style( 'alg-wc-cp-izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/css/iziModal.min.css', array(), false );
+				wp_enqueue_style( 'alg-wc-cp-izimodal' );
 
+				// Show comparison list
+				if(Alg_WC_CP_Comparison_list::$add_product_response!==false || Alg_WC_CP_Comparison_list::$remove_product_response!==false){
+					Alg_WC_CP_Comparison_list::show_comparison_list();
+				}
+			}
 		}
 
 		/**
@@ -278,21 +293,21 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		/**
 		 * Method called when the plugin is activated
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 */
 		public function on_install() {
-
+			Alg_WC_CP_Comparison_list::create_page();
 		}
 
 		/**
 		 * Method called when the plugin is uninstalled
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 */
 		public static function on_uninstall() {
-
+			Alg_WC_CP_Comparison_list::delete_page();
 		}
 
 		/**

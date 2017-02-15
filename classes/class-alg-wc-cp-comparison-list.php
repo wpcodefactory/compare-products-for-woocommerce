@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - Comparison list
  *
- * @version 1.0.0
+ * @version 1.1.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -132,21 +132,32 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Show notification to user after comparing
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 * @param $compare_response
 		 */
 		public static function show_notification_after_comparing( $args ) {
+			$page_id = Alg_WC_CP_Comparison_list::get_comparison_list_page_id();
+
 			if ( self::$add_product_response !== false ) {
 				$product           = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
 				$message           = __( "<strong>{$product->get_title()}</strong> was successfully added to comparison list.", 'alg-wc-compare-products' );
-				$compare_list_link = __( "<a class='alg-wc-cp-open-modal button wc-forward' href='#'>View comparison list</a>", 'alg-wc-compare-products' );
-				wc_add_notice( "{$message}{$compare_list_link}", 'success' );
+				$compare_list_link = sprintf( "<a class='alg-wc-cp-open-modal button wc-forward' href='%s'>%s</a>", get_permalink( Alg_WC_CP_Comparison_list::get_comparison_list_page_id() ), __( 'View comparison list', 'alg-wc-compare-products' ) );
+				if ( ! empty( $page_id ) ) {
+					wc_add_notice( "{$message}{$compare_list_link}", 'success' );
+				}else{
+					wc_add_notice( "{$message}", 'success' );
+				}
+
 			} else if ( self::$remove_product_response !== false ) {
 				$product           = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
 				$message           = __( "<strong>{$product->get_title()}</strong> was successfully removed from comparison list.", 'alg-wc-compare-products' );
-				$compare_list_link = __( "<a class='alg-wc-cp-open-modal button wc-forward' href='#'>View comparison list</a>", 'alg-wc-compare-products' );
-				wc_add_notice( "{$message}{$compare_list_link}", 'success' );
+				$compare_list_link = sprintf( "<a class='alg-wc-cp-open-modal button wc-forward' href='%s'>%s</a>", get_permalink( Alg_WC_CP_Comparison_list::get_comparison_list_page_id() ), __( 'View comparison list', 'alg-wc-compare-products' ) );
+				if ( ! empty( $page_id ) ) {
+					wc_add_notice( "{$message}{$compare_list_link}", 'success' );
+				}else{
+					wc_add_notice( "{$message}", 'success' );
+				}
 			} else {
 				wc_add_notice( __( 'Sorry, Some error occurred. Please, try again later.', 'alg-wc-compare-products' ), 'error' );
 			}
@@ -166,7 +177,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		}
 
 		/**
-		 * Gets all products that are in the compare list
+		 * Gets all products that are in the comparison list
 		 *
 		 * @version 1.0.0
 		 * @since   1.0.0
@@ -178,12 +189,88 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		}
 
 		/**
+		 * Creates a comparison list page
+		 *
+		 * Create comparison list page with a shortcode used for displaying items.
+		 * This page is only created if it doesn't exist
+		 *
+		 * @version 1.1.0
+		 * @since   1.1.0
+		 */
+		public static function create_page() {
+			$previous_page_id = self::get_comparison_list_page_id();
+			$previous_page    = null;
+			if ( $previous_page_id !== false ) {
+				$previous_page = get_post( $previous_page_id );
+			}
+
+			if ( $previous_page == null ) {
+				$post = array(
+					'post_title'     => __( 'Comparison list', 'alg-wc-compare-products' ),
+					'post_type'      => 'page',
+					'post_content'   => '[alg_wc_cp_table]',
+					'post_status'    => 'publish',
+					'post_author'    => 1,
+					'comment_status' => 'closed'
+				);
+				// Insert the post into the database.
+				$page_id = wp_insert_post( $post );
+				self::set_comparison_list_page_id( $page_id );
+			}
+		}
+
+		/**
+		 * Set comparison list page id
+		 *
+		 * @version 1.1.0
+		 * @since   1.1.0
+		 * @param $page_id
+		 * @return bool
+		 */
+		public static function set_comparison_list_page_id( $page_id ) {
+			return update_option( 'alg_wc_cp_page_id', $page_id );
+		}
+
+		/**
+		 * Get comparison list page id
+		 *
+		 * @version 1.1.0
+		 * @since   1.1.0
+		 * @return mixed|void
+		 */
+		public static function get_comparison_list_page_id() {
+			return get_option( 'alg_wc_cp_page_id' );
+		}
+
+		/**
+		 * Deletes the comparison list page
+		 *
+		 * @version 1.1.0
+		 * @since   1.1.0
+		 */
+		public static function delete_page() {
+			$previous_page_id = self::get_comparison_list_page_id();
+			$previous_page    = null;
+			if ( $previous_page_id !== false ) {
+				$previous_page = get_post( $previous_page_id );
+			}
+
+			if ( $previous_page != null ) {
+				wp_delete_post( $previous_page_id, true );
+			}
+		}
+
+		/**
 		 * Creates compare list.
 		 *
 		 * @version 1.1.0
 		 * @since   1.0.0
 		 */
-		public static function create_comparison_list(){
+		public static function create_comparison_list( $args = array() ){
+			$args = wp_parse_args( $args, array(
+				'use_modal' => true,
+			) );
+
 			$compare_list = Alg_WC_CP_Comparison_list::get_list();
 
 			$the_query = null;
@@ -214,6 +301,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 				'show_title' => filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_FIELD_TITLE, false ), FILTER_VALIDATE_BOOLEAN ),
 				'fields'     => array_flip( $fields ),
 			);
+			$params = array_merge( $params, $args );
 			return alg_wc_cp_locate_template( 'comparison-list.php', $params );
 		}
 

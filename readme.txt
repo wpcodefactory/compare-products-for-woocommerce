@@ -3,7 +3,7 @@ Contributors: algoritmika,karzin,anbinder
 Tags: woocommerce,compare,compare products
 Requires at least: 4.4
 Tested up to: 4.7
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,6 +26,14 @@ If you are interested in contributing - head over to the [Compare Products for W
 3. Start by visiting plugin settings at WooCommerce > Settings > Compare Products.
 
 == Changelog ==
+
+= 1.1.1 - 15/02/2017 =
+* Add image option on list tab
+* Add title option on list tab
+* Add product option on column
+* Add shortcode to create a comparison list page
+* Add option to enable a modal to display the comparison list
+* Add option to choose the comparison list page
 
 = 1.0.0 - 09/02/2016 =
 * Initial Release.

@@ -22,9 +22,13 @@ $show_price           = isset( $fields['price'] ) ? true : false;
 $show_stock           = isset( $fields['stock'] ) ? true : false;
 $show_add_to_cart_btn = isset( $fields['add-to-cart'] ) ? true : false;
 $show_description     = isset( $fields['description'] ) ? true : false;
+$is_modal             = $params['use_modal'];
 ?>
 
-<div class="iziModal" id="iziModal">
+<?php if($is_modal): ?>
+    <div class="iziModal" id="iziModal">
+<?php endif; ?>
+
     <div class="alg-wc-cp-list responsive">
 
 		<?php if ( $the_query != null && $the_query->have_posts() ) : ?>
@@ -180,10 +184,14 @@ $show_description     = isset( $fields['description'] ) ? true : false;
                         </td>
                     </tr>
 				<?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
             </table>
 		<?php else: ?>
 			<?php _e( 'The comparison list is empty', 'alg-wc-compare-products' ); ?>
 		<?php endif; ?>
 
+<?php if($is_modal): ?>
     </div>
+<?php endif; ?>
+
 </div>
