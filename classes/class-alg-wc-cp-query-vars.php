@@ -2,7 +2,7 @@
 /**
  * Compare Products for WooCommerce - Query vars
  *
- * @version 1.0.0
+ * @version 1.1.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -29,6 +29,13 @@ if ( ! class_exists( 'Alg_WC_CP_Query_Vars' ) ) {
 		 * @since   1.0.0
 		 */
 		const COMPARE_PRODUCT_ID = 'alg_wc_cp_pid';
+
+		/**
+		 * Var for opening modal
+		 *
+		 * @since   1.1.0
+		 */
+		const MODAL = 'alg_wc_cp_modal';
 
 	}
 

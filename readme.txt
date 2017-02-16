@@ -27,13 +27,15 @@ If you are interested in contributing - head over to the [Compare Products for W
 
 == Changelog ==
 
-= 1.1.0 - 15/02/2017 =
+= 1.1.0 - 16/02/2017 =
 * Add image option on list tab
 * Add title option on list tab
 * Add product option on column
 * Add shortcode to create a comparison list page
 * Add option to enable a modal to display the comparison list
 * Add option to choose the comparison list page
+* Add Widget displaying a link to comparison table
+* New query var to open modal (alg_wc_cp_modal=open)
 
 = 1.0.0 - 09/02/2016 =
 * Initial Release.

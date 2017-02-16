@@ -87,6 +87,22 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 
 				// Manages Shortcodes
 				$this->handle_shortcodes();
+
+				add_action( 'widgets_init', array( $this, 'create_widgets' ) );
+
+			}
+		}
+
+		/**
+		 * Create widgets.
+		 *
+		 * @version 1.1.0
+		 * @since   1.1.0
+		 */
+		public function create_widgets() {
+
+			if ( true === filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_WIDGET_LINK, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				register_widget( 'Alg_WC_CP_Widget_Link' );
 			}
 		}
 
@@ -107,11 +123,15 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		 * @since   1.0.0
 		 */
 		public function create_comparison_list() {
-			if ( true === filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_USE_MODAL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
-				if ( Alg_WC_CP_Comparison_list::$add_product_response !== false || Alg_WC_CP_Comparison_list::$remove_product_response !== false ) {
-					echo Alg_WC_CP_Comparison_list::create_comparison_list();
-				}
+			if ( false === filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_USE_MODAL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
+				return;
 			}
+
+			if ( sanitize_text_field( get_query_var( Alg_WC_CP_Query_Vars::MODAL, false )) != 'open' ) {
+				return;
+			}
+
+			echo Alg_WC_CP_Comparison_list::create_comparison_list();
 		}
 
 		/**
@@ -164,8 +184,9 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		 * @version 1.0.0
 		 * @since   1.0.0
 		 */
-		public function handle_query_vars($vars){
-			$vars = Alg_WC_CP_Default_Button::handle_query_vars($vars);
+		public function handle_query_vars( $vars ) {
+			$vars = Alg_WC_CP_Default_Button::handle_query_vars( $vars );
+			$vars = Alg_WC_CP_Comparison_list::handle_query_vars( $vars );
 			return $vars;
 		}
 
@@ -200,7 +221,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 				wp_enqueue_style( 'alg-wc-cp-izimodal' );
 
 				// Show comparison list
-				if(Alg_WC_CP_Comparison_list::$add_product_response!==false || Alg_WC_CP_Comparison_list::$remove_product_response!==false){
+				if ( sanitize_text_field( get_query_var( Alg_WC_CP_Query_Vars::MODAL, false ) ) == 'open' ) {
 					Alg_WC_CP_Comparison_list::show_comparison_list();
 				}
 			}
@@ -237,7 +258,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		 */
 		public function init_admin() {
 			if ( is_admin() ) {
-				add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_woocommerce_settings_tab' ) );
+					add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_woocommerce_settings_tab' ) );
 				add_filter( 'plugin_action_links_' . ALG_WC_CP_BASENAME, array( $this, 'action_links' ) );
 			}
 
