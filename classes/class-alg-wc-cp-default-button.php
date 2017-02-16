@@ -1,6 +1,6 @@
 <?php
 /**
- * Compare products for WooCommerce - General Section Settings
+ * Compare products for WooCommerce - Default button
  *
  * @version 1.0.0
  * @since   1.0.0
