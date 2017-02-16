@@ -29,8 +29,8 @@ https://coder.fm/compare-products-woocommerce/
 **Take a look on some of its features:**
 
 * Style your buttons easily
-* Choose which columns will be displayed on comparison list on front-end and in real time
-* Sort comparison list columns on front-end to know which product is more important for you
+* Choose in real time which comparison list columns will be displayed on front-end
+* Sort any of the comparison list columns on front-end
 
 == Installation ==
 
