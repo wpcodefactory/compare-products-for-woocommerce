@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Alg - Compare products for WooCommerce\n"
-"POT-Creation-Date: 2017-02-15 20:08-0200\n"
-"PO-Revision-Date: 2017-02-15 20:13-0200\n"
+"POT-Creation-Date: 2017-02-16 12:22-0200\n"
+"PO-Revision-Date: 2017-02-16 12:23-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -133,37 +133,45 @@ msgstr "Página"
 msgid "A page that displays the comparison list"
 msgstr "Uma página que mostra a lista de comparação"
 
-#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:86
-#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:106
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:81
+msgid "Widget"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:82
+msgid "Creates a widget showing a link pointing to the comparison list"
+msgstr "Cria um widget mostrando um link que aponta para a lista de comparação"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:94
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:114
 msgid "Columns"
 msgstr "Colunas"
 
-#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:87
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:95
 msgid "Options regarding comparison table columns"
 msgstr "Opções relacionadas as colunas da tabela de comparação"
 
-#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:92
-#: classes/class-alg-wc-cp-comparison-list.php:288
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:100
+#: classes/class-alg-wc-cp-comparison-list.php:330
 msgid "Image"
 msgstr "Imagem"
 
-#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:93
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:101
 msgid "Enables product image on product column"
 msgstr "Ativa a imagem do produto na coluna do produto"
 
-#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:99
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:107
 msgid "Title"
 msgstr "Título"
 
-#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:100
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:108
 msgid "Enables product title on product column"
 msgstr "Ativa o título do produto na coluna do produto"
 
-#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:107
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:115
 msgid "What columns do you want to show on comparison list?"
 msgstr "Quais colunas você deseja exibir na lista de comparação?"
 
-#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:108
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:116
 msgid "You can drag and drop columns to put them in any order you want"
 msgstr ""
 "Você pode arrastar e soltar as colunas para deixá-las na ordem que quiser"
@@ -210,66 +218,65 @@ msgid "Product"
 msgstr "Produto"
 
 #: classes/class-alg-wc-cp-comparison-list.php:60
-#: classes/class-alg-wc-cp-comparison-list.php:289
+#: classes/class-alg-wc-cp-comparison-list.php:331
 #: templates/comparison-list.php:52 templates/comparison-list.php:118
 msgid "Price"
 msgstr "Preço"
 
 #: classes/class-alg-wc-cp-comparison-list.php:61
-#: classes/class-alg-wc-cp-comparison-list.php:293
+#: classes/class-alg-wc-cp-comparison-list.php:335
 #: templates/comparison-list.php:67 templates/comparison-list.php:143
 msgid "Weight"
 msgstr "Peso"
 
 #: classes/class-alg-wc-cp-comparison-list.php:66
-#: classes/class-alg-wc-cp-comparison-list.php:290
+#: classes/class-alg-wc-cp-comparison-list.php:332
 msgid "Add to cart button"
 msgstr "Botão de comprar"
 
 #: classes/class-alg-wc-cp-comparison-list.php:67
-#: classes/class-alg-wc-cp-comparison-list.php:291
+#: classes/class-alg-wc-cp-comparison-list.php:333
 #: templates/comparison-list.php:47 templates/comparison-list.php:111
 msgid "Description"
 msgstr "Descrição"
 
 #: classes/class-alg-wc-cp-comparison-list.php:68
-#: classes/class-alg-wc-cp-comparison-list.php:292
+#: classes/class-alg-wc-cp-comparison-list.php:334
 msgid "Availability"
 msgstr "Disponibilidade"
 
 #: classes/class-alg-wc-cp-comparison-list.php:69
-#: classes/class-alg-wc-cp-comparison-list.php:294
+#: classes/class-alg-wc-cp-comparison-list.php:336
 #: templates/comparison-list.php:72 templates/comparison-list.php:157
 msgid "Dimensions"
 msgstr "Dimensões"
 
-#: classes/class-alg-wc-cp-comparison-list.php:145
-#: classes/class-alg-wc-cp-comparison-list.php:155
+#: classes/class-alg-wc-cp-comparison-list.php:159
 msgid "View comparison list"
 msgstr "Ver lista de comparação"
 
-#: classes/class-alg-wc-cp-comparison-list.php:162
+#: classes/class-alg-wc-cp-comparison-list.php:204
 msgid "Sorry, Some error occurred. Please, try again later."
 msgstr "Desculpe, ocorreu um erro. Por favor, tente mais tarde."
 
-#: classes/class-alg-wc-cp-comparison-list.php:209
-#: classes/class-alg-wc-cp-comparison-list.php:317
+#: classes/class-alg-wc-cp-comparison-list.php:251
+#: classes/class-alg-wc-cp-comparison-list.php:359
 msgid "Comparison list"
 msgstr "Lista de comparação"
 
-#: classes/class-alg-wc-cp-comparison-list.php:318
+#: classes/class-alg-wc-cp-comparison-list.php:360
 msgid "Compare your items"
 msgstr "Compare seus ítens"
 
-#: classes/class-alg-wc-cp-core.php:266
+#: classes/class-alg-wc-cp-core.php:287
 msgid "Settings"
 msgstr "Ajustes"
 
-#: classes/class-alg-wc-cp-default-button.php:80
+#: classes/class-alg-wc-cp-default-button.php:89
 msgid "Compare"
 msgstr "Comparar"
 
-#: classes/class-alg-wc-cp-remove-button.php:40
+#: classes/class-alg-wc-cp-remove-button.php:50
 #: templates/comparison-list.php:182
 msgid "Remove"
 msgstr "Remover"
