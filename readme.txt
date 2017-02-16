@@ -19,6 +19,19 @@ Let your users know which products interest them the most by comparing them. **C
 = More =
 If you are interested in contributing - head over to the [Compare Products for WooCommerce plugin GitHub Repository](https://github.com/algoritmika/compare-products-for-woocommerce) to find out how you can pitch in.
 
+**Pro version**
+
+Do you like the free version of this plugin? Imagine what the Pro version can do for you!
+Check it out [here](https://coder.fm/compare-products-woocommerce/ "Wish list for WooCommerce Pro")!
+
+https://coder.fm/compare-products-woocommerce/
+
+**Take a look on some of its features:**
+
+* Style your buttons easily
+* Choose which columns will be displayed on comparison list on front-end and in real time
+* Sort comparison list columns on front-end to know which product is more important for you
+
 == Installation ==
 
 1. Upload the entire 'compare-products-for-woocommerce' folder to the '/wp-content/plugins/' directory.
