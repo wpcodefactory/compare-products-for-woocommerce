@@ -38,8 +38,8 @@ $is_modal             = $params['use_modal'];
                 <tr>
 	                <?php foreach ( $fields as $key => $field ): ?>
 		                <?php // Product ?>
-		                <?php if ( $key == 'product' ) : ?>
-                            <th class="product"><?php _e( 'Product', 'alg-wc-compare-products' ); ?></th>
+		                <?php if ( $key == 'the-product' ) : ?>
+                            <th class="the-product"><?php _e( 'Product', 'alg-wc-compare-products' ); ?></th>
 		                <?php endif; ?>
 
 		                <?php // Product description ?>
@@ -91,8 +91,8 @@ $is_modal             = $params['use_modal'];
                     <tr>
 	                    <?php foreach ( $fields as $key => $field ): ?>
 		                    <?php // Product ?>
-		                    <?php if ( $key == 'product' ) : ?>
-                                <td data-title="<?php _e( 'Product', 'alg-wc-compare-products' ); ?>" class="product">
+		                    <?php if ( $key == 'the-product' ) : ?>
+                                <td data-title="<?php _e( 'Product', 'alg-wc-compare-products' ); ?>" class="the-product">
 				                    <?php // Product Image ?>
 				                    <?php if($show_image): ?>
                                         <a class="product-thumbnail" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
