@@ -253,7 +253,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		/**
 		 * Init admin fields
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 */
 		public function init_admin() {
@@ -266,6 +266,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			new Alg_WC_CP_Settings_General();
 			new Alg_WC_CP_Settings_Buttons();
 			new Alg_WC_CP_Settings_Comparison_List();
+			$this->create_custom_settings_fields();
 
 			if ( is_admin() && get_option( 'alg_wc_cp_version', '' ) !== $this->version ) {
 				update_option( 'alg_wc_cp_version', $this->version );
@@ -273,6 +274,20 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 
 			// Admin scripts
 			add_action( 'admin_enqueue_scripts', array($this, 'enqueue_admin_scripts' ), 99 );
+		}
+
+		/**
+		 * Create custom settings fields
+		 *
+		 * @version 1.1.0
+		 * @since   1.1.0
+		 */
+		private function create_custom_settings_fields(){
+			$value='meta_box';
+			add_action( 'woocommerce_admin_field_' . $value, array(
+				Alg_WC_CP_Custom_Settings_Meta_Box::get_class_name(),
+				'add_meta_box',
+			), 10, 2 );
 		}
 
 		/**

@@ -17,6 +17,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 
 		const OPTION_ENABLE_PLUGIN = 'alg_wc_cp_enable';
 		const OPTION_FONT_AWESOME  = 'alg_wc_cp_fontawesome';
+		const OPTION_METABOX_PRO   = 'alg_wc_cp_cmb_pro';
 
 		/**
 		 * Constructor.
@@ -44,6 +45,14 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 					'id'       => 'alg_wc_cp_opt',
 				),
 				array(
+					'title'       => __( 'Pro', 'alg-wc-compare-products' ),
+					'type'        => 'meta_box',
+					'show_in_pro' => false,
+					'title'       => 'Pro version',
+					'description' => $this->get_meta_box_pro_description(),
+					'id'          => self::OPTION_METABOX_PRO,
+				),
+				array(
 					'title'    => __( 'Enable Plugin', 'alg-wc-compare-products' ),
 					'desc'     => __( 'Enable "Compare Products for WooCommerce" plugin', 'alg-wc-compare-products' ),
 					'id'       => self::OPTION_ENABLE_PLUGIN,
@@ -65,6 +74,40 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 			);
 
 			return parent::get_settings( array_merge( $settings, $new_settings ) );
+		}
+
+		/**
+		 * Gets meta box description.
+		 *
+		 * The description is about the pro version of the plugin
+		 *
+		 * @version 1.1.2
+		 * @since   1.1.2
+		 */
+		function get_meta_box_pro_description() {
+			$presentation   = __( 'Do you like the free version of this plugin? Imagine what the Pro version can do for you!', 'alg-wc-compare-products' );
+			$url            = 'https://coder.fm/compare-products-woocommerce/';
+			$links          = sprintf( wp_kses( __( 'Check it out <a target="_blank" href="%s">here</a> or on this link: <a target="_blank" href="%s">%s</a>', 'alg-wc-compare-products' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( $url ), esc_url( $url ), esc_url( $url ) );
+			$features_title = __( 'Take a look on some of its features:', 'alg-wc-compare-products' );
+			$features       = array(
+				__( 'Style your buttons easily', 'alg-wc-compare-products' ),
+				__( 'Choose which columns will be displayed on comparison list on front-end and in real time ', 'alg-wc-compare-products' ),
+				__( 'Sort comparison list columns on front-end to know which product is more important for you', 'alg-wc-compare-products' ),
+			);
+			$features_str   =
+				"<ul style='list-style:square inside'>" .
+				"<li>" . implode( "</li><li>", $features ) . "</li>" .
+				"</ul>";
+
+			$call_to_action = sprintf( __( '<a target="_blank" style="margin:9px 0 15px 0;" class="button-primary" href="%s">Upgrade to Pro version now</a> ', 'alg-wc-compare-products' ), esc_url( $url ) );
+
+			return "			
+				<p>{$presentation}<br/>
+				{$links}</p>
+				<strong>{$features_title}</strong>
+				{$features_str}
+				{$call_to_action}
+			";
 		}
 
 	}
