@@ -56,7 +56,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		public static function get_fields( $getWcAttributes = true, $reorder_based_on_db = true ) {
 			// Default fields
 			$default_fields = array(
-				'product'     => __( 'Product', 'alg-wc-compare-products' ),
+				'the-product'     => __( 'Product', 'alg-wc-compare-products' ),
 				'price'       => __( 'Price', 'alg-wc-compare-products' ),
 				'weight'      => __( 'Weight', 'alg-wc-compare-products' ),
 			);
