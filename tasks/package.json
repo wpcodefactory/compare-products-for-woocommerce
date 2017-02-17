@@ -1,8 +1,8 @@
 {
-  "name": "alg-wc-wish-list",
-  "description": "Wish List for WooCommerce - Gulp modules",
+  "name": "alg-wc-compare-products",
+  "description": "Compare Products for WooCommerce - Gulp modules",
   "version": "1.0.0",
-  "title": "Wish List for WooCommerce",
+  "title": "Compare Products for WooCommerce",
   "main": "gulpfile.js",
   "devDependencies": {
     "gulp": "3.9.1",
