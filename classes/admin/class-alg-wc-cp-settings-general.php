@@ -86,7 +86,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 		 */
 		function get_meta_box_pro_description() {
 			$presentation   = __( 'Do you like the free version of this plugin? Imagine what the Pro version can do for you!', 'alg-wc-compare-products' );
-			$url            = 'https://coder.fm/compare-products-woocommerce/';
+			$url            = 'https://coder.fm/item/compare-products-woocommerce/';
 			$links          = sprintf( wp_kses( __( 'Check it out <a target="_blank" href="%s">here</a> or on this link: <a target="_blank" href="%s">%s</a>', 'alg-wc-compare-products' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( $url ), esc_url( $url ), esc_url( $url ) );
 			$features_title = __( 'Take a look on some of its features:', 'alg-wc-compare-products' );
 			$features       = array(
@@ -101,7 +101,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 
 			$call_to_action = sprintf( __( '<a target="_blank" style="margin:9px 0 15px 0;" class="button-primary" href="%s">Upgrade to Pro version now</a> ', 'alg-wc-compare-products' ), esc_url( $url ) );
 
-			return "			
+			return "
 				<p>{$presentation}<br/>
 				{$links}</p>
 				<strong>{$features_title}</strong>

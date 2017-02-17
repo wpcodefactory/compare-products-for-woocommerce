@@ -22,9 +22,7 @@ If you are interested in contributing - head over to the [Compare Products for W
 **Pro version**
 
 Do you like the free version of this plugin? Imagine what the Pro version can do for you!
-Check it out [here](https://coder.fm/compare-products-woocommerce/ "Wish list for WooCommerce Pro")!
-
-https://coder.fm/compare-products-woocommerce/
+Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare Products for WooCommerce Pro")!
 
 **Take a look on some of its features:**
 
