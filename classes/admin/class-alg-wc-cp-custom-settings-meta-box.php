@@ -1,6 +1,6 @@
 <?php
 /**
- * Wish List for WooCommerce - Meta box about the Pro version
+ * Compare Products for WooCommerce - Meta box about the Pro version
  *
  * @version 1.1.0
  * @since   1.1.0

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Alg - Compare products for WooCommerce\n"
-"POT-Creation-Date: 2017-02-16 12:22-0200\n"
-"PO-Revision-Date: 2017-02-16 12:23-0200\n"
+"POT-Creation-Date: 2017-02-17 10:34-0200\n"
+"PO-Revision-Date: 2017-02-17 10:37-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -176,37 +176,87 @@ msgid "You can drag and drop columns to put them in any order you want"
 msgstr ""
 "Você pode arrastar e soltar as colunas para deixá-las na ordem que quiser"
 
-#: classes/admin/class-alg-wc-cp-settings-general.php:29
+#: classes/admin/class-alg-wc-cp-settings-general.php:30
 msgid "General"
 msgstr "Geral"
 
-#: classes/admin/class-alg-wc-cp-settings-general.php:42
+#: classes/admin/class-alg-wc-cp-settings-general.php:43
 msgid "General Options"
 msgstr "Opções gerais"
 
-#: classes/admin/class-alg-wc-cp-settings-general.php:47
+#: classes/admin/class-alg-wc-cp-settings-general.php:48
+msgid "Pro"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:56
 msgid "Enable Plugin"
 msgstr "Ativa o plugin"
 
-#: classes/admin/class-alg-wc-cp-settings-general.php:48
+#: classes/admin/class-alg-wc-cp-settings-general.php:57
 msgid "Enable \"Compare Products for WooCommerce\" plugin"
 msgstr "Ativa o plugin \"Compare Products for WooCommerce\""
 
-#: classes/admin/class-alg-wc-cp-settings-general.php:54
+#: classes/admin/class-alg-wc-cp-settings-general.php:63
 msgid "Load FontAwesome"
 msgstr "Carregar FontAwesome"
 
-#: classes/admin/class-alg-wc-cp-settings-general.php:55
+#: classes/admin/class-alg-wc-cp-settings-general.php:64
 msgid "Load most recent version of Font Awesome"
 msgstr "Carrega a versão mais recente do FontAwesome"
 
-#: classes/admin/class-alg-wc-cp-settings-general.php:56
+#: classes/admin/class-alg-wc-cp-settings-general.php:65
 msgid ""
 "Only mark this if you are not loading Font Awesome nowhere else. Font "
 "Awesome is responsible for creating icons"
 msgstr ""
 "Apenas marque essa opção se você não estiver carregando o FontAwesome em "
 "nenhum outro local. FontAwesome é responsável por criar ícones"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:88
+msgid ""
+"Do you like the free version of this plugin? Imagine what the Pro version "
+"can do for you!"
+msgstr ""
+"Você gosta da versão gratuita desse plugin? Imagine o que a versão Pro pode "
+"fazer por você!"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:90
+#, php-format
+msgid ""
+"Check it out <a target=\"_blank\" href=\"%s\">here</a> or on this link: <a "
+"target=\"_blank\" href=\"%s\">%s</a>"
+msgstr ""
+"Acesse <a target=\"_blank\" href=\"%s\">por aqui</a> ou por esse link: <a "
+"target=\"_blank\" href=\"%s\">%s</a>"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:91
+msgid "Take a look on some of its features:"
+msgstr "Dê uma olhada nos recursos:"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:93
+msgid "Style your buttons easily"
+msgstr "Personalize seus botões facilmente"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:94
+msgid ""
+"Choose in real time which comparison list columns will be displayed on front-"
+"end"
+msgstr ""
+"Escolha em tempo real quais colunas da lista de comparação ficam visíveis no "
+"front-end"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:95
+msgid "Sort any of the comparison list columns on front-end"
+msgstr "Ordene as colunas da lista de comparação no front-end"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:102
+#, php-format
+msgid ""
+"<a target=\"_blank\" style=\"margin:9px 0 15px 0;\" class=\"button-primary\" "
+"href=\"%s\">Upgrade to Pro version now</a> "
+msgstr ""
+"<a target=\"_blank\" style=\"margin:9px 0 15px 0;\" class=\"button-primary\" "
+"href=\"%s\">Atualize para a versão Pro agora</a> "
 
 #: classes/admin/class-alg-wc-cp-settings.php:26
 msgid "Compare Products"
@@ -268,7 +318,7 @@ msgstr "Lista de comparação"
 msgid "Compare your items"
 msgstr "Compare seus ítens"
 
-#: classes/class-alg-wc-cp-core.php:287
+#: classes/class-alg-wc-cp-core.php:302
 msgid "Settings"
 msgstr "Ajustes"
 

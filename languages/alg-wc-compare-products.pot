@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Alg - Compare products for WooCommerce\n"
-"POT-Creation-Date: 2017-02-10 20:06-0200\n"
+"POT-Creation-Date: 2017-02-17 10:33-0200\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,168 +18,322 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: assets\n"
 "X-Poedit-SearchPathExcluded-1: tasks\n"
 
-#: includes/admin/class-alg-wc-settings-wish-list.php:24
-#: includes/class-alg-wc-wish-list-page.php:35
-msgid "Wish List"
-msgstr ""
-
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:37
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:34
 msgid "Buttons"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:50
-msgid "Product page button"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:47
+msgid "Buttons Options"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:55
-msgid "Enable button"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:52
+msgid "Single Page"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:56
-msgid "Show a button to toggle wish list items on product page"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:53
+msgid "Enables a default button on single product page"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:63
-msgid "Button position"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:59
+msgid "Position on Single"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:64
-msgid "Where the button will appear?"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:60
+msgid "Where the button will appear on single product page?"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:65
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:61
 msgid "Default is On single product summary"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:70
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:84
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:66
 msgid "On single product summary"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:71
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:85
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:67
 msgid "Before single product summary"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:72
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:86
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:68
 msgid "After single product summary"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:76
-msgid "Button priority"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:69
+msgid "After product thumbnail"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:77
-msgid "More precise control of where the button will appear"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:73
+msgid "Priority on Single"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:78
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:74
+msgid ""
+"More precise control of where the button will appear on single product page"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:75
 msgid "Default is 31, right after \"add to cart\" button "
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:94
-msgid "Thumb button"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:82
+msgid "Product Loop"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:99
-msgid "Enable on product page"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:83
+msgid "Enable button on product loop"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:100
-msgid ""
-"Show a small button to toggle wish list items on the thumbnail of a single "
-"product page"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:89
+msgid "Priority on Loop"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:106
-msgid "Enable on loop page"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:90
+msgid "More precise control of where the button will appear on product loop"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-buttons.php:107
-msgid ""
-"Show a small button to toggle wish list items on the thumbnails of a loop "
-"page"
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:93
+msgid "Before add to cart button"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-general.php:27
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:94
+msgid "After add to cart button"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:33
+msgid "Comparison List"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:47
+msgid "None"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:59
+msgid "Comparison List Options"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:60
+msgid "Options regarding the comparison list"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:65
+msgid "Modal"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:66
+msgid "Enables a popup that shows the comparison list"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:72
+msgid "Page"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:73
+msgid "A page that displays the comparison list"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:81
+msgid "Widget"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:82
+msgid "Creates a widget showing a link pointing to the comparison list"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:94
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:114
+msgid "Columns"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:95
+msgid "Options regarding comparison table columns"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:100
+#: classes/class-alg-wc-cp-comparison-list.php:330
+msgid "Image"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:101
+msgid "Enables product image on product column"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:107
+msgid "Title"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:108
+msgid "Enables product title on product column"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:115
+msgid "What columns do you want to show on comparison list?"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:116
+msgid "You can drag and drop columns to put them in any order you want"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:30
 msgid "General"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-general.php:40
-msgid "Wish List Options"
+#: classes/admin/class-alg-wc-cp-settings-general.php:43
+msgid "General Options"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-general.php:45
-msgid "WooCommerce Wish List"
+#: classes/admin/class-alg-wc-cp-settings-general.php:48
+msgid "Pro"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-general.php:46
-msgid "Enable"
+#: classes/admin/class-alg-wc-cp-settings-general.php:56
+msgid "Enable Plugin"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-general.php:47
-msgid "Wish List for WooCommerce."
+#: classes/admin/class-alg-wc-cp-settings-general.php:57
+msgid "Enable \"Compare Products for WooCommerce\" plugin"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-general.php:53
+#: classes/admin/class-alg-wc-cp-settings-general.php:63
 msgid "Load FontAwesome"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-general.php:54
+#: classes/admin/class-alg-wc-cp-settings-general.php:64
 msgid "Load most recent version of Font Awesome"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-general.php:55
+#: classes/admin/class-alg-wc-cp-settings-general.php:65
 msgid ""
 "Only mark this if you are not loading Font Awesome nowhere else. Font "
 "Awesome is responsible for creating icons"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-social.php:24
-msgid "Social Networks"
+#: classes/admin/class-alg-wc-cp-settings-general.php:88
+msgid ""
+"Do you like the free version of this plugin? Imagine what the Pro version "
+"can do for you!"
 msgstr ""
 
-#: includes/admin/class-alg-wc-wish-list-settings-social.php:37
-msgid "Social Networks Options"
+#: classes/admin/class-alg-wc-cp-settings-general.php:90
+#, php-format
+msgid ""
+"Check it out <a target=\"_blank\" href=\"%s\">here</a> or on this link: <a "
+"target=\"_blank\" href=\"%s\">%s</a>"
 msgstr ""
 
-#: includes/class-alg-wc-wish-list-ajax.php:42
-msgid "Sorry, Some error ocurred. Please, try again later."
+#: classes/admin/class-alg-wc-cp-settings-general.php:91
+msgid "Take a look on some of its features:"
 msgstr ""
 
-#: includes/class-alg-wc-wish-list-ajax.php:46
-msgid "Your item was successfully removed from wish list."
+#: classes/admin/class-alg-wc-cp-settings-general.php:93
+msgid "Style your buttons easily"
 msgstr ""
 
-#: includes/class-alg-wc-wish-list-core.php:213
-msgid "Settings"
+#: classes/admin/class-alg-wc-cp-settings-general.php:94
+msgid ""
+"Choose in real time which comparison list columns will be displayed on "
+"front-end"
 msgstr ""
 
-#: templates/toggle-wish-list-button.php:16
-msgid "Add to Wishlist"
+#: classes/admin/class-alg-wc-cp-settings-general.php:95
+msgid "Sort any of the comparison list columns on front-end"
 msgstr ""
 
-#: templates/toggle-wish-list-button.php:20
-msgid "Remove from Wishlist"
+#: classes/admin/class-alg-wc-cp-settings-general.php:102
+#, php-format
+msgid ""
+"<a target=\"_blank\" style=\"margin:9px 0 15px 0;\" class=\"button-primary"
+"\" href=\"%s\">Upgrade to Pro version now</a> "
 msgstr ""
 
-#: templates/wish-list.php:21 templates/wish-list.php:31
-msgid "Thumbnail"
+#: classes/admin/class-alg-wc-cp-settings.php:26
+msgid "Compare Products"
 msgstr ""
 
-#: templates/wish-list.php:22 templates/wish-list.php:36
-msgid "Title"
+#: classes/class-alg-wc-cp-comparison-list.php:59
+#: templates/comparison-list.php:42 templates/comparison-list.php:95
+msgid "Product"
 msgstr ""
 
-#: templates/wish-list.php:23 templates/wish-list.php:37
+#: classes/class-alg-wc-cp-comparison-list.php:60
+#: classes/class-alg-wc-cp-comparison-list.php:331
+#: templates/comparison-list.php:52 templates/comparison-list.php:118
 msgid "Price"
 msgstr ""
 
-#: templates/wish-list.php:24 templates/wish-list.php:38
+#: classes/class-alg-wc-cp-comparison-list.php:61
+#: classes/class-alg-wc-cp-comparison-list.php:335
+#: templates/comparison-list.php:67 templates/comparison-list.php:143
+msgid "Weight"
+msgstr ""
+
+#: classes/class-alg-wc-cp-comparison-list.php:66
+#: classes/class-alg-wc-cp-comparison-list.php:332
+msgid "Add to cart button"
+msgstr ""
+
+#: classes/class-alg-wc-cp-comparison-list.php:67
+#: classes/class-alg-wc-cp-comparison-list.php:333
+#: templates/comparison-list.php:47 templates/comparison-list.php:111
+msgid "Description"
+msgstr ""
+
+#: classes/class-alg-wc-cp-comparison-list.php:68
+#: classes/class-alg-wc-cp-comparison-list.php:334
+msgid "Availability"
+msgstr ""
+
+#: classes/class-alg-wc-cp-comparison-list.php:69
+#: classes/class-alg-wc-cp-comparison-list.php:336
+#: templates/comparison-list.php:72 templates/comparison-list.php:157
+msgid "Dimensions"
+msgstr ""
+
+#: classes/class-alg-wc-cp-comparison-list.php:159
+msgid "View comparison list"
+msgstr ""
+
+#: classes/class-alg-wc-cp-comparison-list.php:204
+msgid "Sorry, Some error occurred. Please, try again later."
+msgstr ""
+
+#: classes/class-alg-wc-cp-comparison-list.php:251
+#: classes/class-alg-wc-cp-comparison-list.php:359
+msgid "Comparison list"
+msgstr ""
+
+#: classes/class-alg-wc-cp-comparison-list.php:360
+msgid "Compare your items"
+msgstr ""
+
+#: classes/class-alg-wc-cp-core.php:302
+msgid "Settings"
+msgstr ""
+
+#: classes/class-alg-wc-cp-default-button.php:89
+msgid "Compare"
+msgstr ""
+
+#: classes/class-alg-wc-cp-remove-button.php:50
+#: templates/comparison-list.php:182
 msgid "Remove"
 msgstr ""
 
-#: templates/wish-list.php:54
-msgid "Your Wish list is empty"
+#: templates/comparison-list.php:57 templates/comparison-list.php:125
+msgid "Stock"
+msgstr ""
+
+#: templates/comparison-list.php:62 templates/comparison-list.php:136
+msgid "Add to cart"
+msgstr ""
+
+#: templates/comparison-list.php:127
+msgid "In stock"
+msgstr ""
+
+#: templates/comparison-list.php:129
+msgid "Out of stock"
+msgstr ""
+
+#: templates/comparison-list.php:190
+msgid "The comparison list is empty"
 msgstr ""
