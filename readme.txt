@@ -11,7 +11,13 @@ Let your users know which products interest them the most by comparing them.
 
 == Description ==
 
-Let your users know which products interest them the most by comparing them. **Compare Products for WooCommerce** is a plugin where users can compare WooCommerce products in many aspects helping them to find out what they are looking for.
+**Compare Products for WooCommerce** is a plugin where users can compare WooCommerce products in many aspects helping them to find out what they are looking for.
+
+= Features =
+* Compare your products using a good looking popup or a normal page if you want
+* Display a button to compare your products on product page or product loop
+* Control precisely where your comparison buttons will be displayed
+* Choose what columns will be available on the comparison list, including price, description, stock, dimensions, and any other WooCommerce custom attributes
 
 = Feedback =
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
@@ -28,13 +34,20 @@ Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare
 
 * Style your buttons easily
 * Choose in real time which comparison list columns will be displayed on front-end
-* Sort any of the comparison list columns on front-end
+* Sort products on the comparison list by any field
 
 == Installation ==
 
 1. Upload the entire 'compare-products-for-woocommerce' folder to the '/wp-content/plugins/' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Start by visiting plugin settings at WooCommerce > Settings > Compare Products.
+
+== Screenshots ==
+
+1. Compare your products using a good looking popup. (It's possible to compare all kind of fields, including WooCommerce attributes.)
+2. Display a button to compare your products on the product page or product loop
+3. Control precisely where your comparison buttons will be displayed
+4. Choose what columns will be available on the comparison list
 
 == Changelog ==
 

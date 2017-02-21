@@ -92,7 +92,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 			$features       = array(
 				__( 'Style your buttons easily', 'alg-wc-compare-products' ),
 				__( 'Choose in real time which comparison list columns will be displayed on front-end', 'alg-wc-compare-products' ),
-				__( 'Sort any of the comparison list columns on front-end', 'alg-wc-compare-products' ),
+				__( 'Sort products on the comparison list by any field', 'alg-wc-compare-products' ),
 			);
 			$features_str   =
 				"<ul style='list-style:square inside'>" .
