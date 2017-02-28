@@ -3,7 +3,7 @@ Contributors: algoritmika,karzin,anbinder
 Tags: woocommerce,compare,compare products
 Requires at least: 4.4
 Tested up to: 4.7
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -50,6 +50,9 @@ Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare
 4. Choose what columns will be available on the comparison list
 
 == Changelog ==
+
+= 1.1.1 - 27/02/2017 =
+* Better plugin description
 
 = 1.1.0 - 16/02/2017 =
 * Add image option on list tab
