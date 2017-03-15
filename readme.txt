@@ -76,5 +76,6 @@ Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-This is the first release of the plugin.
+= 1.1.2 =
+Now it's possible to translate the plugin through translate.wordpress.org)
+Better plugin description

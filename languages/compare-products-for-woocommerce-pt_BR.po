@@ -1,0 +1,399 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Alg - Compare products for WooCommerce\n"
+"POT-Creation-Date: 2017-03-15 15:17-0300\n"
+"PO-Revision-Date: 2017-03-15 15:18-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: tasks\n"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:34
+msgid "Buttons"
+msgstr "Botões"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:47
+msgid "Buttons Options"
+msgstr "Opções dos botões"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:52
+msgid "Single Page"
+msgstr "Página do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:53
+msgid "Enables a default button on single product page"
+msgstr "Ativa o botão padrão na página do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:59
+msgid "Position on Single"
+msgstr "Posição na página do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:60
+msgid "Where the button will appear on single product page?"
+msgstr "Onde o botão será exibido na página do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:61
+msgid "Default is On single product summary"
+msgstr "O padrão é no resumo individual do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:66
+msgid "On single product summary"
+msgstr "No resumo individual do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:67
+msgid "Before single product summary"
+msgstr "Antes do resumo individual do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:68
+msgid "After single product summary"
+msgstr "Depois do resumo individual do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:69
+msgid "After product thumbnail"
+msgstr "Depois da imagem do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:73
+msgid "Priority on Single"
+msgstr "Prioridade na página do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:74
+msgid ""
+"More precise control of where the button will appear on single product page"
+msgstr ""
+"Um controle mais preciso de onde o botão será exibido na página individual "
+"do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:75
+msgid "Default is 31, right after \"add to cart\" button "
+msgstr "O padrão é 31, logo depois do botão de comprar"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:82
+msgid "Product Loop"
+msgstr "Looping dos produtos"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:83
+msgid "Enable button on product loop"
+msgstr "Ativa o botão no looping dos produtos"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:89
+msgid "Priority on Loop"
+msgstr "Prioridade no looping"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:90
+msgid "More precise control of where the button will appear on product loop"
+msgstr ""
+"Um controle mais preciso de onde o botão será exibido no looping dos produtos"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:93
+msgid "Before add to cart button"
+msgstr "Antes do botão de comprar"
+
+#: classes/admin/class-alg-wc-cp-settings-buttons.php:94
+msgid "After add to cart button"
+msgstr "Depois do botão de comprar"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:33
+msgid "Comparison List"
+msgstr "Lista de comparação"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:47
+msgid "None"
+msgstr "Nenhum"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:59
+msgid "Comparison List Options"
+msgstr "Opções da lista de comparação"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:60
+msgid "Options regarding the comparison list"
+msgstr "Opções relacionadas a lista de comparação"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:65
+msgid "Modal"
+msgstr "Popup"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:66
+msgid "Enables a popup that shows the comparison list"
+msgstr "Ativa um popup que mostra a lista de comparação"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:72
+msgid "Page"
+msgstr "Página"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:73
+msgid "A page that displays the comparison list"
+msgstr "Uma página que mostra a lista de comparação"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:81
+msgid "Widget"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:82
+msgid "Creates a widget showing a link pointing to the comparison list"
+msgstr "Cria um widget mostrando um link que aponta para a lista de comparação"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:94
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:114
+msgid "Columns"
+msgstr "Colunas"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:95
+msgid "Options regarding comparison table columns"
+msgstr "Opções relacionadas as colunas da tabela de comparação"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:100
+#: classes/class-alg-wc-cp-comparison-list.php:333
+msgid "Image"
+msgstr "Imagem"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:101
+msgid "Enables product image on product column"
+msgstr "Ativa a imagem do produto na coluna do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:107
+msgid "Title"
+msgstr "Título"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:108
+msgid "Enables product title on product column"
+msgstr "Ativa o título do produto na coluna do produto"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:115
+msgid "What columns do you want to show on comparison list?"
+msgstr "Quais colunas você deseja exibir na lista de comparação?"
+
+#: classes/admin/class-alg-wc-cp-settings-comparison-list.php:116
+msgid "You can drag and drop columns to put them in any order you want"
+msgstr ""
+"Você pode arrastar e soltar as colunas para deixá-las na ordem que quiser"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:30
+msgid "General"
+msgstr "Geral"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:43
+msgid "General Options"
+msgstr "Opções gerais"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:48
+msgid "Pro"
+msgstr ""
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:56
+msgid "Enable Plugin"
+msgstr "Ativa o plugin"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:57
+msgid "Enable \"Compare Products for WooCommerce\" plugin"
+msgstr "Ativa o plugin \"Compare Products for WooCommerce\""
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:63
+msgid "Load FontAwesome"
+msgstr "Carregar FontAwesome"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:64
+msgid "Load most recent version of Font Awesome"
+msgstr "Carrega a versão mais recente do FontAwesome"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:65
+msgid ""
+"Only mark this if you are not loading Font Awesome nowhere else. Font "
+"Awesome is responsible for creating icons"
+msgstr ""
+"Apenas marque essa opção se você não estiver carregando o FontAwesome em "
+"nenhum outro local. FontAwesome é responsável por criar ícones"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:88
+msgid ""
+"Do you like the free version of this plugin? Imagine what the Pro version "
+"can do for you!"
+msgstr ""
+"Você gosta da versão gratuita desse plugin? Imagine o que a versão Pro pode "
+"fazer por você!"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:90
+#, php-format
+msgid ""
+"Check it out <a target=\"_blank\" href=\"%s\">here</a> or on this link: <a "
+"target=\"_blank\" href=\"%s\">%s</a>"
+msgstr ""
+"Acesse <a target=\"_blank\" href=\"%s\">por aqui</a> ou por esse link: <a "
+"target=\"_blank\" href=\"%s\">%s</a>"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:91
+msgid "Take a look on some of its features:"
+msgstr "Dê uma olhada nos recursos:"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:93
+msgid "Style your buttons easily"
+msgstr "Personalize seus botões facilmente"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:94
+msgid ""
+"Choose in real time which comparison list columns will be displayed on front-"
+"end"
+msgstr ""
+"Escolha em tempo real quais colunas da lista de comparação ficam visíveis no "
+"front-end"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:95
+msgid "Sort products on the comparison list by any field"
+msgstr "Ordene produtos na lista de comparação por qualquer campo"
+
+#: classes/admin/class-alg-wc-cp-settings-general.php:102
+#, php-format
+msgid ""
+"<a target=\"_blank\" style=\"margin:9px 0 15px 0;\" class=\"button-primary\" "
+"href=\"%s\">Upgrade to Pro version now</a> "
+msgstr ""
+"<a target=\"_blank\" style=\"margin:9px 0 15px 0;\" class=\"button-primary\" "
+"href=\"%s\">Atualize para a versão Pro agora</a> "
+
+#: classes/admin/class-alg-wc-cp-settings.php:26
+msgid "Compare Products"
+msgstr "Comparação de produtos"
+
+#: classes/class-alg-wc-cp-comparison-list.php:59
+#: templates/comparison-list.php:42 templates/comparison-list.php:95
+msgid "Product"
+msgstr "Produto"
+
+#: classes/class-alg-wc-cp-comparison-list.php:60
+#: classes/class-alg-wc-cp-comparison-list.php:334
+#: templates/comparison-list.php:52 templates/comparison-list.php:118
+msgid "Price"
+msgstr "Preço"
+
+#: classes/class-alg-wc-cp-comparison-list.php:61
+#: classes/class-alg-wc-cp-comparison-list.php:338
+#: templates/comparison-list.php:67 templates/comparison-list.php:143
+msgid "Weight"
+msgstr "Peso"
+
+#: classes/class-alg-wc-cp-comparison-list.php:66
+#: classes/class-alg-wc-cp-comparison-list.php:335
+msgid "Add to cart button"
+msgstr "Botão de comprar"
+
+#: classes/class-alg-wc-cp-comparison-list.php:67
+#: classes/class-alg-wc-cp-comparison-list.php:336
+#: templates/comparison-list.php:47 templates/comparison-list.php:111
+msgid "Description"
+msgstr "Descrição"
+
+#: classes/class-alg-wc-cp-comparison-list.php:68
+#: classes/class-alg-wc-cp-comparison-list.php:337
+msgid "Availability"
+msgstr "Disponibilidade"
+
+#: classes/class-alg-wc-cp-comparison-list.php:69
+#: classes/class-alg-wc-cp-comparison-list.php:339
+#: templates/comparison-list.php:72 templates/comparison-list.php:157
+msgid "Dimensions"
+msgstr "Dimensões"
+
+#: classes/class-alg-wc-cp-comparison-list.php:162
+msgid "View comparison list"
+msgstr "Ver lista de comparação"
+
+#: classes/class-alg-wc-cp-comparison-list.php:207
+msgid "Sorry, Some error occurred. Please, try again later."
+msgstr "Desculpe, ocorreu um erro. Por favor, tente mais tarde."
+
+#: classes/class-alg-wc-cp-comparison-list.php:254
+#: classes/class-alg-wc-cp-comparison-list.php:362
+msgid "Comparison list"
+msgstr "Lista de comparação"
+
+#: classes/class-alg-wc-cp-comparison-list.php:363
+msgid "Compare your items"
+msgstr "Compare seus ítens"
+
+#: classes/class-alg-wc-cp-core.php:302
+msgid "Settings"
+msgstr "Ajustes"
+
+#: classes/class-alg-wc-cp-default-button.php:89
+msgid "Compare"
+msgstr "Comparar"
+
+#: classes/class-alg-wc-cp-remove-button.php:50
+#: templates/comparison-list.php:182
+msgid "Remove"
+msgstr "Remover"
+
+#: templates/comparison-list.php:57 templates/comparison-list.php:125
+msgid "Stock"
+msgstr "Estoque"
+
+#: templates/comparison-list.php:62 templates/comparison-list.php:136
+msgid "Add to cart"
+msgstr "Comprar"
+
+#: templates/comparison-list.php:127
+msgid "In stock"
+msgstr "Em estoque"
+
+#: templates/comparison-list.php:129
+msgid "Out of stock"
+msgstr "Fora de estoque"
+
+#: templates/comparison-list.php:190
+msgid "The comparison list is empty"
+msgstr "A lista de comparação está vazia"
+
+#~ msgid "Sort any of the comparison list columns on front-end"
+#~ msgstr "Ordene as colunas da lista de comparação no front-end"
+
+#~ msgid "General options"
+#~ msgstr "Opções gerais"
+
+#~ msgid "Single page"
+#~ msgstr "Página do produto"
+
+#~ msgid "Position on single"
+#~ msgstr "Posição na página do produto"
+
+#~ msgid "Priority on single"
+#~ msgstr "Prioridade na página do produto"
+
+#~ msgid "Product loop"
+#~ msgstr "Looping dos produtos"
+
+#~ msgid "Priority on loop"
+#~ msgstr "Prioridade no looping dos produtos"
+
+#~ msgid "Fields"
+#~ msgstr "Campos"
+
+#~ msgid "What fields do you want to show on comparison list?"
+#~ msgstr "Quais campos você gostaria de exibir na lista de comparação?"
+
+#~ msgid "You can drag and drop fields to put it in any order you want"
+#~ msgstr ""
+#~ "Você pode arrastar e soltar os campos para coloca-los na ordem que quiser"
+
+#~ msgid "Enables plugin"
+#~ msgstr "Ativa o plugin"
+
+#~ msgid "Enables plugin \"Compare products for WooCommerce\""
+#~ msgstr "Ativa o plugin \"Compare products for WooCommerce\""
+
+#~ msgid "Compare products"
+#~ msgstr "Comparar produtos"
+
+#~ msgid ""
+#~ "<a class='alg-wc-cp-open-modal button wc-forward' href='#'>View "
+#~ "comparison list</a>"
+#~ msgstr ""
+#~ "<a class='alg-wc-cp-open-modal button wc-forward' href='#'>Ver lista de "
+#~ "comparação</a>"
