@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - Settings
  *
- * @version 1.0.0
+ * @version 1.1.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,12 +18,12 @@ if ( ! class_exists( 'Alg_WC_CP_Settings' ) ) :
 		/**
 		 * Constructor.
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 */
 		function __construct() {
 			$this->id    = 'alg_wc_cp';
-			$this->label = __( 'Compare Products', 'alg-wc-compare-products' );
+			$this->label = __( 'Compare Products', 'compare-products-for-woocommerce' );
 			parent::__construct();
 		}
 

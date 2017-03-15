@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - Default button
  *
- * @version 1.0.0
+ * @version 1.1.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -58,7 +58,7 @@ if ( ! class_exists( 'Alg_WC_CP_Default_Button' ) ) {
 		/**
 		 * Loads default button template.
 		 *
-		 * @version 1.1.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 */
 		public static function load_default_button_template() {
@@ -86,7 +86,7 @@ if ( ! class_exists( 'Alg_WC_CP_Default_Button' ) ) {
 			$params = array(
 				'btn_data_action' => 'compare',
 				'btn_class'       => 'alg-wc-cp-btn alg-wc-cp-default-btn button',
-				'btn_label'       => __( 'Compare', 'alg-wc-compare-products' ),
+				'btn_label'       => __( 'Compare', 'compare-products-for-woocommerce' ),
 				'btn_icon_class'  => 'fa fa-exchange alg-wc-cp-icon',
 				'btn_href'        => add_query_arg( $btn_href_params, $current_url ),
 			);

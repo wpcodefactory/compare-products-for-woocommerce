@@ -317,13 +317,13 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		/**
 		 * Handle Localization
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 */
 		public function handle_localization() {
-			$locale = apply_filters( 'plugin_locale', get_locale(), 'alg-wc-compare-products' );
-			load_textdomain( 'alg-wc-compare-products', WP_LANG_DIR . dirname( ALG_WC_CP_BASENAME ) . 'alg-wc-compare-products' . '-' . $locale . '.mo' );
-			load_plugin_textdomain( 'alg-wc-compare-products', false, dirname( ALG_WC_CP_BASENAME ) . '/languages/' );
+			$locale = apply_filters( 'plugin_locale', get_locale(), 'compare-products-for-woocommerce' );
+			load_textdomain( 'compare-products-for-woocommerce', WP_LANG_DIR . dirname( ALG_WC_CP_BASENAME ) . 'compare-products-for-woocommerce' . '-' . $locale . '.mo' );
+			load_plugin_textdomain( 'compare-products-for-woocommerce', false, dirname( ALG_WC_CP_BASENAME ) . '/languages/' );
 		}
 
 		/**

@@ -3,7 +3,7 @@
  * Compare products for WooCommerce - Comparison list template
  *
  * @author  Algoritmika Ltd.
- * @version 1.1.0
+ * @version 1.1.2
  * @since   1.0.0
  */
 
@@ -39,12 +39,12 @@ $is_modal             = $params['use_modal'];
 	                <?php foreach ( $fields as $key => $field ): ?>
 		                <?php // Product ?>
 		                <?php if ( $key == 'the-product' ) : ?>
-                            <th class="the-product"><?php _e( 'Product', 'alg-wc-compare-products' ); ?></th>
+                            <th class="the-product"><?php _e( 'Product', 'compare-products-for-woocommerce' ); ?></th>
 		                <?php endif; ?>
 
 		                <?php // Product description ?>
 		                <?php if ( $key == 'description' ) : ?>
-                            <th class="product-description"><?php _e( 'Description', 'alg-wc-compare-products' ); ?></th>
+                            <th class="product-description"><?php _e( 'Description', 'compare-products-for-woocommerce' ); ?></th>
 		                <?php endif; ?>
 
 		                <?php // Product price ?>
@@ -92,7 +92,7 @@ $is_modal             = $params['use_modal'];
 	                    <?php foreach ( $fields as $key => $field ): ?>
 		                    <?php // Product ?>
 		                    <?php if ( $key == 'the-product' ) : ?>
-                                <td data-title="<?php _e( 'Product', 'alg-wc-compare-products' ); ?>" class="the-product">
+                                <td data-title="<?php _e( 'Product', 'compare-products-for-woocommerce' ); ?>" class="the-product">
 				                    <?php // Product Image ?>
 				                    <?php if($show_image): ?>
                                         <a class="product-thumbnail" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
@@ -108,7 +108,7 @@ $is_modal             = $params['use_modal'];
 
 		                    <?php // Product description ?>
 		                    <?php if ( $key == 'description' ) : ?>
-                                <td data-title="<?php _e( 'Description', 'alg-wc-compare-products' ); ?>"
+                                <td data-title="<?php _e( 'Description', 'compare-products-for-woocommerce' ); ?>"
                                     class="product-description"><?php echo apply_filters( 'get_the_excerpt', $product->post->post_excerpt ); ?>
                                 </td>
 		                    <?php endif; ?>
@@ -179,7 +179,7 @@ $is_modal             = $params['use_modal'];
                         <?php endforeach; ?>
 
 						<?php // Remove button ?>
-                        <td data-title="<?php _e( 'Remove', 'alg-wc-compare-products' ); ?>"
+                        <td data-title="<?php _e( 'Remove', 'compare-products-for-woocommerce' ); ?>"
                             class="product-remove"><?php echo Alg_WC_CP_Remove_Button::load_remove_button_template(); ?>
                         </td>
                     </tr>
@@ -187,7 +187,7 @@ $is_modal             = $params['use_modal'];
                 <?php wp_reset_postdata(); ?>
             </table>
 		<?php else: ?>
-			<?php _e( 'The comparison list is empty', 'alg-wc-compare-products' ); ?>
+			<?php _e( 'The comparison list is empty', 'compare-products-for-woocommerce' ); ?>
 		<?php endif; ?>
 
 <?php if($is_modal): ?>

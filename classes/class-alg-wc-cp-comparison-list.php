@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - Comparison list
  *
- * @version 1.1.0
+ * @version 1.1.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -47,7 +47,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Gets comparison list fields
 		 *
-		 * @version 1.1.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 * @param bool $getWcAttributes     Gets WooCommerce attributes too
 		 * @param bool $reorder_based_on_db Reorder fields based on database
@@ -56,17 +56,17 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		public static function get_fields( $getWcAttributes = true, $reorder_based_on_db = true ) {
 			// Default fields
 			$default_fields = array(
-				'the-product'     => __( 'Product', 'alg-wc-compare-products' ),
-				'price'       => __( 'Price', 'alg-wc-compare-products' ),
-				'weight'      => __( 'Weight', 'alg-wc-compare-products' ),
+				'the-product'     => __( 'Product', 'compare-products-for-woocommerce' ),
+				'price'       => __( 'Price', 'compare-products-for-woocommerce' ),
+				'weight'      => __( 'Weight', 'compare-products-for-woocommerce' ),
 			);
 
 			// Other fields
 			$fields = array(
-				'add-to-cart' => __( 'Add to cart button', 'alg-wc-compare-products' ),
-				'description' => __( 'Description', 'alg-wc-compare-products' ),
-				'stock'       => __( 'Availability', 'alg-wc-compare-products' ),
-				'dimensions'  => __( 'Dimensions', 'alg-wc-compare-products' ),
+				'add-to-cart' => __( 'Add to cart button', 'compare-products-for-woocommerce' ),
+				'description' => __( 'Description', 'compare-products-for-woocommerce' ),
+				'stock'       => __( 'Availability', 'compare-products-for-woocommerce' ),
+				'dimensions'  => __( 'Dimensions', 'compare-products-for-woocommerce' ),
 			);
 			$fields = array_merge( $default_fields, $fields );
 
@@ -131,6 +131,9 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 
 		/**
 		 * Creates a link pointing to comparison list
+		 *
+		 * @version 1.1.2
+		 * @since   1.0.0
 		 */
 		public static function create_comparison_list_link(){
 			if ( true === filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_USE_MODAL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
@@ -156,7 +159,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 			return sprintf(
 				"<a class='alg-wc-cp-open-modal button wc-forward' href='%s'>%s</a>",
 				$final_link,
-				__( 'View comparison list', 'alg-wc-compare-products' )
+				__( 'View comparison list', 'compare-products-for-woocommerce' )
 			);
 		}
 
@@ -174,7 +177,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Show notification to user after comparing
 		 *
-		 * @version 1.1.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 * @param $compare_response
 		 */
@@ -183,7 +186,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 
 			if ( self::$add_product_response !== false ) {
 				$product           = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
-				$message           = __( "<strong>{$product->get_title()}</strong> was successfully added to comparison list.", 'alg-wc-compare-products' );
+				$message           = __( "<strong>{$product->get_title()}</strong> was successfully added to comparison list.", 'compare-products-for-woocommerce' );
 				$compare_list_link = self::create_comparison_list_link();
 				if ( ! empty( $page_id ) ) {
 					wc_add_notice( "{$message}{$compare_list_link}", 'success' );
@@ -193,7 +196,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 
 			} else if ( self::$remove_product_response !== false ) {
 				$product           = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
-				$message           = __( "<strong>{$product->get_title()}</strong> was successfully removed from comparison list.", 'alg-wc-compare-products' );
+				$message           = __( "<strong>{$product->get_title()}</strong> was successfully removed from comparison list.", 'compare-products-for-woocommerce' );
 				$compare_list_link = self::create_comparison_list_link();
 				if ( ! empty( $page_id ) ) {
 					wc_add_notice( "{$message}{$compare_list_link}", 'success' );
@@ -201,7 +204,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 					wc_add_notice( "{$message}", 'success' );
 				}
 			} else {
-				wc_add_notice( __( 'Sorry, Some error occurred. Please, try again later.', 'alg-wc-compare-products' ), 'error' );
+				wc_add_notice( __( 'Sorry, Some error occurred. Please, try again later.', 'compare-products-for-woocommerce' ), 'error' );
 			}
 		}
 
@@ -236,7 +239,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		 * Create comparison list page with a shortcode used for displaying items.
 		 * This page is only created if it doesn't exist
 		 *
-		 * @version 1.1.0
+		 * @version 1.1.2
 		 * @since   1.1.0
 		 */
 		public static function create_page() {
@@ -248,7 +251,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 
 			if ( $previous_page == null ) {
 				$post = array(
-					'post_title'     => __( 'Comparison list', 'alg-wc-compare-products' ),
+					'post_title'     => __( 'Comparison list', 'compare-products-for-woocommerce' ),
 					'post_type'      => 'page',
 					'post_content'   => '[alg_wc_cp_table]',
 					'post_status'    => 'publish',
@@ -305,7 +308,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Creates compare list.
 		 *
-		 * @version 1.1.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 */
 		public static function create_comparison_list( $args = array() ){
@@ -327,13 +330,13 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 			}
 
 			$fields = array(
-				'image'       => __( 'Image', 'alg-wc-compare-products' ),
-				'price'       => __( 'Price', 'alg-wc-compare-products' ),
-				'add-to-cart' => __( 'Add to cart button', 'alg-wc-compare-products' ),
-				'description' => __( 'Description', 'alg-wc-compare-products' ),
-				'stock'       => __( 'Availability', 'alg-wc-compare-products' ),
-				'weight'      => __( 'Weight', 'alg-wc-compare-products' ),
-				'dimensions'  => __( 'Dimensions', 'alg-wc-compare-products' ),
+				'image'       => __( 'Image', 'compare-products-for-woocommerce' ),
+				'price'       => __( 'Price', 'compare-products-for-woocommerce' ),
+				'add-to-cart' => __( 'Add to cart button', 'compare-products-for-woocommerce' ),
+				'description' => __( 'Description', 'compare-products-for-woocommerce' ),
+				'stock'       => __( 'Availability', 'compare-products-for-woocommerce' ),
+				'weight'      => __( 'Weight', 'compare-products-for-woocommerce' ),
+				'dimensions'  => __( 'Dimensions', 'compare-products-for-woocommerce' ),
 			);
 
 			$fields = get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_COLUMNS );
@@ -350,14 +353,14 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Show compare list
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 * @param $response
 		 */
 		public static function show_comparison_list() {
 
-			$compare_list_label          = __( "Comparison list", "alg-wc-compare-products" );
-			$compare_list_subtitle_label = __( "Compare your items", "alg-wc-compare-products" );
+			$compare_list_label          = __( "Comparison list", "compare-products-for-woocommerce" );
+			$compare_list_subtitle_label = __( "Compare your items", "compare-products-for-woocommerce" );
 
 			$js=
 			"			

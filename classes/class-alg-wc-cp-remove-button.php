@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - Remove button
  *
- * @version 1.0.0
+ * @version 1.1.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ if ( ! class_exists( 'Alg_WC_CP_Remove_Button' ) ) {
 		/**
 		 * Loads remove button template.
 		 *
-		 * @version 1.1.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 */
 		public static function load_remove_button_template() {
@@ -47,7 +47,7 @@ if ( ! class_exists( 'Alg_WC_CP_Remove_Button' ) ) {
 			$params = array(
 				'btn_data_action' => 'compare',
 				'btn_class'       => 'alg-wc-cp-btn alg-wc-cp-remove-btn',
-				'btn_label'       => __( 'Remove', 'alg-wc-compare-products' ),
+				'btn_label'       => __( 'Remove', 'compare-products-for-woocommerce' ),
 				'btn_icon_class'  => 'fa fa-trash alg-wc-cp-icon',
 				'btn_href'        => add_query_arg( $btn_href_params, $current_url ),
 			);

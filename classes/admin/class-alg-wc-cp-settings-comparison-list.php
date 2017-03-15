@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - Buttons settings
  *
- * @version 1.1.0
+ * @version 1.1.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -25,26 +25,26 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 		/**
 		 * Constructor.
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 */
 		function __construct( $handle_autoload = true ) {
 			$this->id   = 'comparison_list';
-			$this->desc = __( 'Comparison List', 'alg-wc-compare-products' );
+			$this->desc = __( 'Comparison List', 'compare-products-for-woocommerce' );
 			parent::__construct( $handle_autoload );
 		}
 
 		/**
 		 * get_settings.
 		 *
-		 * @version 1.1.0
+		 * @version 1.1.2
 		 * @since   1.0.0
 		 */
 		function get_settings( $settings = null ) {
 			$fields = Alg_WC_CP_Comparison_list::get_fields();
 			$default_fields = array_slice($fields, 0, 3);
 
-			$pages_pretty = array( '' => __( 'None', 'alg-wc-compare-products' ) );
+			$pages_pretty = array( '' => __( 'None', 'compare-products-for-woocommerce' ) );
 			$pages = get_pages(array(
 			));
 			foreach ($pages as $page){
@@ -56,21 +56,21 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 
 				// General
 				array(
-					'title'     => __( 'Comparison List Options', 'alg-wc-compare-products' ),
-					'desc'      => __( 'Options regarding the comparison list', 'alg-wc-compare-products' ),
+					'title'     => __( 'Comparison List Options', 'compare-products-for-woocommerce' ),
+					'desc'      => __( 'Options regarding the comparison list', 'compare-products-for-woocommerce' ),
 					'type'      => 'title',
 					'id'        => 'alg_wc_cp_cl_opt',
 				),
 				array(
-					'title'     => __( 'Modal', 'alg-wc-compare-products' ),
-					'desc'      => __( 'Enables a popup that shows the comparison list', 'alg-wc-compare-products' ),
+					'title'     => __( 'Modal', 'compare-products-for-woocommerce' ),
+					'desc'      => __( 'Enables a popup that shows the comparison list', 'compare-products-for-woocommerce' ),
 					'id'        => self::OPTION_USE_MODAL,
 					'default'   => 'yes',
 					'type'      => 'checkbox',
 				),
 				array(
-					'title'     => __( 'Page', 'alg-wc-compare-products' ),
-					'desc'      => __( 'A page that displays the comparison list', 'alg-wc-compare-products' ),
+					'title'     => __( 'Page', 'compare-products-for-woocommerce' ),
+					'desc'      => __( 'A page that displays the comparison list', 'compare-products-for-woocommerce' ),
 					'id'        => self::OPTION_COMPARISON_LIST_PAGE,
 					'default'   => Alg_WC_CP_Comparison_list::get_comparison_list_page_id(),
 					'options'   => $pages_pretty,
@@ -78,8 +78,8 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 					'type'      => 'select',
 				),
 				array(
-					'title'     => __( 'Widget', 'alg-wc-compare-products' ),
-					'desc'      => __( 'Creates a widget showing a link pointing to the comparison list', 'alg-wc-compare-products' ),
+					'title'     => __( 'Widget', 'compare-products-for-woocommerce' ),
+					'desc'      => __( 'Creates a widget showing a link pointing to the comparison list', 'compare-products-for-woocommerce' ),
 					'id'        => self::OPTION_WIDGET_LINK,
 					'default'   => 'yes',
 					'type'      => 'checkbox',
@@ -91,29 +91,29 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_Comparison_List' ) ) {
 
 				// Columns
 				array(
-					'title'     => __( 'Columns', 'alg-wc-compare-products' ),
-					'desc'      => __( 'Options regarding comparison table columns', 'alg-wc-compare-products' ),
+					'title'     => __( 'Columns', 'compare-products-for-woocommerce' ),
+					'desc'      => __( 'Options regarding comparison table columns', 'compare-products-for-woocommerce' ),
 					'type'      => 'title',
 					'id'        => 'alg_wc_cp_cl_cols_opt',
 				),
 				array(
-					'title'     => __( 'Image', 'alg-wc-compare-products' ),
-					'desc'      => __( 'Enables product image on product column', 'alg-wc-compare-products' ),
+					'title'     => __( 'Image', 'compare-products-for-woocommerce' ),
+					'desc'      => __( 'Enables product image on product column', 'compare-products-for-woocommerce' ),
 					'id'        => self::OPTION_FIELD_IMAGE,
 					'default'   => 'yes',
 					'type'      => 'checkbox',
 				),
 				array(
-					'title'     => __( 'Title', 'alg-wc-compare-products' ),
-					'desc'      => __( 'Enables product title on product column', 'alg-wc-compare-products' ),
+					'title'     => __( 'Title', 'compare-products-for-woocommerce' ),
+					'desc'      => __( 'Enables product title on product column', 'compare-products-for-woocommerce' ),
 					'id'        => self::OPTION_FIELD_TITLE,
 					'default'   => 'yes',
 					'type'      => 'checkbox',
 				),
 				array(
-					'title'     => __( 'Columns', 'alg-wc-compare-products' ),
-					'desc'      => __( 'What columns do you want to show on comparison list?', 'alg-wc-compare-products' ),
-					'desc_tip'  =>  __( 'You can drag and drop columns to put them in any order you want', 'alg-wc-compare-products' ),
+					'title'     => __( 'Columns', 'compare-products-for-woocommerce' ),
+					'desc'      => __( 'What columns do you want to show on comparison list?', 'compare-products-for-woocommerce' ),
+					'desc_tip'  =>  __( 'You can drag and drop columns to put them in any order you want', 'compare-products-for-woocommerce' ),
 					'id'        => self::OPTION_COLUMNS,
 					'options'   => $fields,
 					'default'   => array_keys($default_fields),

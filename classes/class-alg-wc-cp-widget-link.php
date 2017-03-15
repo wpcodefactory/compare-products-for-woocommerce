@@ -24,8 +24,8 @@ if ( ! class_exists( 'Alg_WC_CP_Widget_Link' ) ) {
 		function __construct() {
 			parent::__construct(
 				'alg_wc_cp_widget_link', // Base ID
-				esc_html__( 'Comparison list link', 'alg-wc-compare-products' ), // Name
-				array( 'description' => esc_html__( 'A link pointing to the comparison list', 'alg-wc-compare-products' ), ) // Args
+				esc_html__( 'Comparison list link', 'compare-products-for-woocommerce' ), // Name
+				array( 'description' => esc_html__( 'A link pointing to the comparison list', 'compare-products-for-woocommerce' ), ) // Args
 			);
 		}
 
@@ -57,12 +57,12 @@ if ( ! class_exists( 'Alg_WC_CP_Widget_Link' ) ) {
 		 * @param array $instance Previously saved values from database.
 		 */
 		public function form( $instance ) {
-			$title      = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Comparison list', 'alg-wc-compare-products' );
-			$link_label = ! empty( $instance['link_label'] ) ? $instance['link_label'] : esc_html__( 'View comparison list', 'alg-wc-compare-products' );
+			$title      = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Comparison list', 'compare-products-for-woocommerce' );
+			$link_label = ! empty( $instance['link_label'] ) ? $instance['link_label'] : esc_html__( 'View comparison list', 'compare-products-for-woocommerce' );
 			?>
             <p>
                 <label
-                        for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'alg-wc-compare-products' ); ?></label>
+                        for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'compare-products-for-woocommerce' ); ?></label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
                        name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
                        value="<?php echo esc_attr( $title ); ?>">
@@ -70,7 +70,7 @@ if ( ! class_exists( 'Alg_WC_CP_Widget_Link' ) ) {
 
             <p>
                 <label
-                        for="<?php echo esc_attr( $this->get_field_id( 'link_label' ) ); ?>"><?php esc_attr_e( 'Link label:', 'alg-wc-compare-products' ); ?></label>
+                        for="<?php echo esc_attr( $this->get_field_id( 'link_label' ) ); ?>"><?php esc_attr_e( 'Link label:', 'compare-products-for-woocommerce' ); ?></label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'link_label' ) ); ?>"
                        name="<?php echo esc_attr( $this->get_field_name( 'link_label' ) ); ?>" type="text"
                        value="<?php echo esc_attr( $link_label ); ?>">
