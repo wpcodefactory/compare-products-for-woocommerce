@@ -19,13 +19,16 @@ Let your users know which products interest them the most by comparing them.
 * Control precisely where your comparison buttons will be displayed
 * Choose what columns will be available on the comparison list, including price, description, stock, dimensions, and any other WooCommerce custom attributes
 
+= Translated to =
+* Portuguese
+
 = Feedback =
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 
 = More =
 If you are interested in contributing - head over to the [Compare Products for WooCommerce plugin GitHub Repository](https://github.com/algoritmika/compare-products-for-woocommerce) to find out how you can pitch in.
 
-**Pro version**
+= Pro version =
 
 Do you like the free version of this plugin? Imagine what the Pro version can do for you!
 Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare Products for WooCommerce Pro")!
