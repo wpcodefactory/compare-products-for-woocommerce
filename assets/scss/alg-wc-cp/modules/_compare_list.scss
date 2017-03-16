@@ -1,5 +1,7 @@
 .alg-wc-cp-list {
 	overflow-x:auto;
+	width:100%;
+
 	table{
 		margin-bottom:0 !important;
 		width:100%;
@@ -14,6 +16,7 @@
 	td, tr {
 		vertical-align: middle !important;
 		text-align: center !important;
+		line-height:18px;
 		padding:12px;
 		&:last-child{
 			padding:12px;
@@ -52,43 +55,32 @@
 		}
 	}
 
+	.product-price{
+		del, ins{
+			display:block;
 
-
-	&.responsive {
-		@media (max-width: 768px) {
-
-
-			td,th{
-				padding:20px 5px;
-			}
-
-			tr{
-
-			}
-
-			.add-to-cart-btn{
-				a{
-					padding:5px 10px;
-				}
-				line-height:15px;
-			}
-
-			.product-price{
-				del, ins{
-					display:block;
-
-				}
-				ins{
-					> span{
-						display:block;
-					}
-				}
+		}
+		ins{
+			> span{
+				display:block;
 			}
 		}
 	}
 
-	/*&.responsive {
+	&.responsive-style-1 {
 		@media (max-width: 768px) {
+			.product-thumbnail{
+				display:inline-block;
+				img{
+					text-align:right;
+					margin:0;
+				}
+			}
+
+			.the-product{
+				text-align:right;
+			}
+
 			thead {
 				display: none;
 			}
@@ -137,6 +129,5 @@
 				}
 			}
 		}
-	}*/
-
+	}
 }

@@ -312,7 +312,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Creates compare list.
 		 *
-		 * @version 1.1.2
+		 * @version 1.1.3
 		 * @since   1.0.0
 		 */
 		public static function create_comparison_list( $args = array() ){
@@ -349,6 +349,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 				'show_image' => filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_FIELD_IMAGE, false ), FILTER_VALIDATE_BOOLEAN ),
 				'show_title' => filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_FIELD_TITLE, false ), FILTER_VALIDATE_BOOLEAN ),
 				'fields'     => array_flip( $fields ),
+				'list_class' => 'alg-wc-cp-list',
 			);
 			$params = array_merge( $params, $args );
 			return alg_wc_cp_locate_template( 'comparison-list.php', $params );

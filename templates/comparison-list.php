@@ -23,13 +23,14 @@ $show_stock           = isset( $fields['stock'] ) ? true : false;
 $show_add_to_cart_btn = isset( $fields['add-to-cart'] ) ? true : false;
 $show_description     = isset( $fields['description'] ) ? true : false;
 $is_modal             = $params['use_modal'];
+$list_class           = $params['list_class'];
 ?>
 
 <?php if($is_modal): ?>
     <div class="iziModal" id="iziModal">
 <?php endif; ?>
 
-    <div class="alg-wc-cp-list responsive">
+    <div class="alg-wc-cp-list">
 
 		<?php if ( $the_query != null && $the_query->have_posts() ) : ?>
             <table>
