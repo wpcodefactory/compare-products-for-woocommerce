@@ -57,6 +57,7 @@ Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare
 = 1.1.3 - 15/03/2017 =
 * Fix widget label
 * Add horizontal overflow on comparison list in case of too many items
+* Loading external scripts through Protocol-relative URL
 
 = 1.1.2 - 15/03/2017 =
 * Fix translation slug (Now it's possible to translate the plugin through translate.wordpress.org)
@@ -83,3 +84,4 @@ Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare
 = 1.1.3 =
 * Fix widget label
 * Add horizontal overflow on comparison list in case of too many items
+* Loading external scripts through Protocol-relative URL

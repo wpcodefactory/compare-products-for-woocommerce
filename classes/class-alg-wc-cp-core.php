@@ -200,11 +200,13 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 			// Font awesome
-			$css_file = 'http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css';
+			$css_file = '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css';
 			$font_awesome_opt = get_option( Alg_WC_CP_Settings_General::OPTION_FONT_AWESOME, true );
 			if ( filter_var( $font_awesome_opt, FILTER_VALIDATE_BOOLEAN ) !== false ) {
-				wp_register_style( 'alg-wc-cp-font-awesome', $css_file, array() );
-				wp_enqueue_style( 'alg-wc-cp-font-awesome' );
+				if ( !wp_script_is( 'alg-font-awesome' ) ) {
+					wp_register_style( 'alg-font-awesome', $css_file, array() );
+					wp_enqueue_style( 'alg-font-awesome' );
+				}
 			}
 
 			// Main css file
@@ -215,9 +217,9 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 
 			// Izimodal - A modal plugin (http://izimodal.marcelodolce.com)
 			if ( true === filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_USE_MODAL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
-				wp_register_script( 'alg-wc-cp-izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/js/iziModal.min.js', array( 'jquery' ), false, true );
+				wp_register_script( 'alg-wc-cp-izimodal', '//cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/js/iziModal.min.js', array( 'jquery' ), false, true );
 				wp_enqueue_script( 'alg-wc-cp-izimodal' );
-				wp_register_style( 'alg-wc-cp-izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/css/iziModal.min.css', array(), false );
+				wp_register_style( 'alg-wc-cp-izimodal', '//cdnjs.cloudflare.com/ajax/libs/izimodal/1.4.2/css/iziModal.min.css', array(), false );
 				wp_enqueue_style( 'alg-wc-cp-izimodal' );
 
 				// Show comparison list
