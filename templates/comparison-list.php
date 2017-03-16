@@ -3,7 +3,7 @@
  * Compare products for WooCommerce - Comparison list template
  *
  * @author  Algoritmika Ltd.
- * @version 1.1.2
+ * @version 1.1.3
  * @since   1.0.0
  */
 
@@ -30,7 +30,7 @@ $list_class           = $params['list_class'];
     <div class="iziModal" id="iziModal">
 <?php endif; ?>
 
-    <div class="alg-wc-cp-list">
+    <div class="<?php echo implode(" ", $list_class); ?>">
 
 		<?php if ( $the_query != null && $the_query->have_posts() ) : ?>
             <table>
