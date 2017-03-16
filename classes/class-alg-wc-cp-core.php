@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce  - Core Class
  *
- * @version 1.1.0
+ * @version 1.1.3
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -193,7 +193,7 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		/**
 		 * Load scripts and styles
 		 *
-		 * @version 1.1.0
+		 * @version 1.1.3
 		 * @since   1.0.0
 		 */
 		function enqueue_scripts() {
