@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - Comparison list
  *
- * @version 1.1.2
+ * @version 1.1.3
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -132,10 +132,14 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Creates a link pointing to comparison list
 		 *
-		 * @version 1.1.2
+		 * @version 1.1.3
 		 * @since   1.0.0
 		 */
-		public static function create_comparison_list_link(){
+		public static function create_comparison_list_link( $args = array() ) {
+			$args = wp_parse_args( $args, array(
+				'link_label' => __( 'View comparison list', 'compare-products-for-woocommerce' ),
+			) );
+
 			if ( true === filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_USE_MODAL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				global $wp;
 				$permalink_structure = get_option( 'permalink_structure' );
@@ -151,15 +155,15 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 				$final_link = add_query_arg( array(
 					Alg_WC_CP_Query_Vars::MODAL => 'open',
 				), $original_link );
-			}else{
+			} else {
 				$original_link = get_permalink( Alg_WC_CP_Comparison_list::get_comparison_list_page_id() );
-				$final_link = $original_link;
+				$final_link    = $original_link;
 			}
 
 			return sprintf(
 				"<a class='alg-wc-cp-open-modal button wc-forward' href='%s'>%s</a>",
 				$final_link,
-				__( 'View comparison list', 'compare-products-for-woocommerce' )
+				$args['link_label']
 			);
 		}
 
