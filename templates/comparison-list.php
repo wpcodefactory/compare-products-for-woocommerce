@@ -30,7 +30,7 @@ $list_class           = $params['list_class'];
     <div class="iziModal" id="iziModal">
 <?php endif; ?>
 
-    <div class="<?php echo implode(" ", $list_class); ?>">
+    <div class="<?php echo esc_attr(implode(" ", $list_class)); ?>">
 
 		<?php if ( $the_query != null && $the_query->have_posts() ) : ?>
             <table>
