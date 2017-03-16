@@ -54,7 +54,7 @@ Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare
 
 == Changelog ==
 
-= 1.1.3 - 15/03/2017 =
+= 1.1.3 - 16/03/2017 =
 * Fix widget label
 * Add horizontal overflow on comparison list in case of too many items
 * Loading external scripts through Protocol-relative URL
