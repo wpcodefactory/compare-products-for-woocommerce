@@ -181,7 +181,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Show notification to user after comparing
 		 *
-		 * @version 1.1.2
+		 * @version 1.1.3
 		 * @since   1.0.0
 		 * @param $compare_response
 		 */
@@ -190,21 +190,21 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 
 			if ( self::$add_product_response !== false ) {
 				$product           = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
-				$message           = __( "<strong>{$product->get_title()}</strong> was successfully added to comparison list.", 'compare-products-for-woocommerce' );
+				$message           = sprintf( __( "%s was successfully added to comparison list.", 'compare-products-for-woocommerce' ), "<strong>{$product->get_title()}</strong>" );
 				$compare_list_link = self::create_comparison_list_link();
 				if ( ! empty( $page_id ) ) {
 					wc_add_notice( "{$message}{$compare_list_link}", 'success' );
-				}else{
+				} else {
 					wc_add_notice( "{$message}", 'success' );
 				}
 
 			} else if ( self::$remove_product_response !== false ) {
 				$product           = new WC_Product( $args[ Alg_WC_CP_Query_Vars::COMPARE_PRODUCT_ID ] );
-				$message           = __( "<strong>{$product->get_title()}</strong> was successfully removed from comparison list.", 'compare-products-for-woocommerce' );
+				$message           = sprintf( __( "%s was successfully removed from comparison list.", 'compare-products-for-woocommerce' ), "<strong>{$product->get_title()}</strong>" );
 				$compare_list_link = self::create_comparison_list_link();
 				if ( ! empty( $page_id ) ) {
 					wc_add_notice( "{$message}{$compare_list_link}", 'success' );
-				}else{
+				} else {
 					wc_add_notice( "{$message}", 'success' );
 				}
 			} else {

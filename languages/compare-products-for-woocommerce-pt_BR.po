@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Alg - Compare products for WooCommerce\n"
-"POT-Creation-Date: 2017-03-15 15:17-0300\n"
-"PO-Revision-Date: 2017-03-15 15:18-0300\n"
+"POT-Creation-Date: 2017-03-17 11:04-0300\n"
+"PO-Revision-Date: 2017-03-17 11:05-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -151,7 +151,7 @@ msgid "Options regarding comparison table columns"
 msgstr "Opções relacionadas as colunas da tabela de comparação"
 
 #: classes/admin/class-alg-wc-cp-settings-comparison-list.php:100
-#: classes/class-alg-wc-cp-comparison-list.php:333
+#: classes/class-alg-wc-cp-comparison-list.php:337
 msgid "Image"
 msgstr "Imagem"
 
@@ -263,62 +263,72 @@ msgid "Compare Products"
 msgstr "Comparação de produtos"
 
 #: classes/class-alg-wc-cp-comparison-list.php:59
-#: templates/comparison-list.php:42 templates/comparison-list.php:95
+#: templates/comparison-list.php:43 templates/comparison-list.php:96
 msgid "Product"
 msgstr "Produto"
 
 #: classes/class-alg-wc-cp-comparison-list.php:60
-#: classes/class-alg-wc-cp-comparison-list.php:334
-#: templates/comparison-list.php:52 templates/comparison-list.php:118
+#: classes/class-alg-wc-cp-comparison-list.php:338
+#: templates/comparison-list.php:53 templates/comparison-list.php:119
 msgid "Price"
 msgstr "Preço"
 
 #: classes/class-alg-wc-cp-comparison-list.php:61
-#: classes/class-alg-wc-cp-comparison-list.php:338
-#: templates/comparison-list.php:67 templates/comparison-list.php:143
+#: classes/class-alg-wc-cp-comparison-list.php:342
+#: templates/comparison-list.php:68 templates/comparison-list.php:144
 msgid "Weight"
 msgstr "Peso"
 
 #: classes/class-alg-wc-cp-comparison-list.php:66
-#: classes/class-alg-wc-cp-comparison-list.php:335
+#: classes/class-alg-wc-cp-comparison-list.php:339
 msgid "Add to cart button"
 msgstr "Botão de comprar"
 
 #: classes/class-alg-wc-cp-comparison-list.php:67
-#: classes/class-alg-wc-cp-comparison-list.php:336
-#: templates/comparison-list.php:47 templates/comparison-list.php:111
+#: classes/class-alg-wc-cp-comparison-list.php:340
+#: templates/comparison-list.php:48 templates/comparison-list.php:112
 msgid "Description"
 msgstr "Descrição"
 
 #: classes/class-alg-wc-cp-comparison-list.php:68
-#: classes/class-alg-wc-cp-comparison-list.php:337
+#: classes/class-alg-wc-cp-comparison-list.php:341
 msgid "Availability"
 msgstr "Disponibilidade"
 
 #: classes/class-alg-wc-cp-comparison-list.php:69
-#: classes/class-alg-wc-cp-comparison-list.php:339
-#: templates/comparison-list.php:72 templates/comparison-list.php:157
+#: classes/class-alg-wc-cp-comparison-list.php:343
+#: templates/comparison-list.php:73 templates/comparison-list.php:158
 msgid "Dimensions"
 msgstr "Dimensões"
 
-#: classes/class-alg-wc-cp-comparison-list.php:162
+#: classes/class-alg-wc-cp-comparison-list.php:140
 msgid "View comparison list"
 msgstr "Ver lista de comparação"
 
-#: classes/class-alg-wc-cp-comparison-list.php:207
+#: classes/class-alg-wc-cp-comparison-list.php:193
+#, php-format
+msgid "%s was successfully added to comparison list."
+msgstr "%s foi adicionado(a) a lista de comparação com sucesso"
+
+#: classes/class-alg-wc-cp-comparison-list.php:203
+#, php-format
+msgid "%s was successfully removed from comparison list."
+msgstr "%s foi removido(a) da lista de comparação com sucesso."
+
+#: classes/class-alg-wc-cp-comparison-list.php:211
 msgid "Sorry, Some error occurred. Please, try again later."
 msgstr "Desculpe, ocorreu um erro. Por favor, tente mais tarde."
 
-#: classes/class-alg-wc-cp-comparison-list.php:254
-#: classes/class-alg-wc-cp-comparison-list.php:362
+#: classes/class-alg-wc-cp-comparison-list.php:258
+#: classes/class-alg-wc-cp-comparison-list.php:367
 msgid "Comparison list"
 msgstr "Lista de comparação"
 
-#: classes/class-alg-wc-cp-comparison-list.php:363
+#: classes/class-alg-wc-cp-comparison-list.php:368
 msgid "Compare your items"
 msgstr "Compare seus ítens"
 
-#: classes/class-alg-wc-cp-core.php:302
+#: classes/class-alg-wc-cp-core.php:304
 msgid "Settings"
 msgstr "Ajustes"
 
@@ -327,27 +337,27 @@ msgid "Compare"
 msgstr "Comparar"
 
 #: classes/class-alg-wc-cp-remove-button.php:50
-#: templates/comparison-list.php:182
+#: templates/comparison-list.php:183
 msgid "Remove"
 msgstr "Remover"
 
-#: templates/comparison-list.php:57 templates/comparison-list.php:125
+#: templates/comparison-list.php:58 templates/comparison-list.php:126
 msgid "Stock"
 msgstr "Estoque"
 
-#: templates/comparison-list.php:62 templates/comparison-list.php:136
+#: templates/comparison-list.php:63 templates/comparison-list.php:137
 msgid "Add to cart"
 msgstr "Comprar"
 
-#: templates/comparison-list.php:127
+#: templates/comparison-list.php:128
 msgid "In stock"
 msgstr "Em estoque"
 
-#: templates/comparison-list.php:129
+#: templates/comparison-list.php:130
 msgid "Out of stock"
 msgstr "Fora de estoque"
 
-#: templates/comparison-list.php:190
+#: templates/comparison-list.php:191
 msgid "The comparison list is empty"
 msgstr "A lista de comparação está vazia"
 
