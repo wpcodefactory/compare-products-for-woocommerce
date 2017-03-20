@@ -3,7 +3,7 @@ Contributors: algoritmika,karzin,anbinder
 Tags: woocommerce,compare,compare products
 Requires at least: 4.4
 Tested up to: 4.7
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -59,6 +59,8 @@ Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare
 * Add horizontal overflow on comparison list in case of too many items
 * Loading external scripts through Protocol-relative URL
 * Better translation structure for adding and removing items
+* Fix comparison list link (It was creating a query string with "wc-ajax=get_refreshed_fragments")
+* Improve calling for the woocommerce notice function
 
 = 1.1.2 - 15/03/2017 =
 * Fix translation slug (Now it's possible to translate the plugin through translate.wordpress.org)
@@ -87,3 +89,5 @@ Check it out [here](https://coder.fm/item/compare-products-woocommerce/ "Compare
 * Add horizontal overflow on comparison list in case of too many items
 * Loading external scripts through Protocol-relative URL
 * Better translation structure for adding and removing items
+* Fix comparison list link (It was creating a query string with "wc-ajax=get_refreshed_fragments")
+* Improve calling for the woocommerce notice function

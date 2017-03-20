@@ -147,10 +147,10 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 					if ( is_shop() ) {
 						$original_link = get_post_type_archive_link( 'product' );
 					} else {
-						$original_link = get_permalink( add_query_arg( array(), $wp->request ) );
+						$original_link = get_permalink( get_the_ID() );
 					}
 				} else {
-					$original_link = home_url( add_query_arg( array(), $wp->request ) ) . '/';
+					$original_link = get_permalink( get_the_ID() );
 				}
 				$final_link = add_query_arg( array(
 					Alg_WC_CP_Query_Vars::MODAL => 'open',
@@ -193,9 +193,9 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 				$message           = sprintf( __( "%s was successfully added to comparison list.", 'compare-products-for-woocommerce' ), "<strong>{$product->get_title()}</strong>" );
 				$compare_list_link = self::create_comparison_list_link();
 				if ( ! empty( $page_id ) ) {
-					wc_add_notice( "{$message}{$compare_list_link}", 'success' );
+					Alg_WC_CP_Woocommerce::add_notice("{$message}{$compare_list_link}", 'success');
 				} else {
-					wc_add_notice( "{$message}", 'success' );
+					Alg_WC_CP_Woocommerce::add_notice( "{$message}", 'success' );
 				}
 
 			} else if ( self::$remove_product_response !== false ) {
@@ -203,12 +203,12 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 				$message           = sprintf( __( "%s was successfully removed from comparison list.", 'compare-products-for-woocommerce' ), "<strong>{$product->get_title()}</strong>" );
 				$compare_list_link = self::create_comparison_list_link();
 				if ( ! empty( $page_id ) ) {
-					wc_add_notice( "{$message}{$compare_list_link}", 'success' );
+					Alg_WC_CP_Woocommerce::add_notice( "{$message}{$compare_list_link}", 'success' );
 				} else {
-					wc_add_notice( "{$message}", 'success' );
+					Alg_WC_CP_Woocommerce::add_notice( "{$message}", 'success' );
 				}
 			} else {
-				wc_add_notice( __( 'Sorry, Some error occurred. Please, try again later.', 'compare-products-for-woocommerce' ), 'error' );
+				Alg_WC_CP_Woocommerce::add_notice( __( 'Sorry, Some error occurred. Please, try again later.', 'compare-products-for-woocommerce' ), 'error' );
 			}
 		}
 
