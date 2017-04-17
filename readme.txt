@@ -66,6 +66,7 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 == Changelog ==
 
 = 1.1.4 - 14/04/2017 =
+* Support to WooCommerce 3.0
 * Improve plugin description
 * Add images about the pro version
 * Fix link to comparison list on shop page
@@ -101,10 +102,9 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 
 == Upgrade Notice ==
 
-= 1.1.3 =
-* Fix widget label
-* Add horizontal overflow on comparison list in case of too many items
-* Loading external scripts through Protocol-relative URL
-* Better translation structure for adding and removing items
-* Fix comparison list link (It was creating a query string with "wc-ajax=get_refreshed_fragments")
-* Improve calling for the woocommerce notice function
+= 1.1.4 - 14/04/2017 =
+* Support to WooCommerce 3.0
+* Improve plugin description
+* Add images about the pro version
+* Fix link to comparison list on shop page
+* Show singular attribute name instead of label on comparison list template

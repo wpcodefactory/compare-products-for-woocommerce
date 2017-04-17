@@ -108,11 +108,11 @@ $list_class           = $params['list_class'];
 		                    <?php endif; ?>
 
 		                    <?php // Product description ?>
-		                    <?php if ( $key == 'description' ) : ?>
-                                <td data-title="<?php _e( 'Description', 'compare-products-for-woocommerce' ); ?>"
-                                    class="product-description"><?php echo apply_filters( 'get_the_excerpt', $product->post->post_excerpt ); ?>
-                                </td>
-		                    <?php endif; ?>
+							<?php if ( $key == 'description' ) : ?>
+								<td data-title="<?php _e( 'Description', 'compare-products-for-woocommerce' ); ?>"
+								    class="product-description <?php echo esc_attr($key) ?>"><?php the_excerpt(); ?>
+								</td>
+							<?php endif; ?>
 
 		                    <?php // Product price ?>
 		                    <?php if ( $key == 'price' ) : ?>
@@ -156,14 +156,14 @@ $list_class           = $params['list_class'];
 		                    <?php // Dimensions ?>
 		                    <?php if ( $key == 'dimensions' ) : ?>
                                 <td data-title="<?php _e( 'Dimensions', 'woocommerce' ); ?>"
-                                    class="product-dimensions">
-				                    <?php
-				                    if ( $product->get_dimensions() != '' ) {
-					                    echo $product->get_dimensions();
-				                    } else {
-					                    echo ' - ';
-				                    }
-				                    ?>
+                                    class="product-dimensions <?php echo esc_attr( $key ) ?>">
+									<?php
+									if ( ! empty( wc_format_dimensions( $product->get_dimensions( false ) ) ) ) {
+										echo wc_format_dimensions( $product->get_dimensions( false ) );
+									} else {
+										echo ' - ';
+									}
+									?>
                                 </td>
 		                    <?php endif; ?>
 
