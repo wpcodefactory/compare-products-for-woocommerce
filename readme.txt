@@ -69,7 +69,7 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 * Improve plugin description
 * Add images about the pro version
 * Fix link to comparison list on shop page
-* Show singular attribute name instead of label
+* Show singular attribute name instead of label on comparison list template
 
 = 1.1.3 - 20/03/2017 =
 * Fix widget label

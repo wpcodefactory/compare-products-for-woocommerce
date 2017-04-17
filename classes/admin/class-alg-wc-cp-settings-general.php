@@ -56,15 +56,15 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 						'items' => array(
 							array(
 								'trigger'     => __( 'Choose in real time which comparison list columns will be displayed on front-end', 'compare-products-for-woocommerce' ),
-								'img_src'     => plugins_url( '../../assets/images/sort-choose-columns.gif', __FILE__ ),
-							),
-							array(
-								'trigger'     => __( 'Style your buttons easily', 'compare-products-for-woocommerce' ),
-								'img_src'     => plugins_url( '../../assets/images/sort-choose-columns.gif', __FILE__ ),
+								'img_src'     => plugins_url( '../../assets/images/real-time-columns.gif', __FILE__ ),
 							),
 							array(
 								'trigger'     => __( 'Sort products on the comparison list by any field', 'compare-products-for-woocommerce' ),
-								'img_src'     => plugins_url( '../../assets/images/thumb-btn-position.gif', __FILE__ ),
+								'img_src'     => plugins_url( '../../assets/images/sorter.gif', __FILE__ ),
+							),
+							array(
+								'trigger'     => __( 'Style your buttons easily', 'compare-products-for-woocommerce' ),
+								'description' => __( 'Customize button icon, color, background, margin and more', 'compare-products-for-woocommerce' ),
 							),
 						),
 					),
@@ -97,40 +97,6 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 			);
 
 			return parent::get_settings( array_merge( $settings, $new_settings ) );
-		}
-
-		/**
-		 * Gets meta box description.
-		 *
-		 * The description is about the pro version of the plugin
-		 *
-		 * @version 1.1.2
-		 * @since   1.1.2
-		 */
-		function get_meta_box_pro_description() {
-			$presentation   = __( 'Do you like the free version of this plugin? Imagine what the Pro version can do for you!', 'compare-products-for-woocommerce' );
-			$url            = 'https://coder.fm/item/compare-products-woocommerce/';
-			$links          = sprintf( wp_kses( __( 'Check it out <a target="_blank" href="%s">here</a> or on this link: <a target="_blank" href="%s">%s</a>', 'compare-products-for-woocommerce' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( $url ), esc_url( $url ), esc_url( $url ) );
-			$features_title = __( 'Take a look on some of its features:', 'compare-products-for-woocommerce' );
-			$features       = array(
-				__( 'Style your buttons easily', 'compare-products-for-woocommerce' ),
-				__( 'Choose in real time which comparison list columns will be displayed on front-end', 'compare-products-for-woocommerce' ),
-				__( 'Sort products on the comparison list by any field', 'compare-products-for-woocommerce' ),
-			);
-			$features_str   =
-				"<ul style='list-style:square inside'>" .
-				"<li>" . implode( "</li><li>", $features ) . "</li>" .
-				"</ul>";
-
-			$call_to_action = sprintf( __( '<a target="_blank" style="margin:9px 0 15px 0;" class="button-primary" href="%s">Upgrade to Pro version now</a> ', 'compare-products-for-woocommerce' ), esc_url( $url ) );
-
-			return "
-				<p>{$presentation}<br/>
-				{$links}</p>
-				<strong>{$features_title}</strong>
-				{$features_str}
-				{$call_to_action}
-			";
 		}
 
 	}
