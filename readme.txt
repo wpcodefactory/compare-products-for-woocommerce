@@ -42,9 +42,9 @@ Yes, it's located [here](https://coder.fm/item/compare-products-woocommerce/ "Co
 
 **Take a look on some of its features:**
 
-* Style your buttons easily
 * Choose in real time which comparison list columns will be displayed on front-end
 * Sort products on the comparison list by any field
+* Style your buttons easily
 * Support
 
 = Can I see what the Pro version is capable of? =
