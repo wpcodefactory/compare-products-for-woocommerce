@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - Comparison list
  *
- * @version 1.1.3
+ * @version 1.1.4
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -132,7 +132,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Creates a link pointing to comparison list
 		 *
-		 * @version 1.1.3
+		 * @version 1.1.4
 		 * @since   1.0.0
 		 */
 		public static function create_comparison_list_link( $args = array() ) {
@@ -142,16 +142,12 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 
 			if ( true === filter_var( get_option( Alg_WC_CP_Settings_Comparison_List::OPTION_USE_MODAL, true ), FILTER_VALIDATE_BOOLEAN ) ) {
 				global $wp;
-				$permalink_structure = get_option( 'permalink_structure' );
-				if ( empty( $permalink_structure ) ) {
-					if ( is_shop() ) {
-						$original_link = get_post_type_archive_link( 'product' );
-					} else {
-						$original_link = get_permalink( get_the_ID() );
-					}
+				if ( is_shop() ) {
+					$original_link = get_post_type_archive_link( 'product' );
 				} else {
 					$original_link = get_permalink( get_the_ID() );
 				}
+
 				$final_link = add_query_arg( array(
 					Alg_WC_CP_Query_Vars::MODAL => 'open',
 				), $original_link );

@@ -2,7 +2,7 @@
 /*
 Plugin Name: Compare Products for WooCommerce
 Description: Let your users know which products interest them the most by comparing them.
-Version: 1.1.3
+Version: 1.1.4
 Author: Algoritmika Ltd
 Copyright: © 2017 Algoritmika Ltd.
 License: GNU General Public License v3.0
@@ -126,10 +126,18 @@ if ( ! function_exists( 'alg_wc_compare_products' ) ) {
 	}
 }
 
-$alg_wc_wl = alg_wc_compare_products();
-
 // Called when plugin is activated
-register_activation_hook( __FILE__, array( $alg_wc_wl, 'on_install' ) );
+register_activation_hook( __FILE__, array( alg_wc_compare_products(), 'on_install' ) );
 
 // Called when plugin is uninstalled
 register_uninstall_hook( __FILE__, array( Alg_WC_CP_Core::get_class_name(), 'on_uninstall' ) );
+
+add_action( 'plugins_loaded', 'alg_wc_cp_plugins_loaded' );
+if ( ! function_exists( 'alg_wc_cp_plugins_loaded' ) ) {
+	function alg_wc_cp_plugins_loaded() {
+		// Includes composer dependencies
+		require __DIR__ . '/vendor/autoload.php';
+
+		alg_wc_compare_products();
+	}
+}

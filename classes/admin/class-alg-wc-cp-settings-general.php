@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - General Section Settings
  *
- * @version 1.1.2
+ * @version 1.1.4
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -19,6 +19,8 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 		const OPTION_FONT_AWESOME  = 'alg_wc_cp_fontawesome';
 		const OPTION_METABOX_PRO   = 'alg_wc_cp_cmb_pro';
 
+		protected $pro_version_url = 'https://coder.fm/item/compare-products-woocommerce/';
+
 		/**
 		 * Constructor.
 		 *
@@ -34,7 +36,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 		/**
 		 * get_settings.
 		 *
-		 * @version 1.1.2
+		 * @version 1.1.4
 		 * @since   1.0.0
 		 */
 		function get_settings( $settings = null ) {
@@ -45,12 +47,33 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 					'id'       => 'alg_wc_cp_opt',
 				),
 				array(
-					'title'       => __( 'Pro', 'compare-products-for-woocommerce' ),
-					'type'        => 'meta_box',
-					'show_in_pro' => false,
-					'title'       => 'Pro version',
-					'description' => $this->get_meta_box_pro_description(),
-					'id'          => self::OPTION_METABOX_PRO,
+					'title'          => 'Pro version',
+					'enable'         => !defined( 'Alg_WC_CP_Pro_Core' ),
+					'type'           => 'wccso_metabox',
+					'show_in_pro'    => false,
+					'accordion' => array(
+						'title' => __( 'Take a look on some of its features:', 'compare-products-for-woocommerce' ),
+						'items' => array(
+							array(
+								'trigger'     => __( 'Choose in real time which comparison list columns will be displayed on front-end', 'compare-products-for-woocommerce' ),
+								'img_src'     => plugins_url( '../../assets/images/sort-choose-columns.gif', __FILE__ ),
+							),
+							array(
+								'trigger'     => __( 'Style your buttons easily', 'compare-products-for-woocommerce' ),
+								'img_src'     => plugins_url( '../../assets/images/sort-choose-columns.gif', __FILE__ ),
+							),
+							array(
+								'trigger'     => __( 'Sort products on the comparison list by any field', 'compare-products-for-woocommerce' ),
+								'img_src'     => plugins_url( '../../assets/images/thumb-btn-position.gif', __FILE__ ),
+							),
+						),
+					),
+					'call_to_action' => array(
+						'href'   => $this->pro_version_url,
+						'label'  => 'Upgrade to Pro version now',
+					),
+					'description'    => __( 'Do you like the free version of this plugin? Imagine what the Pro version can do for you!', 'compare-products-for-woocommerce' ) . '<br />' . sprintf( __( 'Check it out <a target="_blank" href="%1$s">here</a> or on this link: <a target="_blank" href="%1$s">%1$s</a>', 'compare-products-for-woocommerce' ), esc_url( $this->pro_version_url ) ),
+					'id'             => self::OPTION_METABOX_PRO,
 				),
 				array(
 					'title'    => __( 'Enable Plugin', 'compare-products-for-woocommerce' ),

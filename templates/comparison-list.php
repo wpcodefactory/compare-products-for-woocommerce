@@ -3,7 +3,7 @@
  * Compare products for WooCommerce - Comparison list template
  *
  * @author  Algoritmika Ltd.
- * @version 1.1.3
+ * @version 1.1.4
  * @since   1.0.0
  */
 
@@ -75,7 +75,8 @@ $list_class           = $params['list_class'];
 
 		                <?php // Dynamic attribute ?>
 		                <?php if ( strpos( $key, 'pa_' ) !== false ): ?>
-                            <th class="dynamic-attribute"><?php echo esc_html( get_taxonomy( $key )->label ); ?></th>
+                            <?php error_log(print_r(get_taxonomy( $key ),true));?>
+                            <th class="dynamic-attribute"><?php echo esc_html( get_taxonomy( $key )->labels->singular_name ); ?></th>
 		                <?php endif; ?>
 	                <?php endforeach; ?>
 
