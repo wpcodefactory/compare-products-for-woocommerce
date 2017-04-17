@@ -75,7 +75,6 @@ $list_class           = $params['list_class'];
 
 		                <?php // Dynamic attribute ?>
 		                <?php if ( strpos( $key, 'pa_' ) !== false ): ?>
-                            <?php error_log(print_r(get_taxonomy( $key ),true));?>
                             <th class="dynamic-attribute"><?php echo esc_html( get_taxonomy( $key )->labels->singular_name ); ?></th>
 		                <?php endif; ?>
 	                <?php endforeach; ?>
