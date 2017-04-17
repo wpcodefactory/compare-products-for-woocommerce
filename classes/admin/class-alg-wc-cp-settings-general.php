@@ -48,7 +48,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 				),
 				array(
 					'title'          => 'Pro version',
-					'enable'         => !defined( 'Alg_WC_CP_Pro_Core' ),
+					'enable'         => !defined( 'ALG_WC_CP_PRO_BASENAME' ),
 					'type'           => 'wccso_metabox',
 					'show_in_pro'    => false,
 					'accordion' => array(
