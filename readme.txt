@@ -65,7 +65,7 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 
 == Changelog ==
 
-= 1.1.4 - 14/04/2017 =
+= 1.1.4 - 18/04/2017 =
 * Support to WooCommerce 3.0
 * Improve plugin description
 * Add images about the pro version
