@@ -158,11 +158,19 @@ $list_class           = $params['list_class'];
                                 <td data-title="<?php _e( 'Dimensions', 'woocommerce' ); ?>"
                                     class="product-dimensions <?php echo esc_attr( $key ) ?>">
 									<?php
-									if ( ! empty( wc_format_dimensions( $product->get_dimensions( false ) ) ) ) {
-										echo wc_format_dimensions( $product->get_dimensions( false ) );
-									} else {
-										echo ' - ';
-									}
+                                    if(Alg_WC_CP_Woocommerce::version_check('3.0')){
+	                                    if ( ! empty( wc_format_dimensions( $product->get_dimensions( false ) ) ) ) {
+		                                    echo wc_format_dimensions( $product->get_dimensions( false ) );
+	                                    } else {
+		                                    echo ' - ';
+	                                    }
+                                    }else{
+                                        if ( $product->get_dimensions() != '' ) {
+                                            echo $product->get_dimensions();
+                                        } else {
+                                            echo ' - ';
+                                        }
+                                    }
 									?>
                                 </td>
 		                    <?php endif; ?>

@@ -3,7 +3,7 @@ Contributors: algoritmika,karzin,anbinder
 Tags: woocommerce,compare,compare products
 Requires at least: 4.4
 Tested up to: 4.7
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -22,6 +22,10 @@ Let your users know which products interest them the most by comparing them.
 == Frequently Asked Questions ==
 
 = Are there any widgets available? =
+
+= Is it compatible with WooCommerce 3.0 ? =
+Yes.
+
 **Comparison list link** - Displays a link to the comparison list page or modal
 
 = Are there shortcodes available? =

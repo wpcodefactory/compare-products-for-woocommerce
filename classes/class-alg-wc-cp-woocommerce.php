@@ -2,7 +2,7 @@
 /**
  * Compare Products for WooCommerce - WooCommerce functions
  *
- * @version 1.1.3
+ * @version 1.1.5
  * @since   1.1.3
  * @author  Algoritmika Ltd.
  */
@@ -28,6 +28,27 @@ if ( ! class_exists( 'Alg_WC_CP_Woocommerce' ) ) {
 			if ( ! wc_has_notice( $message, $notice_type ) ) {
 				wc_add_notice( $message, $notice_type = 'success' );
 			}
+		}
+
+		/**
+		 * Check if you are running a specified WooCommerce version (or higher).
+		 *
+		 * @version 1.1.5
+		 * @since   1.1.5
+		 *
+		 * @param string $version
+		 *
+		 * @return bool
+		 */
+		public static function version_check( $version = '3.0' ) {
+			if ( class_exists( 'WooCommerce' ) ) {
+				global $woocommerce;
+				if ( version_compare( $woocommerce->version, $version, ">=" ) ) {
+					return true;
+				}
+			}
+
+			return false;
 		}
 	}
 }
