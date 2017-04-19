@@ -69,6 +69,9 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 
 == Changelog ==
 
+= 1.1.5 - 19/04/2017 =
+* Make product dimensions compatible with WooCommerce 3.0 and older versions too
+
 = 1.1.4 - 18/04/2017 =
 * Support to WooCommerce 3.0
 * Improve plugin description
@@ -106,9 +109,5 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 
 == Upgrade Notice ==
 
-= 1.1.4 - 14/04/2017 =
-* Support to WooCommerce 3.0
-* Improve plugin description
-* Add images about the pro version
-* Fix link to comparison list on shop page
-* Show singular attribute name instead of label on comparison list template
+= 1.1.5 - 19/04/2017 =
+* Make product dimensions compatible with WooCommerce 3.0 and older versions too
