@@ -3,7 +3,7 @@
  * Compare products for WooCommerce - Comparison list template
  *
  * @author  Algoritmika Ltd.
- * @version 1.1.4
+ * @version 1.1.5
  * @since   1.0.0
  */
 
