@@ -21,11 +21,10 @@ Let your users know which products interest them the most by comparing them.
 
 == Frequently Asked Questions ==
 
-= Are there any widgets available? =
-
 = Is it compatible with WooCommerce 3.0 ? =
 Yes.
 
+= Are there any widgets available? =
 **Comparison list link** - Displays a link to the comparison list page or modal
 
 = Are there shortcodes available? =
