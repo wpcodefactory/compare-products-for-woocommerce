@@ -69,7 +69,7 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 == Changelog ==
 
 = 1.2.0 - 20/10/2019 =
--* Fix - Font Awesome button default icon fixed.
+* Fix - Font Awesome icon fixed.
 -* Dev - Composer removed.
 * Dev - Plugin and author URI updated.
 * WC tested up to: 3.7.

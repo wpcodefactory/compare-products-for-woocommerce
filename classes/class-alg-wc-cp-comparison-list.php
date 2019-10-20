@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - Comparison list
  *
- * @version 1.1.4
+ * @version 1.2.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -354,7 +354,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 		/**
 		 * Show compare list
 		 *
-		 * @version 1.1.2
+		 * @version 1.2.0
 		 * @since   1.0.0
 		 * @param $response
 		 */
@@ -364,7 +364,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 			$compare_list_subtitle_label = __( "Compare your items", "compare-products-for-woocommerce" );
 
 			$js=
-			"			
+			"
 				jQuery(document).ready(function($){
 					var isModalCreated=false;
 					function openModal(){
@@ -372,7 +372,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 							$('#iziModal').iziModal({
 						        title: '{$compare_list_label}',
 						        subtitle:'{$compare_list_subtitle_label}',
-						        icon:'fa fa-exchange',
+						        icon:'fa fa-exchange-alt',
 						        headerColor: '#666666',
 						        zindex:999999,
 						        history:false,
@@ -383,7 +383,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 					        isModalCreated=true;
 						}else{
 							$('#iziModal').iziModal('open');
-						}						
+						}
 					}
 					$('.alg-wc-cp-open-modal').on('click',function(e){
 						e.preventDefault();
@@ -391,7 +391,7 @@ if ( ! class_exists( 'Alg_WC_CP_Comparison_list' ) ) {
 					});
 					openModal();
 				});
-			
+
 			";
 
 			wp_add_inline_script( 'alg-wc-cp-izimodal', $js );
