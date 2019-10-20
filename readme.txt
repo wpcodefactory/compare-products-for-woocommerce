@@ -55,9 +55,9 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 
 == Installation ==
 
-1. Upload the entire 'compare-products-for-woocommerce' folder to the '/wp-content/plugins/' directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Start by visiting plugin settings at WooCommerce > Settings > Compare Products.
+1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the "Plugins" menu in WordPress.
+3. Start by visiting plugin settings at "WooCommerce > Settings > Compare Products".
 
 == Screenshots ==
 
