@@ -137,10 +137,12 @@ register_uninstall_hook( __FILE__, array( Alg_WC_CP_Core::get_class_name(), 'on_
 
 add_action( 'plugins_loaded', 'alg_wc_cp_plugins_loaded' );
 if ( ! function_exists( 'alg_wc_cp_plugins_loaded' ) ) {
+	/**
+	 * alg_wc_cp_plugins_loaded.
+	 *
+	 * @version 1.2.0
+	 */
 	function alg_wc_cp_plugins_loaded() {
-		// Includes composer dependencies
-		require __DIR__ . '/vendor/autoload.php';
-
 		alg_wc_compare_products();
 	}
 }

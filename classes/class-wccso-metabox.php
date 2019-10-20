@@ -5,7 +5,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 if ( ! class_exists( 'WCCSO_Metabox' ) ) {
-	class WCCSO_Metabox extends WCCSO_Singleton{
+	class WCCSO_Metabox {
+
+		protected static $instance = null;
 
 		public $admin_field_id = 'wccso_metabox';
 
@@ -21,6 +23,17 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 		}
 
 		/**
+		 * @return Current_Class_Name
+		 */
+		public static function get_instance() {
+			if ( ! isset( static::$instance ) ) {
+				static::$instance = new static;
+			}
+
+			return static::$instance;
+		}
+
+		/**
 		 * Gets the style for the metabox
 		 *
 		 * @version 1.0.0
@@ -28,7 +41,7 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 		 */
 		public function get_inline_style() {
 			$style = '
-			<style>				
+			<style>
 				.wccso-admin-accordion .details-container{
 					display:none;
 					margin-top:10px;
@@ -36,7 +49,7 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 					background:#f9f9f9;
 					padding:13px;
 				}
-				.wccso-admin-accordion .desc_container{					
+				.wccso-admin-accordion .desc_container{
 					color:#999;
 				}
 				.wccso-admin-accordion .accordion-item .trigger{
@@ -64,10 +77,10 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 					width: 0;
 					height: 0;
 					border-left: 5px solid transparent;
-				    border-right: 5px solid transparent;					  
+				    border-right: 5px solid transparent;
 				    border-top: 9px solid #0073aa;
 				    display:inline-block;
-				    margin-right:7px;	
+				    margin-right:7px;
 				    transition:all 0.3s ease-in-out;
 				    transform: rotate(-90deg);
 				}
@@ -80,7 +93,7 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 				}
 				.wccso-call-to-action{
 					margin:17px 0 15px 0 !important;
-				}				
+				}
 			</style>
 			';
 
@@ -104,7 +117,7 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
             			}else{
             				$('.wccso-admin-accordion .accordion-item .details-container').slideUp();
             				$('.wccso-admin-accordion .accordion-item').removeClass('active');
-            				$(this).parent().addClass('active');   
+            				$(this).parent().addClass('active');
             				$(this).parent().find('.details-container').slideDown();
             			}
 					})
@@ -197,10 +210,10 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 		 */
 		public function add_meta_box( $value ) {
 			// Doesn't show metabox if enable = false
-			if ( isset($value['enabled']) && $value['enabled']==false) {				
+			if ( isset($value['enabled']) && $value['enabled']==false) {
 					return;
 			}
-			if ( isset($value['enable']) && $value['enable']==false) {				
+			if ( isset($value['enable']) && $value['enable']==false) {
 					return;
 			}
 
@@ -212,7 +225,7 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 			$option_id             = esc_attr( $value['id'] );
 
 			echo '
-			<div id="poststuff">									
+			<div id="poststuff">
 				<div id="' . $option_id . '" class="postbox">
 					<h2 class="hndle"><span>' . $option_title . '</span></h2>
 					<div class="inside">

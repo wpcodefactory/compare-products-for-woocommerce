@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce  - Core Class
  *
- * @version 1.1.4
+ * @version 1.2.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -281,10 +281,11 @@ if ( ! class_exists( 'Alg_WC_CP_Core' ) ) :
 		/**
 		 * Create custom settings fields
 		 *
-		 * @version 1.1.4
+		 * @version 1.2.0
 		 * @since   1.1.0
 		 */
 		private function create_custom_settings_fields(){
+			require_once( 'class-wccso-metabox.php' );
 			WCCSO_Metabox::get_instance();
 		}
 
