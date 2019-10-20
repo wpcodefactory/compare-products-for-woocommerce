@@ -1,10 +1,13 @@
 <?php
 /*
 Plugin Name: Compare Products for WooCommerce
+Plugin URI: https://wpfactory.com/item/compare-products-woocommerce/
 Description: Let your users know which products interest them the most by comparing them.
-Version: 1.1.5
+Version: 1.2.0-dev
 Author: Algoritmika Ltd
-Copyright: © 2017 Algoritmika Ltd.
+Author URI: https://algoritmika.com
+Copyright: © 2019 Algoritmika Ltd.
+WC tested up to: 3.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: compare-products-for-woocommerce

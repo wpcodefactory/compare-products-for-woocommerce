@@ -1,8 +1,8 @@
 === Compare Products for WooCommerce ===
-Contributors: algoritmika,karzin,anbinder
-Tags: woocommerce,compare,compare products
+Contributors: algoritmika, anbinder, karzin
+Tags: woocommerce, compare, compare products
 Requires at least: 4.4
-Tested up to: 4.7
+Tested up to: 5.2
 Stable tag: 1.1.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -39,7 +39,7 @@ Yes, for now:
 If you are interested in contributing - head over to the [Compare Products for WooCommerce plugin GitHub Repository](https://github.com/algoritmika/compare-products-for-woocommerce) to find out how you can pitch in.
 
 = Is there a Pro version? =
-Yes, it's located [here](https://coder.fm/item/compare-products-woocommerce/ "Compare Products for WooCommerce Pro")
+Yes, it's located [here](https://wpfactory.com/item/compare-products-woocommerce/ "Compare Products for WooCommerce Pro")
 
 = What can I do in the Pro version? =
 
@@ -67,6 +67,13 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 4. Choose what columns will be available on the comparison list
 
 == Changelog ==
+
+= 1.2.0 - 20/10/2019 =
+-* Fix - Font Awesome button default icon fixed.
+-* Dev - Composer removed.
+* Dev - Plugin and author URI updated.
+* WC tested up to: 3.7.
+* Tested up to: 5.2.
 
 = 1.1.5 - 19/04/2017 =
 * Make product dimensions compatible with WooCommerce 3.0 and older versions too
@@ -108,5 +115,5 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 
 == Upgrade Notice ==
 
-= 1.1.5 - 19/04/2017 =
-* Make product dimensions compatible with WooCommerce 3.0 and older versions too
+= 1.0.0 =
+This is the first release of the plugin.

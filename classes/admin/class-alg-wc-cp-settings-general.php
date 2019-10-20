@@ -2,7 +2,7 @@
 /**
  * Compare products for WooCommerce - General Section Settings
  *
- * @version 1.1.4
+ * @version 1.2.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -19,7 +19,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 		const OPTION_FONT_AWESOME  = 'alg_wc_cp_fontawesome';
 		const OPTION_METABOX_PRO   = 'alg_wc_cp_cmb_pro';
 
-		protected $pro_version_url = 'https://coder.fm/item/compare-products-woocommerce/';
+		protected $pro_version_url = 'https://wpfactory.com/item/compare-products-woocommerce/';
 
 		/**
 		 * Constructor.
