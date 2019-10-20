@@ -14,10 +14,10 @@ Let your users know which products interest them the most by comparing them.
 **Compare Products for WooCommerce** is a plugin where users can compare WooCommerce products in many aspects helping them to find out what they are looking for.
 
 = Features =
-* Compare your products using a good looking popup or a normal page if you want
-* Display a button to compare your products on product page or product loop
-* Control precisely where your comparison buttons will be displayed
-* Choose what columns will be available on the comparison list, including price, description, stock, dimensions, and any other WooCommerce custom attributes
+* Compare your products using a good looking popup or a normal page if you want.
+* Display a button to compare your products on product page or product loop.
+* Control precisely where your comparison buttons will be displayed.
+* Choose what columns will be available on the comparison list, including price, description, stock, dimensions, and any other WooCommerce custom attributes.
 
 == Frequently Asked Questions ==
 
@@ -28,30 +28,30 @@ Yes.
 **Comparison list link** - Displays a link to the comparison list page or modal.
 
 = Are there shortcodes available? =
-* **[alg_wc_cp_table]** Displays the comparison list page
+* **[alg_wc_cp_table]** Displays the comparison list page.
 
 = Are there any ready languages available? =
 Yes, for now:
 
-* Portuguese
+* Portuguese.
 
 = How can I contribute? Is there a github repository? =
 If you are interested in contributing - head over to the [Compare Products for WooCommerce plugin GitHub Repository](https://github.com/algoritmika/compare-products-for-woocommerce) to find out how you can pitch in.
 
 = Is there a Pro version? =
-Yes, it's located [here](https://wpfactory.com/item/compare-products-woocommerce/ "Compare Products for WooCommerce Pro")
+Yes, it's located [here](https://wpfactory.com/item/compare-products-woocommerce/ "Compare Products for WooCommerce Pro").
 
 = What can I do in the Pro version? =
 
 **Take a look on some of its features:**
 
-* Choose in real time which comparison list columns will be displayed on front-end
-* Sort products on the comparison list by any field
-* Style your buttons easily
-* Support
+* Choose in real time which comparison list columns will be displayed on front-end.
+* Sort products on the comparison list by any field.
+* Style your buttons easily.
+* Support.
 
 = Can I see what the Pro version is capable of? =
-Start by visiting plugin settings at **WooCommerce > Settings > Compare products.**
+Start by visiting plugin settings at **WooCommerce > Settings > Compare products**.
 
 == Installation ==
 
