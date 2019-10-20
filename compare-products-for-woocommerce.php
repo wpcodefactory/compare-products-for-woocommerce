@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Disable this plugin if Pro version is activated
 if ( defined( 'ALG_WC_CP_PRO_DIR' ) ) {
-	add_action('admin_init',function(){
+	add_action( 'admin_init', function() {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
-	});
+	} );
 }
 
 // Check if WooCommerce is active
