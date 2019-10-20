@@ -25,10 +25,10 @@ Let your users know which products interest them the most by comparing them.
 Yes.
 
 = Are there any widgets available? =
-**Comparison list link** - Displays a link to the comparison list page or modal
+**Comparison list link** - Displays a link to the comparison list page or modal.
 
 = Are there shortcodes available? =
-*  **[alg_wc_cp_table]** Displays the comparison list page
+* **[alg_wc_cp_table]** Displays the comparison list page
 
 = Are there any ready languages available? =
 Yes, for now:
@@ -61,7 +61,7 @@ Start by visiting plugin settings at **WooCommerce > Settings > Compare products
 
 == Screenshots ==
 
-1. Compare your products using a good looking popup. (It's possible to compare all kind of fields, including WooCommerce attributes.)
+1. Compare your products using a good looking popup (it's possible to compare all kind of fields, including WooCommerce attributes)
 2. Display a button to compare your products on the product page or product loop
 3. Control precisely where your comparison buttons will be displayed
 4. Choose what columns will be available on the comparison list
