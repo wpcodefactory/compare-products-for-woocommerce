@@ -1,10 +1,16 @@
 <?php
+/**
+ * WCCSO_Metabox.
+ *
+ * @version 1.2.0
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
 if ( ! class_exists( 'WCCSO_Metabox' ) ) {
+
 	class WCCSO_Metabox {
 
 		protected static $instance = null;
@@ -77,16 +83,16 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 					width: 0;
 					height: 0;
 					border-left: 5px solid transparent;
-				    border-right: 5px solid transparent;
-				    border-top: 9px solid #0073aa;
-				    display:inline-block;
-				    margin-right:7px;
-				    transition:all 0.3s ease-in-out;
-				    transform: rotate(-90deg);
+					border-right: 5px solid transparent;
+					border-top: 9px solid #0073aa;
+					display:inline-block;
+					margin-right:7px;
+					transition:all 0.3s ease-in-out;
+					transform: rotate(-90deg);
 				}
 				.wccso-admin-accordion .accordion-item.active:before{
 				transform: rotate(0deg);
-    				transform-origin: 50% 50%;
+					transform-origin: 50% 50%;
 				}
 				.wccso-admin-accordion-title{
 					margin-top:23px;
@@ -109,19 +115,19 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 		public function get_inline_js() {
 			$js = "
 			 <script>
-            	jQuery(document).ready(function($){
-            		$('.wccso-admin-accordion .accordion-item .trigger').on('click',function(){
-            			if($(this).parent().hasClass('active')){
-            				$(this).parent().removeClass('active');
-            				$(this).parent().find('.details-container').slideUp();
-            			}else{
-            				$('.wccso-admin-accordion .accordion-item .details-container').slideUp();
-            				$('.wccso-admin-accordion .accordion-item').removeClass('active');
-            				$(this).parent().addClass('active');
-            				$(this).parent().find('.details-container').slideDown();
-            			}
+				jQuery(document).ready(function($){
+					$('.wccso-admin-accordion .accordion-item .trigger').on('click',function(){
+						if($(this).parent().hasClass('active')){
+							$(this).parent().removeClass('active');
+							$(this).parent().find('.details-container').slideUp();
+						}else{
+							$('.wccso-admin-accordion .accordion-item .details-container').slideUp();
+							$('.wccso-admin-accordion .accordion-item').removeClass('active');
+							$(this).parent().addClass('active');
+							$(this).parent().find('.details-container').slideDown();
+						}
 					})
-            	})
+				})
 			</script>
 			";
 
@@ -205,7 +211,7 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 		/**
 		 * Creates meta box
 		 *
-		 * @version 1.0.0
+		 * @version 1.2.0
 		 * @since   1.0.0
 		 */
 		public function add_meta_box( $value ) {
@@ -224,15 +230,14 @@ if ( ! class_exists( 'WCCSO_Metabox' ) ) {
 			$option_title          = $value['title'];
 			$option_id             = esc_attr( $value['id'] );
 
-			echo '
+			echo '<tr><th scope="row" class="titledesc">' . $option_title . '</th><td>
 			<div id="poststuff">
 				<div id="' . $option_id . '" class="postbox">
-					<h2 class="hndle"><span>' . $option_title . '</span></h2>
 					<div class="inside">
 						' . $option_description . $option_accordion_str . $option_call_to_action. '
 					</div>
 				</div>
-			</div>
+			</div></td></tr>
 			';
 
 			$style = $this->get_inline_style();

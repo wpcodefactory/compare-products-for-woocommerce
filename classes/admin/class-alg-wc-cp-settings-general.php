@@ -36,7 +36,7 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 		/**
 		 * get_settings.
 		 *
-		 * @version 1.1.4
+		 * @version 1.2.0
 		 * @since   1.0.0
 		 */
 		function get_settings( $settings = null ) {
@@ -45,6 +45,21 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 					'title'    => __( 'General Options', 'compare-products-for-woocommerce' ),
 					'type'     => 'title',
 					'id'       => 'alg_wc_cp_opt',
+				),
+				array(
+					'title'    => __( 'Enable Plugin', 'compare-products-for-woocommerce' ),
+					'desc'     => __( 'Enable "Compare Products for WooCommerce" plugin', 'compare-products-for-woocommerce' ),
+					'id'       => self::OPTION_ENABLE_PLUGIN,
+					'default'  => 'yes',
+					'type'     => 'checkbox',
+				),
+				array(
+					'title'    => __( 'Load FontAwesome', 'compare-products-for-woocommerce' ),
+					'desc'     => __( 'Load most recent version of Font Awesome', 'compare-products-for-woocommerce' ),
+					'desc_tip' => __( 'Only mark this if you are not loading Font Awesome nowhere else. Font Awesome is responsible for creating icons', 'compare-products-for-woocommerce' ),
+					'id'       => self::OPTION_FONT_AWESOME,
+					'default'  => 'yes',
+					'type'     => 'checkbox',
 				),
 				array(
 					'title'          => 'Pro version',
@@ -74,21 +89,6 @@ if ( ! class_exists( 'Alg_WC_CP_Settings_General' ) ) {
 					),
 					'description'    => __( 'Do you like the free version of this plugin? Imagine what the Pro version can do for you!', 'compare-products-for-woocommerce' ) . '<br />' . sprintf( __( 'Check it out <a target="_blank" href="%1$s">here</a> or on this link: <a target="_blank" href="%1$s">%1$s</a>', 'compare-products-for-woocommerce' ), esc_url( $this->pro_version_url ) ),
 					'id'             => self::OPTION_METABOX_PRO,
-				),
-				array(
-					'title'    => __( 'Enable Plugin', 'compare-products-for-woocommerce' ),
-					'desc'     => __( 'Enable "Compare Products for WooCommerce" plugin', 'compare-products-for-woocommerce' ),
-					'id'       => self::OPTION_ENABLE_PLUGIN,
-					'default'  => 'yes',
-					'type'     => 'checkbox',
-				),
-				array(
-					'title'    => __( 'Load FontAwesome', 'compare-products-for-woocommerce' ),
-					'desc'     => __( 'Load most recent version of Font Awesome', 'compare-products-for-woocommerce' ),
-					'desc_tip' => __( 'Only mark this if you are not loading Font Awesome nowhere else. Font Awesome is responsible for creating icons', 'compare-products-for-woocommerce' ),
-					'id'       => self::OPTION_FONT_AWESOME,
-					'default'  => 'yes',
-					'type'     => 'checkbox',
 				),
 				array(
 					'type'     => 'sectionend',
