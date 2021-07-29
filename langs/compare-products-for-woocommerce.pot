@@ -1,0 +1,630 @@
+#: includes/alg-wc-compare-products-functions.php:144
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:45
+msgid "Compare"
+msgstr ""
+
+#: includes/alg-wc-compare-products-functions.php:144
+#: includes/pro/templates/comparison-list.php:219
+#: templates/comparison-list.php:190
+msgid "Remove"
+msgstr ""
+
+#: includes/class-alg-wc-compare-products.php:140
+msgid "Settings"
+msgstr ""
+
+#: includes/class-alg-wc-compare-products.php:143
+msgid "Go Pro"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:53
+#: includes/pro/templates/comparison-list.php:70
+#: includes/pro/templates/comparison-list.php:124
+#: templates/comparison-list.php:42 templates/comparison-list.php:95
+msgid "Product"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:54
+#: includes/class-alg-wc-cp-comparison-list.php:308
+#: includes/pro/templates/comparison-list.php:80
+#: includes/pro/templates/comparison-list.php:147
+#: templates/comparison-list.php:52 templates/comparison-list.php:118
+msgid "Price"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:55
+#: includes/class-alg-wc-cp-comparison-list.php:312
+#: includes/pro/templates/comparison-list.php:95
+#: includes/pro/templates/comparison-list.php:172
+#: templates/comparison-list.php:67 templates/comparison-list.php:143
+msgid "Weight"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:74
+#: includes/class-alg-wc-cp-comparison-list.php:309
+msgid "Add to cart button"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:75
+#: includes/class-alg-wc-cp-comparison-list.php:310
+#: includes/pro/templates/comparison-list.php:75
+#: includes/pro/templates/comparison-list.php:140
+#: templates/comparison-list.php:47 templates/comparison-list.php:111
+msgid "Description"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:76
+#: includes/class-alg-wc-cp-comparison-list.php:311
+msgid "Availability"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:77
+#: includes/class-alg-wc-cp-comparison-list.php:313
+#: includes/pro/templates/comparison-list.php:100
+#: includes/pro/templates/comparison-list.php:186
+#: templates/comparison-list.php:72 templates/comparison-list.php:157
+msgid "Dimensions"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:143
+msgid "View comparison list"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:171
+#, php-format
+msgid "%s was successfully added to comparison list."
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:180
+#, php-format
+msgid "%s was successfully removed from comparison list."
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:188
+msgid "Sorry, some error occurred. Please try again later."
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:233
+#: includes/class-alg-wc-cp-comparison-list.php:335
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:25
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:65
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:64
+msgid "Comparison List"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:307
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:113
+msgid "Image"
+msgstr ""
+
+#: includes/class-alg-wc-cp-comparison-list.php:336
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:72
+msgid "Compare your items."
+msgstr ""
+
+#: includes/class-alg-wc-cp-widget-link.php:26
+msgid "Comparison list link"
+msgstr ""
+
+#: includes/class-alg-wc-cp-widget-link.php:27
+msgid "A link pointing to the comparison list"
+msgstr ""
+
+#: includes/class-alg-wc-cp-widget-link.php:66
+msgid "Title:"
+msgstr ""
+
+#: includes/class-alg-wc-cp-widget-link.php:71
+msgid "Link label:"
+msgstr ""
+
+#: includes/pro/templates/comparison-list.php:48
+msgid "Choose table fields"
+msgstr ""
+
+#: includes/pro/templates/comparison-list.php:85
+#: includes/pro/templates/comparison-list.php:154
+#: templates/comparison-list.php:57 templates/comparison-list.php:125
+msgid "Stock"
+msgstr ""
+
+#: includes/pro/templates/comparison-list.php:90
+#: includes/pro/templates/comparison-list.php:165
+#: templates/comparison-list.php:62 templates/comparison-list.php:136
+msgid "Add to cart"
+msgstr ""
+
+#: includes/pro/templates/comparison-list.php:156
+#: templates/comparison-list.php:127
+msgid "In stock"
+msgstr ""
+
+#: includes/pro/templates/comparison-list.php:158
+#: templates/comparison-list.php:129
+msgid "Out of stock"
+msgstr ""
+
+#: includes/pro/templates/comparison-list.php:227
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:96
+#: templates/comparison-list.php:198
+msgid "The comparison list is empty"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:24
+msgid "Buttons"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:38
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:57
+msgid "General Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:43
+msgid "Button title"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:53
+msgid "Singe Product Page Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:58
+msgid "Single product page"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:59
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:99
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:55
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:114
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:122
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:140
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:151
+msgid "Enable"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:60
+msgid "Enables button on single product page."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:66
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:106
+msgid "Position"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:67
+msgid "Where the button will appear on single product page?"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:68
+msgid "Default is \"On single product summary\"."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:73
+msgid "On single product summary"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:74
+msgid "Before single product summary"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:75
+msgid "After single product summary"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:76
+msgid "After product thumbnail"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:80
+msgid "Priority"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:81
+msgid ""
+"More precise control of where the button will appear on single product page."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:82
+msgid "Default is 31, right after \"add to cart\" button."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:93
+msgid "Product Loop Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:98
+msgid "Product loop"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:100
+msgid "Enables button on product loop."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:107
+msgid "More precise control of where the button will appear on product loop."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:110
+msgid "Before add to cart button"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-buttons.php:111
+msgid "After add to cart button"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:40
+msgid "None"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:48
+msgid "Comparison List Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:49
+msgid "Options regarding the comparison list."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:54
+msgid "Modal"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:56
+msgid "Enables a popup that shows the comparison list."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:62
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:121
+msgid "Title"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:63
+msgid "Title for the modal comparison list."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:69
+msgid "Subtitle"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:70
+msgid "Subtitle for the modal comparison list."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:76
+msgid "Page"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:77
+msgid "A page that displays the comparison list."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:85
+msgid "Widget"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:86
+msgid "Create"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:87
+msgid "Creates a widget showing a link pointing to the comparison list."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:93
+msgid "Empty list text"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:94
+msgid "Text displayed when comparison list is empty."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:107
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:129
+msgid "Columns"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:108
+msgid "Options regarding comparison table columns."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:115
+msgid "Enables product image on product column."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:123
+msgid "Enables product title on product column."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:130
+msgid "What columns do you want to show on comparison list?"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:131
+msgid "You can drag and drop columns to put them in any order you want."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:139
+msgid "Sorter"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:141
+msgid ""
+"Enables a column sorter button on front-end allowing users to sort based in "
+"any field."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:150
+msgid "Organizer"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-comparison-list.php:152
+msgid "Allows users on front-end to choose what columns will be visible."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:24
+msgid "General"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:38
+msgid "Compare Products Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:43
+#: includes/settings/class-alg-wc-compare-products-settings.php:25
+msgid "Compare Products"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:44
+msgid "Enable plugin"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:62
+msgid "Load Font Awesome"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:63
+msgid "Load most recent version of Font Awesome"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:64
+msgid ""
+"Only mark this if you are not loading Font Awesome nowhere else. Font "
+"Awesome is responsible for creating icons."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:75
+msgid "Take a look on some of its features:"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:78
+msgid ""
+"Choose in real time which comparison list columns will be displayed on front-"
+"end"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:82
+msgid "Sort products on the comparison list by any field"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:86
+msgid "Style your buttons easily"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:87
+msgid "Customize button icon, color, background, margin and more"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:95
+msgid ""
+"Do you like the free version of this plugin? Imagine what the Pro version "
+"can do for you!"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-general.php:96
+#, php-format
+msgid ""
+"Check it out <a target=\"_blank\" href=\"%1$s\">here</a> or on this link: <a "
+"target=\"_blank\" href=\"%1$s\">%1$s</a>"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:24
+msgid "Style"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:40
+msgid "Style Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:42
+msgid "Options that can be used to create a custom style."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:46
+msgid "Custom style"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:47
+msgid "Enable section"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:48
+msgid "Enables custom style section."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:66
+msgid "Comparison list style."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:70
+msgid "Responsiveness"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:71
+msgid "The responsive behaviour of the comparison list."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:72
+msgid ""
+"How comparison list will behave when window width is smaller than 768px."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:73
+msgid "* The sorter feature does not work well with List style."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:78
+msgid "List style"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:79
+msgid "Default table"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:91
+msgid "Default Button"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:93
+msgid "Default button style."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:97
+msgid "Icon"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:98
+msgid "Click on input field to choose icon."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:99
+msgid ""
+"Choose an Icon from font awesome. Leave it empty if you do not want icons."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:106
+msgid "Background color"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:107
+msgid "Background color for default button."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:113
+msgid "Background color hover"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:114
+msgid "Background color when mouse is over default button."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:120
+msgid "Text color"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:121
+msgid "Color for text and icon of default button."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:127
+msgid "Font weight"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:128
+msgid "Font weight for default button text."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:134
+msgid "Border radius"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:135
+msgid "Use it to make a rounded button."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:141
+msgid "Font size"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:142
+msgid "Default button font size (in pixels)."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:148
+msgid "Margin - single"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:149
+msgid ""
+"Distance between button and other adjacent elements on single product page."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:150
+msgid ""
+"E.g: 5px 15px 15px 20px. <br /><br />There are 4 space separated numbers, "
+"each one pointing to a direction:<br /><br /> top right bottom left <br /"
+"><br /> Do not forget to write px after each number."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:156
+msgid "Margin - loop"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:157
+msgid "Distance between button and other adjacent elements on product loop."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:158
+msgid ""
+"E.g: 5px 15px 15px 20px. <br /><br />There are 4 space separated numbers, "
+"each one pointing to a direction:<br /><br /> top right bottom left <br /"
+"><br /> Do not forget to write px after each number. "
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:164
+msgid "Alignment - single "
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:165
+msgid "Default button alignment on single product page."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:171
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:184
+msgid "Left"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:172
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:185
+msgid "Right"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:173
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:186
+msgid "Center"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:177
+msgid "Alignment - loop"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings-style.php:178
+msgid "Default button alignment on product loop."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings.php:46
+msgid "Reset Settings"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings.php:51
+msgid "Reset section settings"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings.php:52
+msgid "Reset"
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings.php:53
+msgid "Check the box and save changes to reset."
+msgstr ""
+
+#: includes/settings/class-alg-wc-compare-products-settings.php:92
+msgid "Your settings have been reset."
+msgstr ""

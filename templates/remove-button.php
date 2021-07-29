@@ -22,7 +22,7 @@ $href       = $params['btn_href'];
 ?>
 
 <div class="alg-wc-cp-remove-btn-wrapper">
-	<a href="<?php echo esc_url($href); ?>" data-item_id="<?php echo $id; ?>" data-action="<?php echo esc_attr( $action );?>" class="<?php echo esc_attr( $class );?>">
+	<a href="<?php echo esc_url( $href ); ?>" data-item_id="<?php echo $id; ?>" data-action="<?php echo esc_attr( $action );?>" class="<?php echo esc_attr( $class );?>">
 		<span class="alg-wc-cp-btn-text"><?php echo esc_html( $label ); ?></span>
 		<i class="<?php echo esc_attr( $icon_class );?>" aria-hidden="true"></i>
 	</a>
